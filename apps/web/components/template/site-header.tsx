@@ -1,8 +1,21 @@
+'use client'
+
 import { Button } from '@workspace/ui/components/button.tsx'
 import { Separator } from '@workspace/ui/components/separator.tsx'
 import { SidebarTrigger } from '@workspace/ui/components/sidebar.tsx'
+import { useTheme } from 'next-themes'
+import { MoonIcon, SunIcon } from 'lucide-react'
+import React from 'react'
 
 export function SiteHeader() {
+  const { resolvedTheme, setTheme } = useTheme()
+
+  const toggleTheme = React.useCallback(() => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+  }, [resolvedTheme, setTheme])
+
+  const isDark = resolvedTheme === 'dark'
+
   return (
     <header className="h-(--header-height) group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height) flex shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear">
       <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
@@ -19,6 +32,16 @@ export function SiteHeader() {
             >
               GitHub
             </a>
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? <SunIcon /> : <MoonIcon />}
+            <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
       </div>

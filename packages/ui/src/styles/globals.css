@@ -125,3 +125,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+    [data-slot="sidebar-inset"] {
+        @apply backdrop-blur-lg border-l-2 shadow-md;
+    }
+
+    [data-slot="card"] {
+        @apply from-primary/5 to-card bg-gradient-to-t shadow-xl;
+    }
+}

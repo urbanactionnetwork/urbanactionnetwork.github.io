@@ -9,6 +9,7 @@ import { SiteHeader } from '@/components/template/site-header.tsx'
 import { SidebarInset, SidebarProvider } from '@workspace/ui/components/sidebar'
 
 import data from './data.json'
+import { CardsDemo } from '@/components/cards'
 
 export default function Page() {
   return (
@@ -31,6 +32,9 @@ export default function Page() {
                 <ChartAreaInteractive />
               </div>
               <DataTable data={data} />
+              <div className="px-4 lg:px-6">
+                <CardsDemo />
+              </div>
             </div>
           </div>
         </div>
