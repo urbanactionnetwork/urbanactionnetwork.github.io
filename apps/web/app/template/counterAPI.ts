@@ -12,7 +12,7 @@ export interface Count {
  * @returns Count
  */
 export const fetchCount = async (amount: number = 1) => {
-  const response = await publicApi.get('/api/count', {
+  const response = await publicApi.get('/data/count.json', {
     params: { amount },
   })
   return response.data as Count
