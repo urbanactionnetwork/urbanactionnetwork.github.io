@@ -1,3 +1,7 @@
+---
+apply: always
+---
+
 # Prompt for Component layer generate
 
 ## 1. Basic rules

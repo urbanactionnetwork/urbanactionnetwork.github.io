@@ -1,6 +1,8 @@
-# Component structure for generate
+---
+apply: always
+---
 
-# AI Agent
+# Component structure for generate
 
 ## page.tsx
 

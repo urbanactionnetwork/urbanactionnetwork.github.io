@@ -1,3 +1,7 @@
+---
+apply: always
+---
+
 # React Style Guide for Application
 
 This document outlines the coding standards, architectural patterns, and best practices for the Dashboard app.
@@ -13,12 +17,6 @@ This document outlines the coding standards, architectural patterns, and best pr
 - **dayjs** for Date util
 - **shadcn/ui** is a set of beautifully-designed, accessible components and a code distribution platform.
 - **Zustand** for state management
-
-### Excluded Technologies
-
-### Excluded Prompt
-
-Ignore the `*.prompt.md` resources defined in `./prompt.ignore`.
 
 ## Architectural Patterns
 

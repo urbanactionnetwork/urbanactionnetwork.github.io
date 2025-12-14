@@ -1,9 +1,11 @@
+---
+apply: always
+---
+
 # Prompt for API layer generate
 
 ## 1. Basic rules
 
-- `../apps/web/prompts/web-api-swagger.json`을 이용하여 API function을 생성한다.
-- {domain}은 `swagger.json`에 정의 된 `tags`의 `name`을 이용한다.
 - 리소스는 `../apps/web/app/{domain}/{domain}API.ts`으로 생성한다.
 - function 이름 규칙은 `method`에 따라서 접두사를 붙힌다.
   - 조회 GET: 'fetch'
