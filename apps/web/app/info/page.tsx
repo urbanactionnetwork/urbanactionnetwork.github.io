@@ -11,8 +11,8 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@workspace/ui/components/sidebar'
-import { StaffSection } from '@/components/info/staff-section'
-import { SiteFooter } from '@/components/site-footer.tsx'
+import { StaffSection } from '@/app/info/staff-section'
+import { SiteFooter } from '@/components/site-footer'
 
 export default async function Page() {
   return (

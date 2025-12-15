@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { Button } from '@workspace/ui/components/button'
 import { HeartHandshakeIcon } from 'lucide-react'
-import { ActivitiesSection } from '@/components/home/activities-section'
-import { InstagramSection } from '@/components/home/instagram-section.tsx'
-import { SiteFooter } from '@/components/site-footer.tsx'
+import { ActivitiesSection } from '@/app/home/activities-section'
+import { InstagramSection } from '@/app/home/instagram-section'
+import { SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
   return (

@@ -3,22 +3,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Button } from '@workspace/ui/components/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@workspace/ui/components/card'
-import { Skeleton } from '@workspace/ui/components/skeleton'
-import { ActivityIcon, ArrowRightIcon } from 'lucide-react'
-import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI'
+import { Button } from '@workspace/ui/components/button.tsx'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card.tsx'
+import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
+import { NewspaperIcon, ArrowRightIcon } from 'lucide-react'
+import { fetchTopNews, type News } from '@/app/news/newsAPI.ts'
 
-export interface ActivitiesItem {
+export interface NewsItem {
   id: number
   title: string
   description: string
   thumbnail: string
-  url: string
 }
 
-export function ActivitiesSection() {
-  const [items, setItems] = useState<ActivitiesItem[]>([])
+export function NewsSection() {
+  const [items, setItems] = useState<NewsItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -26,7 +32,7 @@ export function ActivitiesSection() {
     let mounted = true
     ;(async () => {
       try {
-        const res: Activities = await fetchTopActivities()
+        const res: News = await fetchTopNews()
         if (!mounted) return
         setItems(res?.data ?? [])
       } catch (e) {
@@ -47,13 +53,13 @@ export function ActivitiesSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
-        <ActivityIcon className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
+        <NewspaperIcon className="size-5" />
+        <h2 className="text-xl font-semibold md:text-2xl">새소식</h2>
       </div>
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }).map((_, idx) => (
-            <Card key={idx} className="flex h-full flex-col overflow-hidden">
+            <Card key={idx} className="overflow-hidden">
               {/* 썸네일 자리 */}
               <div className="relative aspect-[16/9] w-full">
                 <Skeleton className="h-full w-full" />
@@ -68,7 +74,7 @@ export function ActivitiesSection() {
                 </div>
               </CardHeader>
 
-              <CardContent className="mt-auto" />
+              <CardContent />
 
               {/* 버튼 자리 */}
               <CardFooter>
@@ -84,7 +90,7 @@ export function ActivitiesSection() {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card key={item.id} className="flex h-full flex-col overflow-hidden">
+            <Card key={item.id} className="overflow-hidden">
               <div className="relative aspect-[16/9] w-full">
                 <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
               </div>
@@ -92,10 +98,10 @@ export function ActivitiesSection() {
                 <CardTitle className="line-clamp-2">{item.title}</CardTitle>
                 <CardDescription className="line-clamp-3">{item.description}</CardDescription>
               </CardHeader>
-              <CardContent className="mt-auto"></CardContent>
+              <CardContent></CardContent>
               <CardFooter>
                 <Button asChild variant="secondary" className="ml-auto gap-1">
-                  <Link href={item.url} target="_blank" rel="noopener noreferrer">
+                  <Link href={`/news/${item.id}`}>
                     자세히 보기 <ArrowRightIcon className="size-4" />
                   </Link>
                 </Button>

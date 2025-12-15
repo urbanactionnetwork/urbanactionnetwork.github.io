@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { fetchStaff, type Staff as StaffResponse } from '@/app/info/infoAPI'
+import { fetchStaff, type Staff as StaffResponse } from '@/app/info/infoAPI.ts'
 import { Mail, Building2, User2 } from 'lucide-react'
 
 type StaffItem = StaffResponse['data'][number]

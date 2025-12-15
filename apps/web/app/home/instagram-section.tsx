@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Instagram, ExternalLink } from 'lucide-react'
-import { Skeleton } from '@workspace/ui/components/skeleton'
-import { fetchInstagram } from '@/app/instagram/instagramAPI'
+import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
+import { fetchInstagram } from '@/app/instagram/instagramAPI.ts'
 
 interface InstagramEmbedProps {
   url: string
