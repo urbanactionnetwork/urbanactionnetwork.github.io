@@ -4,9 +4,9 @@ export interface News {
   data: {
     id: number
     title: string
-    description: string
     thumbnail: string
     url: string
+    postDate: string
   }[]
 }
 

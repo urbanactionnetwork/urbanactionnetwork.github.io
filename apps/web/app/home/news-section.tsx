@@ -19,7 +19,7 @@ import { fetchTopNews, type News } from '@/app/news/newsAPI.ts'
 export interface NewsItem {
   id: number
   title: string
-  description: string
+  description?: string
   thumbnail: string
 }
 
@@ -96,7 +96,7 @@ export function NewsSection() {
               </div>
               <CardHeader>
                 <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-                <CardDescription className="line-clamp-3">{item.description}</CardDescription>
+                <CardDescription className="line-clamp-3">{item.description ?? ''}</CardDescription>
               </CardHeader>
               <CardContent></CardContent>
               <CardFooter>
