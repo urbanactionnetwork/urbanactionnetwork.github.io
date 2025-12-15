@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "John Doe",
+      "mail": "john.doe@example.com",
+      "imageUrl": "/avatars/01.png"
+    },
+    {
+      "name": "Jane Smith",
+      "mail": "jane.smith@example.com",
+      "imageUrl": "/avatars/02.png"
+    },
+    {
+      "name": "Alice Johnson",
+      "mail": "alice.johnson@example.com",
+      "imageUrl": "/avatars/03.png"
+    }
+  ]
+}
