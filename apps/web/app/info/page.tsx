@@ -46,6 +46,11 @@ export default async function Page() {
                     <a href="#staff">함께하는 사람들</a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <a href="#location">오시는 길</a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
@@ -127,6 +132,33 @@ export default async function Page() {
 
           {/* 함께하는 사람들 */}
           <StaffSection />
+
+          {/* 오시는 길 */}
+          <section id="location" className="scroll-mt-24 space-y-4 py-10">
+            <h2 className="text-2xl font-semibold tracking-tight">오시는 길</h2>
+            <div className="space-y-4">
+              <p className="text-muted-foreground flex items-start gap-2 leading-7">
+                {/* 아이콘 */}
+                <span className="text-foreground/70 mt-1 inline-flex h-5 w-5 flex-none items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" />
+                  </svg>
+                </span>
+                <span>(04526) 서울 중구 세종대로16길 23 3층</span>
+              </p>
+              <img
+                src="/placeholder.svg"
+                alt="도시연대 위치 안내 이미지"
+                className="bg-muted/40 mx-auto block w-full rounded-md"
+              />
+            </div>
+          </section>
 
           <SiteFooter />
         </div>
