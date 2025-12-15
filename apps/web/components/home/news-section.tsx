@@ -77,29 +77,29 @@ export function NewsSection() {
           ))}
         </div>
       ) : error ? (
-        <div className="text-sm text-muted-foreground">{error}</div>
+        <div className="text-muted-foreground text-sm">{error}</div>
       ) : (
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
-          <Card key={item.id} className="overflow-hidden">
-            <div className="relative aspect-[16/9] w-full">
-              <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
-            </div>
-            <CardHeader>
-              <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-              <CardDescription className="line-clamp-3">{item.description}</CardDescription>
-            </CardHeader>
-            <CardContent></CardContent>
-            <CardFooter>
-              <Button asChild variant="secondary" className="ml-auto gap-1">
-                <Link href={`/news/${item.id}`}>
-                  자세히 보기 <ArrowRightIcon className="size-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <Card key={item.id} className="overflow-hidden">
+              <div className="relative aspect-[16/9] w-full">
+                <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="line-clamp-2">{item.title}</CardTitle>
+                <CardDescription className="line-clamp-3">{item.description}</CardDescription>
+              </CardHeader>
+              <CardContent></CardContent>
+              <CardFooter>
+                <Button asChild variant="secondary" className="ml-auto gap-1">
+                  <Link href={`/news/${item.id}`}>
+                    자세히 보기 <ArrowRightIcon className="size-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
       )}
     </section>
   )

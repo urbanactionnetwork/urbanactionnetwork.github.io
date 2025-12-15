@@ -28,4 +28,3 @@ export const fetchTopNews = async () => {
   const response = await publicApi.get('/data/news/top-news.json')
   return response.data as News
 }
-

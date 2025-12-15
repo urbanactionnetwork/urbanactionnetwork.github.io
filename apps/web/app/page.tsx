@@ -6,9 +6,8 @@ import { HeartHandshakeIcon } from 'lucide-react'
 import { NewsSection } from '@/components/home/news-section'
 
 export default function Page() {
-
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="bg-background text-foreground flex min-h-screen flex-col">
       <SiteHeader />
 
       {/* CTA Section */}
