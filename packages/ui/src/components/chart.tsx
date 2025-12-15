@@ -93,6 +93,23 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip
 
+// A minimal local type describing the props injected by Recharts Tooltip into a custom content component.
+// This avoids tight coupling to Recharts' internal type names across versions.
+type ChartTooltipContentInjectedProps = {
+  active?: boolean
+  label?: React.ReactNode
+  payload?: Array<
+    {
+      name?: string
+      value?: number | string
+      color?: string
+      dataKey?: string
+      // original datum payload
+      payload?: Record<string, unknown> & { fill?: string }
+    } & Record<string, unknown>
+  >
+}
+
 function ChartTooltipContent({
   active,
   payload,
@@ -107,13 +124,26 @@ function ChartTooltipContent({
   color,
   nameKey,
   labelKey,
-}: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+}: ChartTooltipContentInjectedProps &
   React.ComponentProps<'div'> & {
     hideLabel?: boolean
     hideIndicator?: boolean
     indicator?: 'line' | 'dot' | 'dashed'
+    color?: string
     nameKey?: string
     labelKey?: string
+    labelClassName?: string
+    labelFormatter?: (
+      value: any,
+      payload?: ChartTooltipContentInjectedProps['payload']
+    ) => React.ReactNode
+    formatter?: (
+      value: unknown,
+      name: unknown,
+      item: NonNullable<ChartTooltipContentInjectedProps['payload']>[number],
+      index: number,
+      payload?: unknown
+    ) => React.ReactNode
   }) {
   const { config } = useChart()
 
@@ -157,7 +187,7 @@ function ChartTooltipContent({
         {payload.map((item, index) => {
           const key = `${nameKey || item.name || item.dataKey || 'value'}`
           const itemConfig = getPayloadConfigFromPayload(config, item, key)
-          const indicatorColor = color || item.payload.fill || item.color
+          const indicatorColor = color || item.payload?.fill || item.color
 
           return (
             <div
@@ -216,6 +246,17 @@ function ChartTooltipContent({
 
 const ChartLegend = RechartsPrimitive.Legend
 
+type ChartLegendContentInjectedProps = {
+  payload?: Array<
+    {
+      dataKey?: string
+      value?: string
+      color?: string
+    } & Record<string, unknown>
+  >
+  verticalAlign?: 'top' | 'middle' | 'bottom'
+}
+
 function ChartLegendContent({
   className,
   hideIcon = false,
@@ -223,7 +264,7 @@ function ChartLegendContent({
   verticalAlign = 'bottom',
   nameKey,
 }: React.ComponentProps<'div'> &
-  Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+  ChartLegendContentInjectedProps & {
     hideIcon?: boolean
     nameKey?: string
   }) {
