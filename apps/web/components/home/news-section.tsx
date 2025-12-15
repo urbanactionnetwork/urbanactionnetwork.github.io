@@ -29,11 +29,13 @@ export function NewsSection() {
         if (!mounted) return
         setItems(res?.data ?? [])
       } catch (e) {
+        console.error(e)
         if (!mounted) return
         setError('새소식을 불러오는 데 실패했습니다.')
       } finally {
-        if (!mounted) return
-        setLoading(false)
+        if (mounted) {
+          setLoading(false)
+        }
       }
     })()
     return () => {
