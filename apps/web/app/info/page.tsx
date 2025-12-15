@@ -70,6 +70,11 @@ export default async function Page() {
                 극복하고, 시민들이 자신의 몸 가까운 곳부터 살피고 돌보는 생활 속의 실천을 토대로 작지만 강력한 시민운동,
                 지역사회에 밀착한 현장운동을 추구하고 있습니다.
               </p>
+              <img
+                src="/dosi-info.jpg"
+                alt="도시연대 이념"
+                className="bg-muted/40 mx-auto my-6 block w-full rounded-md md:w-1/2"
+              />
               <p>
                 도시연대는 보행권 확보 운동, 마을만들기 운동, 생활문화 운동을 주된 축으로 활동하고 있습니다. 이 세가지
                 축은 도시연대가 우리 도시를 바라보는 시각을 반영합니다. 인간이 중심이 되는 도시를 만들기 위한 보행권

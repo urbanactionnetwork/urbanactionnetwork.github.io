@@ -3,8 +3,10 @@ import { publicApi } from '@workspace/core/api'
 export interface Staff {
   data: {
     name: string
-    mail: string
-    imageUrl: string
+    mail?: string
+    imageUrl?: string
+    affiliation?: string
+    group: string
   }[]
 }
 
