@@ -1,18 +1,16 @@
 import Link from 'next/link'
 import Script from 'next/script'
 import { Button } from '@workspace/ui/components/button'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
 import { HeartHandshakeIcon } from 'lucide-react'
 import { ActivitiesSection } from '@/components/home/activities-section'
 import { InstagramSection } from '@/components/home/instagram-section.tsx'
+import { SiteFooter } from '@/components/site-footer.tsx'
 
 export default function Page() {
   return (
-    <div className="bg-background text-foreground flex min-h-screen flex-col">
+    <>
       {/* Instagram embed 스크립트를 메인 페이지에서 로드 */}
       <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
-      <SiteHeader />
 
       {/* CTA Section */}
       <section className="relative isolate flex items-center">
@@ -37,6 +35,6 @@ export default function Page() {
       <ActivitiesSection />
 
       <SiteFooter />
-    </div>
+    </>
   )
 }

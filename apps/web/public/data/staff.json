@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "name": "안상욱",
+      "mail": "",
+      "imageUrl": "",
+      "affiliation": "충북대 대학원 도시재생협동과정 전담교수",
+      "group": "이사장"
+    },
+    {
+      "name": "김성주",
+      "mail": "",
+      "imageUrl": "",
+      "affiliation": "(주)도시건축이래 소장",
+      "group": "부 이사장"
+    },
+    {
+      "name": "장옥연",
+      "mail": "",
+      "imageUrl": "",
+      "affiliation": "온 공간연구소(주) 소장",
+      "group": "부 이사장"
+    }
+  ]
+}
