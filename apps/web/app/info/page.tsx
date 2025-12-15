@@ -12,6 +12,7 @@ import {
   SidebarProvider,
 } from '@workspace/ui/components/sidebar'
 import { StaffSection } from '@/components/info/staff-section'
+import { SiteFooter } from '@/components/site-footer.tsx'
 
 export default async function Page() {
   return (
@@ -29,7 +30,7 @@ export default async function Page() {
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupContent>
-              <SidebarMenu>
+              <SidebarMenu className="mt-18">
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild>
                     <a href="#vision-mission">비전과 미션</a>
@@ -121,6 +122,8 @@ export default async function Page() {
 
           {/* 함께하는 사람들 */}
           <StaffSection />
+
+          <SiteFooter />
         </div>
       </SidebarInset>
     </SidebarProvider>
