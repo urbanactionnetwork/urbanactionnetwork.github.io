@@ -6,18 +6,18 @@ import { useEffect, useState } from 'react'
 import { Button } from '@workspace/ui/components/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@workspace/ui/components/card'
 import { Skeleton } from '@workspace/ui/components/skeleton'
-import { NewspaperIcon, ArrowRightIcon } from 'lucide-react'
-import { fetchTopNews, type News } from '@/app/news/newsAPI'
+import { ActivityIcon, ArrowRightIcon } from 'lucide-react'
+import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI'
 
-export interface NewsItem {
+export interface ActivitiesItem {
   id: number
   title: string
   description: string
   thumbnail: string
 }
 
-export function NewsSection() {
-  const [items, setItems] = useState<NewsItem[]>([])
+export function ActivitiesSection() {
+  const [items, setItems] = useState<ActivitiesItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -25,7 +25,7 @@ export function NewsSection() {
     let mounted = true
     ;(async () => {
       try {
-        const res: News = await fetchTopNews()
+        const res: Activities = await fetchTopActivities()
         if (!mounted) return
         setItems(res?.data ?? [])
       } catch (e) {
@@ -46,8 +46,8 @@ export function NewsSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
-        <NewspaperIcon className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">새소식</h2>
+        <ActivityIcon className="size-5" />
+        <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
       </div>
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -3,7 +3,7 @@ import { Button } from '@workspace/ui/components/button'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { HeartHandshakeIcon } from 'lucide-react'
-import { NewsSection } from '@/components/home/news-section'
+import { ActivitiesSection } from '@/components/home/activities-section'
 
 export default function Page() {
   return (
@@ -26,8 +26,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* News Section */}
-      <NewsSection />
+      {/* Activities Section */}
+      <ActivitiesSection />
 
       <SiteFooter />
     </div>
