@@ -14,6 +14,7 @@ export interface ActivitiesItem {
   title: string
   description: string
   thumbnail: string
+  url: string
 }
 
 export function ActivitiesSection() {
@@ -52,7 +53,7 @@ export function ActivitiesSection() {
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }).map((_, idx) => (
-            <Card key={idx} className="overflow-hidden">
+            <Card key={idx} className="flex h-full flex-col overflow-hidden">
               {/* 썸네일 자리 */}
               <div className="relative aspect-[16/9] w-full">
                 <Skeleton className="h-full w-full" />
@@ -67,7 +68,7 @@ export function ActivitiesSection() {
                 </div>
               </CardHeader>
 
-              <CardContent />
+              <CardContent className="mt-auto" />
 
               {/* 버튼 자리 */}
               <CardFooter>
@@ -83,7 +84,7 @@ export function ActivitiesSection() {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card key={item.id} className="overflow-hidden">
+            <Card key={item.id} className="flex h-full flex-col overflow-hidden">
               <div className="relative aspect-[16/9] w-full">
                 <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
               </div>
@@ -91,10 +92,10 @@ export function ActivitiesSection() {
                 <CardTitle className="line-clamp-2">{item.title}</CardTitle>
                 <CardDescription className="line-clamp-3">{item.description}</CardDescription>
               </CardHeader>
-              <CardContent></CardContent>
+              <CardContent className="mt-auto"></CardContent>
               <CardFooter>
                 <Button asChild variant="secondary" className="ml-auto gap-1">
-                  <Link href={`/news/${item.id}`}>
+                  <Link href={item.url} target="_blank" rel="noopener noreferrer">
                     자세히 보기 <ArrowRightIcon className="size-4" />
                   </Link>
                 </Button>

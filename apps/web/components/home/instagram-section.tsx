@@ -138,7 +138,7 @@ export function InstagramSection() {
       ) : error ? (
         <div className="text-muted-foreground text-sm">{error}</div>
       ) : (
-        <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (
             <div key={index} className="overflow-hidden">
               <InstagramEmbed url={item} className="w-full" />

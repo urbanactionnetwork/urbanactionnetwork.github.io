@@ -6,6 +6,7 @@ export interface News {
     title: string
     description: string
     thumbnail: string
+    url: string
   }[]
 }
 
@@ -15,7 +16,7 @@ export interface News {
  * @returns News
  */
 export const fetchNews = async () => {
-  const response = await publicApi.get('/data/news/all-news.json')
+  const response = await publicApi.get('/data/news.json')
   return response.data as News
 }
 
@@ -25,7 +26,7 @@ export const fetchNews = async () => {
  * @returns News (data 길이 최대 3)
  */
 export const fetchTopNews = async () => {
-  const response = await publicApi.get('/data/news/all-news.json')
+  const response = await publicApi.get('/data/news.json')
   const all = response.data as News
   return { data: all.data.slice(0, 3) }
 }
