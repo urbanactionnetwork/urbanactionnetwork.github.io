@@ -6,18 +6,19 @@ import { useEffect, useState } from 'react'
 import { Button } from '@workspace/ui/components/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@workspace/ui/components/card'
 import { Skeleton } from '@workspace/ui/components/skeleton'
-import { NewspaperIcon, ArrowRightIcon } from 'lucide-react'
-import { fetchTopNews, type News } from '@/app/news/newsAPI'
+import { ActivityIcon, ArrowRightIcon } from 'lucide-react'
+import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI'
 
-export interface NewsItem {
+export interface ActivitiesItem {
   id: number
   title: string
   description: string
   thumbnail: string
+  url: string
 }
 
-export function NewsSection() {
-  const [items, setItems] = useState<NewsItem[]>([])
+export function ActivitiesSection() {
+  const [items, setItems] = useState<ActivitiesItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -25,7 +26,7 @@ export function NewsSection() {
     let mounted = true
     ;(async () => {
       try {
-        const res: News = await fetchTopNews()
+        const res: Activities = await fetchTopActivities()
         if (!mounted) return
         setItems(res?.data ?? [])
       } catch (e) {
@@ -46,13 +47,13 @@ export function NewsSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
-        <NewspaperIcon className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">새소식</h2>
+        <ActivityIcon className="size-5" />
+        <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
       </div>
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }).map((_, idx) => (
-            <Card key={idx} className="overflow-hidden">
+            <Card key={idx} className="flex h-full flex-col overflow-hidden">
               {/* 썸네일 자리 */}
               <div className="relative aspect-[16/9] w-full">
                 <Skeleton className="h-full w-full" />
@@ -67,7 +68,7 @@ export function NewsSection() {
                 </div>
               </CardHeader>
 
-              <CardContent />
+              <CardContent className="mt-auto" />
 
               {/* 버튼 자리 */}
               <CardFooter>
@@ -83,7 +84,7 @@ export function NewsSection() {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card key={item.id} className="overflow-hidden">
+            <Card key={item.id} className="flex h-full flex-col overflow-hidden">
               <div className="relative aspect-[16/9] w-full">
                 <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
               </div>
@@ -91,10 +92,10 @@ export function NewsSection() {
                 <CardTitle className="line-clamp-2">{item.title}</CardTitle>
                 <CardDescription className="line-clamp-3">{item.description}</CardDescription>
               </CardHeader>
-              <CardContent></CardContent>
+              <CardContent className="mt-auto"></CardContent>
               <CardFooter>
                 <Button asChild variant="secondary" className="ml-auto gap-1">
-                  <Link href={`/news/${item.id}`}>
+                  <Link href={item.url} target="_blank" rel="noopener noreferrer">
                     자세히 보기 <ArrowRightIcon className="size-4" />
                   </Link>
                 </Button>
