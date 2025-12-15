@@ -106,7 +106,7 @@ export function InstagramSection() {
       } catch (e) {
         console.error(e)
         if (!mounted) return
-        setError('인스타그램을 불러오는 데 실패했습니다.')
+        setError('인스타그램 정보를 불러오는 중 문제가 발생했습니다.')
       } finally {
         if (mounted) {
           setLoading(false)
