@@ -8,7 +8,7 @@ import Link from 'next/link'
 export default function SupportPage() {
   return (
     <>
-      <section className="container mx-auto w-full max-w-4xl px-4 py-12 md:py-16">
+      <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         {/* Header & CTA Button */}
         <div className="mb-12 flex flex-col gap-6 border-b pb-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-3">
