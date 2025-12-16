@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Instagram, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import { ExternalLink } from 'lucide-react'
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { fetchInstagram } from '@/app/instagram/instagramAPI.ts'
 
@@ -14,16 +15,21 @@ interface InstagramEmbedProps {
 function InstagramFallback({ url }: { url: string }) {
   return (
     <div className="flex h-96 w-full max-w-sm flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 transition-colors hover:border-pink-400 hover:bg-pink-50">
-      <Instagram className="mb-4 h-16 w-16 text-pink-500" />
-      <p className="mb-2 text-center text-sm font-medium text-gray-600">인스타그램 포스트</p>
+      <Image
+        src="/logo/Instagram_Glyph_Black.svg"
+        alt="Instagram Logo"
+        width={64}
+        height={64}
+        className="mb-4 h-16 w-16"
+      />
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded-lg bg-pink-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-pink-600"
+        className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-4 py-2 text-sm font-medium text-white transition-colors visited:text-white hover:bg-pink-600 hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
       >
-        <ExternalLink className="h-4 w-4" />
         인스타그램에서 보기
+        <ExternalLink className="h-4 w-4" />
       </a>
     </div>
   )
@@ -121,7 +127,7 @@ export function InstagramSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
-        <Instagram className="size-5" />
+        <Image src="/logo/Instagram_Glyph_Black.svg" alt="Instagram Logo" width={20} height={20} className="size-5" />
         <h2 className="text-xl font-semibold md:text-2xl">Instagram</h2>
       </div>
 

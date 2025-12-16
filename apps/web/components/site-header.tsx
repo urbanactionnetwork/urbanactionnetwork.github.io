@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@workspace/ui/components/navigation-menu'
+import Image from 'next/image'
 
 export function SiteHeader() {
   return (
@@ -47,7 +48,7 @@ export function SiteHeader() {
               >
                 <a href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
                   <span className="inline-flex items-center gap-2">
-                    <img src="/logo/Instagram_Glyph_White.svg" alt="" aria-hidden="true" className="h-4 w-4" />
+                    <Image src="/logo/Instagram_Glyph_White.svg" alt="Instagram Logo" width={16} height={16} />
                     <span>Instagram</span>
                   </span>
                 </a>
