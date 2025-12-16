@@ -41,6 +41,7 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
   const embedRef = useRef<HTMLDivElement>(null)
   const [embedLoaded, setEmbedLoaded] = useState(false)
   const [embedFailed, setEmbedFailed] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     // 임베드 로딩 타이머
@@ -75,26 +76,38 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
     return () => clearTimeout(timer)
   }, [embedLoaded])
 
+  useEffect(() => {
+    if (embedLoaded) {
+      const timer = setTimeout(() => {
+        setIsVisible(true)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [embedLoaded])
+
   if (embedFailed) {
     return <InstagramFallback url={url} />
   }
 
   return (
-    <div ref={embedRef} className={`instagram-embed ${className}`}>
-      <blockquote
-        className="instagram-media"
-        data-instgrm-permalink={url}
-        data-instgrm-version="14"
-        style={{
-          background: '#FFF',
-          border: 0,
-          boxShadow: 'none',
-          margin: '0px',
-          maxWidth: '0px',
-          padding: 0,
-          width: '100%',
-        }}
-      />
+    <div ref={embedRef} className={`instagram-embed relative ${className}`}>
+      {!isVisible && <Skeleton className="h-156 w-full" />}
+      <div>
+        <blockquote
+          className="instagram-media"
+          data-instgrm-permalink={url}
+          data-instgrm-version="14"
+          style={{
+            background: '#FFF',
+            border: 0,
+            boxShadow: 'none',
+            margin: '0px',
+            maxWidth: '0px',
+            padding: 0,
+            width: '100%',
+          }}
+        />
+      </div>
     </div>
   )
 }
