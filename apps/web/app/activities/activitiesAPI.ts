@@ -7,6 +7,7 @@ export interface Activities {
     description: string
     thumbnail: string
     url: string
+    postDate: string
   }[]
 }
 

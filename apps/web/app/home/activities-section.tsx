@@ -3,11 +3,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Button } from '@workspace/ui/components/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@workspace/ui/components/card'
-import { Skeleton } from '@workspace/ui/components/skeleton'
+import { Button } from '@workspace/ui/components/button.tsx'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card.tsx'
+import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { ActivityIcon, ArrowRightIcon } from 'lucide-react'
-import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI'
+import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI.ts'
 
 export interface ActivitiesItem {
   id: number

@@ -47,7 +47,7 @@ export function SiteHeader() {
               >
                 <a href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
                   <span className="inline-flex items-center gap-2">
-                    <img src="/Instagram_Glyph_White.svg" alt="" aria-hidden="true" className="h-4 w-4" />
+                    <img src="/logo/Instagram_Glyph_White.svg" alt="" aria-hidden="true" className="h-4 w-4" />
                     <span>Instagram</span>
                   </span>
                 </a>
