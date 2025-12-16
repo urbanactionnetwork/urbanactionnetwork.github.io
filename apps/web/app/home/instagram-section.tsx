@@ -92,7 +92,7 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
   return (
     <div ref={embedRef} className={`instagram-embed relative ${className}`}>
       {!isVisible && <Skeleton className="h-156 w-full" />}
-      <div>
+      <div className="flex justify-center">
         <blockquote
           className="instagram-media"
           data-instgrm-permalink={url}
@@ -155,7 +155,6 @@ export function InstagramSection() {
               height={20}
               className="size-5"
             />
-            <h2 className="text-xl font-semibold md:text-2xl">Instagram</h2>
             <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
             <ExternalLink className="size-4" />
           </Link>

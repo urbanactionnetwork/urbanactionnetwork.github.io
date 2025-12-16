@@ -16,7 +16,8 @@ export function SiteHeader() {
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           {/* 원본 비율 유지 및 선명도 개선을 위해 Next/Image 대신 기본 img 사용 */}
-          <img src="/logo.png" alt="logo" className="h-8 w-auto" />
+          <img src="/logo.jpg" alt="logo" className="h-8 w-auto md:hidden" />
+          <img src="/logo-text.png" alt="logo" className="hidden h-8 w-auto md:block" />
           <span className="sr-only">홈으로</span>
         </Link>
         <NavigationMenu>
