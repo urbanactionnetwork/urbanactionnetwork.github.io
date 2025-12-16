@@ -133,10 +133,7 @@ function ChartTooltipContent({
     nameKey?: string
     labelKey?: string
     labelClassName?: string
-    labelFormatter?: (
-      value: any,
-      payload?: ChartTooltipContentInjectedProps['payload']
-    ) => React.ReactNode
+    labelFormatter?: (value: any, payload?: ChartTooltipContentInjectedProps['payload']) => React.ReactNode
     formatter?: (
       value: unknown,
       name: unknown,

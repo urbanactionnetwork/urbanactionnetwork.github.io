@@ -28,5 +28,3 @@
 - URL: /info
 - API: [activitiesAPI.ts](../apps/web/app/activities/activitiesAPI.ts)
 - 새소식 페이지를 참조
-
-
