@@ -23,3 +23,10 @@
 - 제목
 - 등록 날짜
 
+# 주요활동 페이지
+
+- URL: /info
+- API: [activitiesAPI.ts](../apps/web/app/activities/activitiesAPI.ts)
+- 새소식 페이지를 참조
+
+
