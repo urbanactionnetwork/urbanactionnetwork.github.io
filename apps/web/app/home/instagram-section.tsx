@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, HeartHandshakeIcon } from 'lucide-react'
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { fetchInstagram } from '@/app/instagram/instagramAPI.ts'
+import { Button } from '@workspace/ui/components/button.tsx'
+import Link from 'next/link'
 
 interface InstagramEmbedProps {
   url: string
@@ -127,8 +129,24 @@ export function InstagramSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
-        <Image src="/logo/Instagram_Glyph_Black.svg" alt="Instagram Logo" width={20} height={20} className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">Instagram</h2>
+        <Button
+          asChild
+          size="lg"
+          className="gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white visited:text-white hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
+        >
+          <Link href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logo/Instagram_Glyph_White.svg"
+              alt="Instagram Logo"
+              width={20}
+              height={20}
+              className="size-5"
+            />
+            <h2 className="text-xl font-semibold md:text-2xl">Instagram</h2>
+            <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
+            <ExternalLink className="size-4" />
+          </Link>
+        </Button>
       </div>
 
       {loading ? (
