@@ -59,30 +59,13 @@ export function NewsSection() {
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }).map((_, idx) => (
-            <Card key={idx} className="overflow-hidden">
-              {/* 썸네일 자리 */}
-              <div className="relative aspect-[16/9] w-full">
-                <Skeleton className="h-full w-full" />
+            <div key={idx} className="flex h-full flex-col space-y-3">
+              <Skeleton className="h-48 w-full rounded-xl" />
+              <div className="space-y-2">
+                <Skeleton className="h-8 w-full" />
+                <Skeleton className="h-8 w-1/2" />
               </div>
-
-              {/* 본문(제목/설명) 자리 */}
-              <CardHeader>
-                <Skeleton className="h-5 w-3/4" />
-                <div className="mt-2 space-y-2">
-                  <Skeleton className="h-4 w-full" />
-                  <Skeleton className="h-4 w-5/6" />
-                </div>
-              </CardHeader>
-
-              <CardContent />
-
-              {/* 버튼 자리 */}
-              <CardFooter>
-                <div className="ml-auto w-28">
-                  <Skeleton className="h-9 w-full" />
-                </div>
-              </CardFooter>
-            </Card>
+            </div>
           ))}
         </div>
       ) : error ? (

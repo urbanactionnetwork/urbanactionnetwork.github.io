@@ -22,7 +22,7 @@ export default function SupportPage() {
               rel="noopener noreferrer"
               className="gap-2"
             >
-              후원하기
+              정기후원하기
               <ExternalLink className="size-4" />
             </Link>
           </Button>

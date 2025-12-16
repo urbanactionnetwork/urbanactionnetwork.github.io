@@ -150,13 +150,9 @@ export function InstagramSection() {
       </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <div className="relative aspect-[16/9] w-full">
-                <Skeleton className="h-full w-full" />
-              </div>
-            </div>
+        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <Skeleton key={index} className="h-156 w-full" />
           ))}
         </div>
       ) : error ? (
