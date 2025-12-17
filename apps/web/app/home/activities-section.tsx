@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from '@workspace/ui/components/card.tsx'
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
-import { ActivityIcon, ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, SparklesIcon } from 'lucide-react'
 import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI.ts'
 
 export interface ActivitiesItem {
@@ -54,7 +54,7 @@ export function ActivitiesSection() {
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center justify-center gap-2">
-        <ActivityIcon className="size-5" />
+        <SparklesIcon className="size-5" />
         <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
       </div>
       {loading ? (
