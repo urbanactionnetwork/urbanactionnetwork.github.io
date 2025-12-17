@@ -53,7 +53,7 @@ export function ActivitiesSection() {
 
   return (
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
-      <div className="mb-6 flex items-center gap-2">
+      <div className="mb-6 flex items-center justify-center gap-2">
         <ActivityIcon className="size-5" />
         <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
       </div>
