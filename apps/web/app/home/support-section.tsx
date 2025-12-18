@@ -16,7 +16,7 @@ export function SupportSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-gradient-to-br from-cyan-100 via-cyan-50 to-teal-100 py-16 text-center md:py-12"
+      className="relative flex w-full items-center justify-center bg-gradient-to-br from-cyan-200 via-cyan-100 to-cyan-50 py-16 text-center md:py-12"
     >
       {/* 배경 장식 요소 - 원형 패턴 */}
       <div className="absolute inset-0 -z-0 overflow-hidden">
@@ -40,7 +40,7 @@ export function SupportSection() {
 
       {/* 왼쪽 상단 타이틀 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-b-200 text-[calc(700px*0.20)] font-medium leading-none text-zinc-500">
+        <span className="text-b-200 text-[calc(700px*0.20)] font-medium leading-none text-cyan-600">
           {letters.map((letter, index) => (
             <motion.span
               key={index}

@@ -149,11 +149,27 @@ export function InstagramSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-zinc-900 py-8 text-center md:py-12"
+      className="relative flex w-full items-center justify-center bg-gradient-to-br from-emerald-200 via-emerald-100 to-emerald-50 py-8 text-center md:py-12"
     >
+      {/* 배경 장식 요소 - 원형 패턴 */}
+      <div className="absolute inset-0 -z-0 overflow-hidden">
+        {/* 큰 원형 장식 */}
+        <motion.div
+          className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-purple-200/30 blur-3xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+        />
+      </div>
       {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-500">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-emerald-600">
           {letters.map((letter, index) => (
             <motion.span
               key={index}
@@ -172,7 +188,7 @@ export function InstagramSection() {
         </span>
       </div>
 
-      <div className="container relative mx-auto w-full max-w-6xl px-4">
+      <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         <div className="mb-4 flex items-center justify-end gap-2">
           <Button
             asChild

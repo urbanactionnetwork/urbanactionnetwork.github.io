@@ -60,11 +60,27 @@ export function ActivitiesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-zinc-100 py-12 text-center md:py-16"
+      className="relative flex w-full items-center justify-center bg-gradient-to-br from-lime-200 via-lime-100 to-lime-50 py-12 text-center md:py-16"
     >
+      {/* 배경 장식 요소 - 원형 패턴 */}
+      <div className="absolute inset-0 -z-0 overflow-hidden">
+        {/* 큰 원형 장식 */}
+        <motion.div
+          className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-purple-200/30 blur-3xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
+        />
+      </div>
       {/* 왼쪽 상단 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-500">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-lime-600">
           {letters.map((letter, index) => (
             <motion.span
               key={index}
@@ -83,7 +99,7 @@ export function ActivitiesSection() {
         </span>
       </div>
 
-      <div className="container mx-auto w-full max-w-6xl px-4">
+      <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         {loading ? (
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, idx) => (
@@ -108,7 +124,7 @@ export function ActivitiesSection() {
                 rel="noopener noreferrer"
                 className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
               >
-                <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group">
+                <Card className="group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
                   <div className="relative aspect-[16/9] w-full overflow-hidden">
                     <Image
                       src={item.thumbnail}
@@ -118,13 +134,16 @@ export function ActivitiesSection() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="line-clamp-2 text-left group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="group-hover:text-primary line-clamp-2 text-left transition-colors duration-300">
                       {item.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="line-clamp-3 flex-1 text-left">{item.description}</CardContent>
                   <CardFooter>
-                    <Button variant="secondary" className="ml-auto gap-1.5 font-semibold text-foreground/90 group-hover:text-foreground group-hover:shadow-lg group-hover:scale-[1.02] transition-all duration-300 pointer-events-none">
+                    <Button
+                      variant="secondary"
+                      className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+                    >
                       자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </CardFooter>
