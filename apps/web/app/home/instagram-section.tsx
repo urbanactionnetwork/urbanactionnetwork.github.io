@@ -140,45 +140,50 @@ export function InstagramSection() {
   }, [])
 
   return (
-    <section className="w-full bg-white text-center py-12 md:py-16 flex items-center justify-center">
-      <div className="container mx-auto px-4 w-full">
-        <div className="mb-6 flex items-center justify-center gap-2">
-        <Button
-          asChild
-          size="lg"
-          className="gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white visited:text-white hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
-        >
-          <Link href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/logo/Instagram_Glyph_White.svg"
-              alt="Instagram Logo"
-              width={20}
-              height={20}
-              className="size-5"
-            />
-            <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
-            <ExternalLink className="size-4" />
-          </Link>
-        </Button>
+    <section className="relative flex w-full items-center justify-center bg-white py-8 text-center md:py-12">
+      {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
+      <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-800">What's now</span>
       </div>
 
-      {loading ? (
-        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <Skeleton key={index} className="h-156 w-full" />
-          ))}
+      <div className="container relative mx-auto w-full px-4">
+        <div className="mb-4 flex items-center justify-end gap-2">
+          <Button
+            asChild
+            size="lg"
+            className="gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white visited:text-white hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
+          >
+            <Link href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/logo/Instagram_Glyph_White.svg"
+                alt="Instagram Logo"
+                width={20}
+                height={20}
+                className="size-5"
+              />
+              <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
+              <ExternalLink className="size-4" />
+            </Link>
+          </Button>
         </div>
-      ) : error ? (
-        <div className="text-muted-foreground text-sm">{error}</div>
-      ) : (
-        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, index) => (
-            <div key={index} className="overflow-hidden">
-              <InstagramEmbed url={item} className="w-full" />
-            </div>
-          ))}
-        </div>
-      )}
+
+        {loading ? (
+          <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Skeleton key={index} className="h-156 w-full" />
+            ))}
+          </div>
+        ) : error ? (
+          <div className="text-muted-foreground text-sm">{error}</div>
+        ) : (
+          <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item, index) => (
+              <div key={index} className="overflow-hidden">
+                <InstagramEmbed url={item} className="w-full" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )
