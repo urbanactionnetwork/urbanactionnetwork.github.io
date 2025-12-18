@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ActivityIcon } from 'lucide-react'
+import { SparklesIcon } from 'lucide-react'
 import { fetchActivities, type Activities } from '@/app/activities/activitiesAPI'
 import PostCardList from '@/components/news/post-card-list.tsx'
 import { SiteFooter } from '@/components/site-footer'
@@ -37,7 +37,7 @@ export default function NewsPage() {
     <>
       <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-6 flex items-center gap-2">
-          <ActivityIcon className="size-5" />
+          <SparklesIcon className="size-5" />
           <h1 className="text-xl font-semibold md:text-2xl">주요활동</h1>
         </div>
 
