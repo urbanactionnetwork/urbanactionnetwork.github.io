@@ -2,7 +2,7 @@
 
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
-import { HeartHandshakeIcon } from 'lucide-react'
+import { HeartHandshakeIcon, Footprints, Home, Heart } from 'lucide-react'
 import { motion } from 'motion/react'
 
 export function CtaSection() {
@@ -47,7 +47,7 @@ export function CtaSection() {
 
         {/* CTA 버튼 */}
         <motion.div
-          className="flex items-center justify-center"
+          className="mb-4 flex items-center justify-center md:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
@@ -61,6 +61,41 @@ export function CtaSection() {
               <HeartHandshakeIcon className="size-7" /> 정기후원하기
             </Link>
           </Button>
+        </motion.div>
+
+        {/* 정보 카드 섹션 */}
+        <motion.div
+          className="grid grid-cols-1 gap-6 md:grid-cols-3"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
+        >
+          {/* 보행권 확보 운동 */}
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+            <div className="mb-4 flex justify-center">
+              <Footprints className="text-primary size-8" />
+            </div>
+            <h3 className="mb-2 text-2xl font-semibold">보행권 확보 운동</h3>
+            <p className="text-muted-foreground text-lg font-semibold">사람이 중심이 되는 도시</p>
+          </div>
+
+          {/* 마을 만들기 운동 */}
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+            <div className="mb-4 flex justify-center">
+              <Home className="text-primary size-8" />
+            </div>
+            <h3 className="mb-2 text-2xl font-semibold">마을 만들기 운동</h3>
+            <p className="text-muted-foreground text-lg font-semibold">주민이 스스로 삶터 가꾸기</p>
+          </div>
+
+          {/* 생활문화 운동 */}
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+            <div className="mb-4 flex justify-center">
+              <Heart className="text-primary size-8" />
+            </div>
+            <h3 className="mb-2 text-2xl font-semibold">생활문화 운동</h3>
+            <p className="text-muted-foreground text-lg font-semibold">사람의 삶의 흔적을 소중히</p>
+          </div>
         </motion.div>
       </div>
     </section>
