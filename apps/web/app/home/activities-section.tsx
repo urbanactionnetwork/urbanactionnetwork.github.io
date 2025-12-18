@@ -52,48 +52,50 @@ export function ActivitiesSection() {
   }, [])
 
   return (
-    <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
-      <div className="mb-6 flex items-center justify-center gap-2">
-        <SparklesIcon className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
+    <section className="flex w-full items-center justify-center bg-gray-100 py-12 text-center md:py-16">
+      <div className="container mx-auto w-full px-4">
+        <div className="mb-6 flex items-center justify-center gap-2">
+          <SparklesIcon className="size-5" />
+          <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
+        </div>
+        {loading ? (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, idx) => (
+              <div key={idx} className="flex h-full flex-col space-y-3">
+                <Skeleton className="h-48 w-full rounded-xl" />
+                <div className="space-y-2">
+                  <Skeleton className="h-8 w-full" />
+                  <Skeleton className="h-8 w-1/2" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : error ? (
+          <div className="text-muted-foreground text-sm">{error}</div>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item) => (
+              <Card key={item.id} className="flex h-full flex-col overflow-hidden">
+                <div className="relative aspect-[16/9] w-full">
+                  <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="line-clamp-2">{item.title}</CardTitle>
+                  <CardDescription className="line-clamp-3">{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="mt-auto"></CardContent>
+                <CardFooter>
+                  <Button asChild variant="secondary" className="ml-auto gap-1">
+                    <Link href={item.url} target="_blank" rel="noopener noreferrer">
+                      자세히 보기 <ArrowRightIcon className="size-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
-      {loading ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, idx) => (
-            <div key={idx} className="flex h-full flex-col space-y-3">
-              <Skeleton className="h-48 w-full rounded-xl" />
-              <div className="space-y-2">
-                <Skeleton className="h-8 w-full" />
-                <Skeleton className="h-8 w-1/2" />
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : error ? (
-        <div className="text-muted-foreground text-sm">{error}</div>
-      ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <Card key={item.id} className="flex h-full flex-col overflow-hidden">
-              <div className="relative aspect-[16/9] w-full">
-                <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
-              </div>
-              <CardHeader>
-                <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-                <CardDescription className="line-clamp-3">{item.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="mt-auto"></CardContent>
-              <CardFooter>
-                <Button asChild variant="secondary" className="ml-auto gap-1">
-                  <Link href={item.url} target="_blank" rel="noopener noreferrer">
-                    자세히 보기 <ArrowRightIcon className="size-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      )}
     </section>
   )
 }

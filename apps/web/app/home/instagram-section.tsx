@@ -140,8 +140,9 @@ export function InstagramSection() {
   }, [])
 
   return (
-    <section className="container mx-auto w-full max-w-6xl px-4 py-12 text-center md:py-16">
-      <div className="mb-6 flex items-center justify-center gap-2">
+    <section className="w-full bg-white text-center py-12 md:py-16 flex items-center justify-center">
+      <div className="container mx-auto px-4 w-full">
+        <div className="mb-6 flex items-center justify-center gap-2">
         <Button
           asChild
           size="lg"
@@ -178,6 +179,7 @@ export function InstagramSection() {
           ))}
         </div>
       )}
+      </div>
     </section>
   )
 }
