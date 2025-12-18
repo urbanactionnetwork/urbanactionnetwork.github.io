@@ -55,7 +55,7 @@ export function SupportSection() {
         </span>
       </div>
 
-      <div className="container relative z-10 mx-auto mt-16 w-full max-w-3xl px-6">
+      <div className="container relative z-10 mx-auto mt-10 w-full max-w-3xl px-6">
         {/* 아이콘 장식 */}
         <motion.div
           className="mb-6 flex justify-center gap-6"
