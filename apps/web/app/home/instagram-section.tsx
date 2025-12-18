@@ -7,6 +7,7 @@ import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { fetchInstagram } from '@/app/instagram/instagramAPI.ts'
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
+import { motion, useInView } from 'motion/react'
 
 interface InstagramEmbedProps {
   url: string
@@ -116,6 +117,8 @@ export function InstagramSection() {
   const [items, setItems] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   useEffect(() => {
     let mounted = true
@@ -139,11 +142,30 @@ export function InstagramSection() {
     }
   }, [])
 
+  const text = "What's now"
+  const letters = text.split('')
+
   return (
-    <section className="relative flex w-full items-center justify-center bg-white py-8 text-center md:py-12">
+    <section ref={sectionRef} className="relative flex w-full items-center justify-center bg-white py-8 text-center md:py-12">
       {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-800">What's now</span>
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-800">
+          {letters.map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: 'easeOut',
+              }}
+              style={{ display: 'inline-block' }}
+            >
+              {letter === ' ' ? '\u00A0' : letter}
+            </motion.span>
+          ))}
+        </span>
       </div>
 
       <div className="container relative mx-auto w-full px-4">
