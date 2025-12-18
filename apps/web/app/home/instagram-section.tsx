@@ -172,7 +172,7 @@ export function InstagramSection() {
         </span>
       </div>
 
-      <div className="container relative mx-auto w-full px-4">
+      <div className="container relative mx-auto w-full max-w-6xl px-4">
         <div className="mb-4 flex items-center justify-end gap-2">
           <Button
             asChild

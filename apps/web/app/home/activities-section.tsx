@@ -83,7 +83,7 @@ export function ActivitiesSection() {
         </span>
       </div>
 
-      <div className="container mx-auto w-full px-4">
+      <div className="container mx-auto w-full max-w-6xl px-4">
         {loading ? (
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, idx) => (
