@@ -80,10 +80,9 @@ export function ActivitiesSection() {
                   <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
                 </div>
                 <CardHeader>
-                  <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-                  <CardDescription className="line-clamp-3">{item.description}</CardDescription>
+                  <CardTitle className="line-clamp-2 text-left">{item.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="mt-auto"></CardContent>
+                <CardContent className="line-clamp-3 flex-1 text-left">{item.description}</CardContent>
                 <CardFooter>
                   <Button asChild variant="secondary" className="ml-auto gap-1">
                     <Link href={item.url} target="_blank" rel="noopener noreferrer">
