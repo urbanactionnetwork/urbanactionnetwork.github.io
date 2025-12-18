@@ -20,10 +20,10 @@ export function CtaSection() {
         <div className="from-background/50 via-background/40 to-background/30 absolute inset-0 bg-gradient-to-br" />
       </div>
 
-      <div className="container mx-auto w-full max-w-6xl px-4 py-8 text-center md:py-10 lg:py-12">
+      <div className="container mx-auto w-full max-w-6xl px-4 py-8 md:py-10 lg:py-12">
         {/* 메인 타이틀 */}
         <h1
-          className="mb-4 text-4xl leading-tight md:mb-8 md:text-6xl lg:text-7xl xl:text-8xl"
+          className="text-leftmd:text-6xl mb-4 text-4xl leading-tight md:mb-8 lg:text-7xl xl:text-8xl"
           style={{ fontFamily: 'var(--font-blackHanSans)' }}
         >
           <motion.span
@@ -71,29 +71,29 @@ export function CtaSection() {
           transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
         >
           {/* 보행권 확보 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
             <div className="mb-4 flex justify-center">
               <Footprints className="text-primary size-8" />
             </div>
-            <h3 className="mb-2 text-2xl font-semibold">보행권 확보 운동</h3>
+            <h3 className="text-2xl font-semibold">보행권 확보 운동</h3>
             <p className="text-muted-foreground text-lg font-semibold">사람이 중심이 되는 도시</p>
           </div>
 
           {/* 마을 만들기 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
             <div className="mb-4 flex justify-center">
               <Home className="text-primary size-8" />
             </div>
-            <h3 className="mb-2 text-2xl font-semibold">마을 만들기 운동</h3>
+            <h3 className="text-2xl font-semibold">마을 만들기 운동</h3>
             <p className="text-muted-foreground text-lg font-semibold">주민이 스스로 삶터 가꾸기</p>
           </div>
 
           {/* 생활문화 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 backdrop-blur-sm">
+          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
             <div className="mb-4 flex justify-center">
               <Heart className="text-primary size-8" />
             </div>
-            <h3 className="mb-2 text-2xl font-semibold">생활문화 운동</h3>
+            <h3 className="text-2xl font-semibold">생활문화 운동</h3>
             <p className="text-muted-foreground text-lg font-semibold">사람의 삶의 흔적을 소중히</p>
           </div>
         </motion.div>
