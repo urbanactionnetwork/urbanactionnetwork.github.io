@@ -17,51 +17,54 @@ export function CtaSection() {
         }}
       >
         {/* 오버레이 - 텍스트 가독성을 위한 어두운 레이어 */}
-        <div className="from-background/50 via-background/40 to-background/30 absolute inset-0 bg-gradient-to-br" />
+        <div className="from-background/30 via-background/40 to-background/30 absolute inset-0 bg-gradient-to-br" />
       </div>
 
       <div className="container mx-auto w-full max-w-6xl px-4 py-8 md:py-10 lg:py-12">
-        {/* 메인 타이틀 */}
-        <h1
-          className="text-leftmd:text-6xl mb-4 text-4xl leading-tight md:mb-8 lg:text-7xl xl:text-8xl"
-          style={{ fontFamily: 'var(--font-blackHanSans)' }}
-        >
-          <motion.span
-            className="text-zinc-700 drop-shadow-md"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+        {/* 메인 타이틀과 CTA 버튼을 같은 행에 배치 */}
+        <div className="mb-2 flex items-start justify-between gap-4 md:mb-4">
+          {/* 메인 타이틀 */}
+          <h1
+            className="text-leftmd:text-5xl text-5xl leading-tight lg:text-6xl xl:text-7xl"
+            style={{ fontFamily: 'var(--font-blackHanSans)' }}
           >
-            걷고 싶은 도시가
-          </motion.span>
-          <br />
-          <motion.span
-            className="text-zinc-700 drop-shadow-md"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          >
-            살고 싶은 도시다
-          </motion.span>
-        </h1>
+            <motion.span
+              className="text-zinc-800 drop-shadow-md"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
+              걷고 싶은 도시가
+            </motion.span>
+            <br />
+            <motion.span
+              className="text-zinc-800 drop-shadow-md"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+            >
+              살고 싶은 도시다
+            </motion.span>
+          </h1>
 
-        {/* CTA 버튼 */}
-        <motion.div
-          className="mb-4 flex items-center justify-center md:mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-        >
-          <Button
-            asChild
-            size="lg"
-            className="h-[60px] gap-4 text-lg shadow-lg transition-all duration-300 hover:scale-105"
+          {/* CTA 버튼 - 오른쪽 상단 정렬 */}
+          <motion.div
+            className="flex-shrink-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
           >
-            <Link href="/support">
-              <HeartHandshakeIcon className="size-7" /> 정기후원하기
-            </Link>
-          </Button>
-        </motion.div>
+            <Button
+              asChild
+              size="lg"
+              className="h-[60px] gap-4 text-lg shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              <Link href="/support">
+                <HeartHandshakeIcon className="size-7" /> 정기후원하기
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
 
         {/* 정보 카드 섹션 */}
         <motion.div
