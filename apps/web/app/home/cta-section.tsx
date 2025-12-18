@@ -23,8 +23,8 @@ export function CtaSection() {
       <div className="container mx-auto w-full max-w-6xl px-4 py-8 text-center md:py-10 lg:py-12">
         {/* 메인 타이틀 */}
         <h1
-          className="mb-4 text-4xl font-semibold leading-tight md:mb-8 md:text-6xl lg:text-7xl xl:text-8xl"
-          style={{ fontFamily: 'var(--font-gamja)' }}
+          className="mb-4 text-4xl leading-tight md:mb-8 md:text-6xl lg:text-7xl xl:text-8xl"
+          style={{ fontFamily: 'var(--font-blackHanSans)' }}
         >
           <motion.span
             className="text-zinc-700 drop-shadow-md"

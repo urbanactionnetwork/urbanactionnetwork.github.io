@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Geist, Geist_Mono, Gamja_Flower, Nanum_Gothic } from 'next/font/google'
+import { Geist, Geist_Mono, Black_Han_Sans } from 'next/font/google'
 import '@workspace/ui/globals.css'
 import { Providers } from '@/components/providers'
 import { SiteHeader } from '@/components/site-header'
@@ -15,10 +15,10 @@ const fontMono = Geist_Mono({
   variable: '--font-mono',
 })
 
-const fontGamja = Gamja_Flower({
+const blackHanSans = Black_Han_Sans({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-gamja',
+  variable: '--font-blackHanSans',
 })
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} ${fontGamja.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} ${blackHanSans.variable} bg-background text-foreground flex min-h-screen flex-col font-sans antialiased`}
       >
         <Providers>
           <SiteHeader />
