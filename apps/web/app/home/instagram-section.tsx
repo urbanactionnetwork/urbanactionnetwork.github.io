@@ -91,9 +91,9 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
   }
 
   return (
-    <div ref={embedRef} className={`instagram-embed relative ${className}`}>
+    <div ref={embedRef} className={`instagram-embed relative w-full ${className}`}>
       {!isVisible && <Skeleton className="h-156 w-full" />}
-      <div className="flex justify-center">
+      <div className="flex w-full justify-center">
         <blockquote
           className="instagram-media"
           data-instgrm-permalink={url}
@@ -103,7 +103,8 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
             border: 0,
             boxShadow: 'none',
             margin: '0px',
-            maxWidth: '0px',
+            maxWidth: '540px',
+            minWidth: '320px',
             padding: 0,
             width: '100%',
           }}
@@ -148,7 +149,7 @@ export function InstagramSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-zinc-100 py-8 text-center md:py-12"
+      className="relative flex w-full items-center justify-center bg-zinc-900 py-8 text-center md:py-12"
     >
       {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
@@ -193,7 +194,7 @@ export function InstagramSection() {
         </div>
 
         {loading ? (
-          <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, index) => (
               <Skeleton key={index} className="h-156 w-full" />
             ))}
@@ -201,7 +202,7 @@ export function InstagramSection() {
         ) : error ? (
           <div className="text-muted-foreground text-sm">{error}</div>
         ) : (
-          <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((item, index) => (
               <div key={index} className="overflow-hidden">
                 <InstagramEmbed url={item} className="w-full" />
