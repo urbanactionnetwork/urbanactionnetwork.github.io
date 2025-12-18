@@ -7,6 +7,7 @@ import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { fetchInstagram } from '@/app/instagram/instagramAPI.ts'
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
+import { motion, useInView } from 'motion/react'
 
 interface InstagramEmbedProps {
   url: string
@@ -90,9 +91,9 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
   }
 
   return (
-    <div ref={embedRef} className={`instagram-embed relative ${className}`}>
+    <div ref={embedRef} className={`instagram-embed relative w-full ${className}`}>
       {!isVisible && <Skeleton className="h-156 w-full" />}
-      <div className="flex justify-center">
+      <div className="flex w-full justify-center">
         <blockquote
           className="instagram-media"
           data-instgrm-permalink={url}
@@ -102,7 +103,8 @@ function InstagramEmbed({ url, className = '' }: InstagramEmbedProps) {
             border: 0,
             boxShadow: 'none',
             margin: '0px',
-            maxWidth: '0px',
+            maxWidth: '540px',
+            minWidth: '320px',
             padding: 0,
             width: '100%',
           }}
@@ -116,6 +118,8 @@ export function InstagramSection() {
   const [items, setItems] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   useEffect(() => {
     let mounted = true
@@ -139,45 +143,74 @@ export function InstagramSection() {
     }
   }, [])
 
+  const text = "What's now"
+  const letters = text.split('')
+
   return (
-    <section className="container mx-auto w-full max-w-6xl px-4 py-12 text-center md:py-16">
-      <div className="mb-6 flex items-center justify-center gap-2">
-        <Button
-          asChild
-          size="lg"
-          className="gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white visited:text-white hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
-        >
-          <Link href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/logo/Instagram_Glyph_White.svg"
-              alt="Instagram Logo"
-              width={20}
-              height={20}
-              className="size-5"
-            />
-            <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
-            <ExternalLink className="size-4" />
-          </Link>
-        </Button>
+    <section
+      ref={sectionRef}
+      className="relative flex w-full items-center justify-center bg-zinc-900 py-8 text-center md:py-12"
+    >
+      {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
+      <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-500">
+          {letters.map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: 'easeOut',
+              }}
+              style={{ display: 'inline-block' }}
+            >
+              {letter === ' ' ? '\u00A0' : letter}
+            </motion.span>
+          ))}
+        </span>
       </div>
 
-      {loading ? (
-        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <Skeleton key={index} className="h-156 w-full" />
-          ))}
+      <div className="container relative mx-auto w-full px-4">
+        <div className="mb-4 flex items-center justify-end gap-2">
+          <Button
+            asChild
+            size="lg"
+            className="gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white visited:text-white hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white focus:from-[#f58529] focus:via-[#dd2a7b] focus:to-[#8134af] focus:text-white active:text-white data-[state=open]:text-white"
+          >
+            <Link href="https://www.instagram.com/urbanaction_1994/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/logo/Instagram_Glyph_White.svg"
+                alt="Instagram Logo"
+                width={20}
+                height={20}
+                className="size-5"
+              />
+              <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
+              <ExternalLink className="size-4" />
+            </Link>
+          </Button>
         </div>
-      ) : error ? (
-        <div className="text-muted-foreground text-sm">{error}</div>
-      ) : (
-        <div className="gap-17 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, index) => (
-            <div key={index} className="overflow-hidden">
-              <InstagramEmbed url={item} className="w-full" />
-            </div>
-          ))}
-        </div>
-      )}
+
+        {loading ? (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Skeleton key={index} className="h-156 w-full" />
+            ))}
+          </div>
+        ) : error ? (
+          <div className="text-muted-foreground text-sm">{error}</div>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item, index) => (
+              <div key={index} className="overflow-hidden">
+                <InstagramEmbed url={item} className="w-full" />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   )
 }

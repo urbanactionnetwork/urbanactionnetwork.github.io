@@ -73,23 +73,34 @@ export function NewsSection() {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card key={item.id} className="overflow-hidden">
-              <div className="relative aspect-[16/9] w-full">
-                <Image src={item.thumbnail} alt="thumbnail" fill className="object-cover" />
-              </div>
-              <CardHeader>
-                <CardTitle className="line-clamp-2">{item.title}</CardTitle>
-                <CardDescription className="line-clamp-3">{item.description ?? ''}</CardDescription>
-              </CardHeader>
-              <CardContent></CardContent>
-              <CardFooter>
-                <Button asChild variant="secondary" className="ml-auto gap-1">
-                  <Link href={`/news/${item.id}`}>
-                    자세히 보기 <ArrowRightIcon className="size-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+            <Link
+              key={item.id}
+              href={`/news/${item.id}`}
+              className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+            >
+              <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group h-full flex flex-col">
+                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <Image
+                    src={item.thumbnail}
+                    alt="thumbnail"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                    {item.title}
+                  </CardTitle>
+                  <CardDescription className="line-clamp-3">{item.description ?? ''}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1"></CardContent>
+                <CardFooter>
+                  <Button variant="secondary" className="ml-auto gap-1.5 font-semibold text-foreground/90 group-hover:text-foreground group-hover:shadow-lg group-hover:scale-[1.02] transition-all duration-300 pointer-events-none">
+                    자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       )}
