@@ -46,24 +46,6 @@ export function CtaSection() {
               살고 싶은 도시다
             </motion.span>
           </h1>
-
-          {/* CTA 버튼 - 오른쪽 상단 정렬 */}
-          <motion.div
-            className="flex-shrink-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          >
-            <Button
-              asChild
-              size="lg"
-              className="h-[60px] gap-4 text-lg shadow-lg transition-all duration-300 hover:scale-105"
-            >
-              <Link href="/support">
-                <HeartHandshakeIcon className="size-7" /> 정기후원하기
-              </Link>
-            </Button>
-          </motion.div>
         </div>
 
         {/* 정보 카드 섹션 */}

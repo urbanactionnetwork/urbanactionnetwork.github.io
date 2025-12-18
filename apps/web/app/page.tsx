@@ -3,6 +3,7 @@ import { ActivitiesSection } from '@/app/home/activities-section'
 import { InstagramSection } from '@/app/home/instagram-section'
 import { SiteFooter } from '@/components/site-footer'
 import { CtaSection } from '@/app/home/cta-section.tsx'
+import { SupportSection } from '@/app/home/support-section'
 
 export default function Page() {
   return (
@@ -18,6 +19,9 @@ export default function Page() {
 
       {/* Activities Section */}
       <ActivitiesSection />
+
+      {/* Support (정기후원) Section */}
+      <SupportSection />
 
       <SiteFooter />
     </>
