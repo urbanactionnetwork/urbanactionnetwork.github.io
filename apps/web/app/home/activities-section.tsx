@@ -60,11 +60,11 @@ export function ActivitiesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-gray-100 py-12 text-center md:py-16"
+      className="relative flex w-full items-center justify-center bg-zinc-900 py-12 text-center md:py-16"
     >
       {/* 왼쪽 상단 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-800">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-500">
           {letters.map((letter, index) => (
             <motion.span
               key={index}

@@ -146,10 +146,13 @@ export function InstagramSection() {
   const letters = text.split('')
 
   return (
-    <section ref={sectionRef} className="relative flex w-full items-center justify-center bg-white py-8 text-center md:py-12">
+    <section
+      ref={sectionRef}
+      className="relative flex w-full items-center justify-center bg-zinc-100 py-8 text-center md:py-12"
+    >
       {/* 왼쪽 상단 Instagram 아이콘과 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
       <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-800">
+        <span className="text-[calc(700px*0.25)] font-medium leading-none text-zinc-500">
           {letters.map((letter, index) => (
             <motion.span
               key={index}
