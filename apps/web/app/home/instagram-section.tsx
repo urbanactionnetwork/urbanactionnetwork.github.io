@@ -187,7 +187,7 @@ export function InstagramSection() {
                 height={20}
                 className="size-5"
               />
-              <h3 className="text-lg md:text-lg">도시연대의 더 많은 게시물 보기</h3>
+              <h3 className="text-lg md:text-lg">Instagram</h3>
               <ExternalLink className="size-4" />
             </Link>
           </Button>
