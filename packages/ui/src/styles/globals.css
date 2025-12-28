@@ -8,39 +8,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  /* Neobrutalism 색상 팔레트 - 고대비, 생생한 원색 */
+  --background: oklch(0.99 0 0); /* 밝은 회색/흰색 배경 */
+  --foreground: oklch(0.1 0 0); /* 진한 검정 텍스트 */
+  --card: oklch(1 0 0); /* 순수 흰색 카드 */
+  --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: oklch(0.2 0 0); /* 진한 검정 */
+  --primary-foreground: oklch(1 0 0); /* 흰색 */
+  --secondary: oklch(0.95 0 0); /* 연한 회색 */
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.9 0.15 50); /* 생생한 노란색 */
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.6 0.25 25); /* 생생한 빨간색 */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.1 0 0); /* 두꺼운 검정 테두리 */
+  --input: oklch(0.1 0 0);
+  --ring: oklch(0.1 0 0);
+  --chart-1: oklch(0.6 0.25 25); /* 빨간색 */
+  --chart-2: oklch(0.7 0.2 150); /* 파란색 */
+  --chart-3: oklch(0.8 0.2 80); /* 노란색 */
+  --chart-4: oklch(0.65 0.25 320); /* 핑크색 */
+  --chart-5: oklch(0.7 0.2 200); /* 보라색 */
+  --radius: 0rem; /* Neobrutalism은 둥근 모서리 없음 */
+  --sidebar: oklch(0.95 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-primary: oklch(0.2 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.9 0.15 50);
+  --sidebar-accent-foreground: oklch(0.1 0 0);
+  --sidebar-border: oklch(0.1 0 0);
+  --sidebar-ring: oklch(0.1 0 0);
+  
+  /* Neobrutalism 특수 색상 */
+  --neobrutal-pink: oklch(0.75 0.25 340); /* 생생한 핑크 */
+  --neobrutal-yellow: oklch(0.9 0.2 80); /* 생생한 노란색 */
+  --neobrutal-blue: oklch(0.7 0.2 250); /* 생생한 파란색 */
+  --neobrutal-green: oklch(0.7 0.2 150); /* 생생한 초록색 */
+  --neobrutal-orange: oklch(0.75 0.2 50); /* 생생한 오렌지 */
+  --neobrutal-purple: oklch(0.65 0.25 300); /* 생생한 보라색 */
+  --neobrutal-cyan: oklch(0.75 0.2 200); /* 생생한 시안 */
+  --neobrutal-lime: oklch(0.85 0.2 120); /* 생생한 라임 */
 }
 
 .dark {
@@ -115,6 +126,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-neobrutal-pink: var(--neobrutal-pink);
+  --color-neobrutal-yellow: var(--neobrutal-yellow);
+  --color-neobrutal-blue: var(--neobrutal-blue);
+  --color-neobrutal-green: var(--neobrutal-green);
+  --color-neobrutal-orange: var(--neobrutal-orange);
+  --color-neobrutal-purple: var(--neobrutal-purple);
+  --color-neobrutal-cyan: var(--neobrutal-cyan);
+  --color-neobrutal-lime: var(--neobrutal-lime);
 }
 
 @layer base {
@@ -125,6 +144,16 @@
     @apply bg-background text-foreground;
     width: 100%;
     height: 100%;
+    font-weight: 600; /* Neobrutalism 굵은 텍스트 */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black; /* 헤딩은 매우 굵게 */
+    letter-spacing: -0.02em; /* 약간의 자간 조정 */
+  }
+  
+  p, span, div {
+    @apply font-semibold; /* 일반 텍스트도 굵게 */
   }
 }
 
@@ -135,5 +164,60 @@
 
     [data-slot="card"] {
         @apply from-primary/5 to-card bg-gradient-to-t shadow-xl;
+    }
+    
+    /* Neobrutalism 오프셋 드롭 쉐도우 */
+    .shadow-neobrutal {
+        box-shadow: 4px 4px 0px 0px oklch(0.1 0 0);
+    }
+    
+    .shadow-neobrutal-sm {
+        box-shadow: 2px 2px 0px 0px oklch(0.1 0 0);
+    }
+    
+    .shadow-neobrutal-lg {
+        box-shadow: 6px 6px 0px 0px oklch(0.1 0 0);
+    }
+    
+    .shadow-neobrutal-xl {
+        box-shadow: 8px 8px 0px 0px oklch(0.1 0 0);
+    }
+    
+    /* 카드 hover 효과 - 앞으로 이동하고 그림자 벌어짐 */
+    .card-hover-lift {
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    
+    .card-hover-lift:hover {
+        transform: translateY(-8px) translateX(-2px);
+        box-shadow: 12px 12px 0px 0px oklch(0.1 0 0);
+    }
+    
+    /* 버튼 hover 효과 - 앞으로 이동하고 그림자 벌어짐 */
+    [data-slot="button"]:not(:disabled):hover {
+        transform: translateY(-4px) translateX(-1px) !important;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out !important;
+    }
+    
+    [data-slot="button"]:not(:disabled):active {
+        transform: translateY(-2px) translateX(0px) !important;
+        transition: transform 0.1s ease-out !important;
+    }
+    
+    /* 카드 내부 버튼도 hover 효과 적용 */
+    [data-slot="card"] [data-slot="button"]:not(:disabled):hover {
+        transform: translateY(-4px) translateX(-1px) !important;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out !important;
+    }
+    
+    /* Neobrutalism 두꺼운 테두리 */
+    .border-neobrutal {
+        border-width: 3px;
+        border-color: oklch(0.1 0 0);
+    }
+    
+    .border-neobrutal-thick {
+        border-width: 4px;
+        border-color: oklch(0.1 0 0);
     }
 }

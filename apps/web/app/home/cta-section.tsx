@@ -7,29 +7,17 @@ import { motion } from 'motion/react'
 
 export function CtaSection() {
   return (
-    <section className="relative isolate flex items-center overflow-hidden">
-      {/* 배경 이미지 */}
-      <div
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1640734174398-23f2f1aba208?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        }}
-      >
-        {/* 오버레이 - 텍스트 가독성을 위한 어두운 레이어 */}
-        <div className="from-background/30 via-background/40 to-background/30 absolute inset-0 bg-gradient-to-br" />
-      </div>
-
-      <div className="container mx-auto w-full max-w-6xl px-4 py-8 md:py-10 lg:py-12">
-        {/* 메인 타이틀과 CTA 버튼을 같은 행에 배치 */}
-        <div className="mb-2 flex items-start justify-between gap-4 md:mb-4">
-          {/* 메인 타이틀 */}
+    <section className="relative isolate flex items-center overflow-hidden bg-background">
+      <div className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16 lg:py-20">
+        {/* 메인 타이틀 */}
+        <div className="mb-8">
           <h1
-            className="text-leftmd:text-5xl text-5xl leading-tight lg:text-6xl xl:text-7xl"
+            className="text-left text-5xl leading-tight md:text-6xl lg:text-7xl xl:text-8xl"
             style={{ fontFamily: 'var(--font-blackHanSans)' }}
           >
             <motion.span
-              className="text-zinc-800 drop-shadow-md"
+              className="text-foreground inline-block border-4 border-foreground px-6 py-3 shadow-neobrutal-lg"
+              style={{ backgroundColor: 'oklch(0.9 0.2 80)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -38,7 +26,8 @@ export function CtaSection() {
             </motion.span>
             <br />
             <motion.span
-              className="text-zinc-800 drop-shadow-md"
+              className="text-foreground inline-block border-4 border-foreground px-6 py-3 mt-4 shadow-neobrutal-lg"
+              style={{ backgroundColor: 'oklch(0.75 0.2 50)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -56,30 +45,30 @@ export function CtaSection() {
           transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
         >
           {/* 보행권 확보 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
+          <div className="text-foreground flex flex-col border-4 border-foreground p-6 text-center shadow-neobrutal hover:shadow-neobrutal-lg transition-shadow" style={{ backgroundColor: 'oklch(0.7 0.2 250)' }}>
             <div className="mb-4 flex justify-center">
-              <Footprints className="text-primary size-8" />
+              <Footprints className="text-foreground size-10" />
             </div>
-            <h3 className="text-2xl font-semibold">보행권 확보 운동</h3>
-            <p className="text-muted-foreground text-lg font-semibold">사람이 중심이 되는 도시</p>
+            <h3 className="text-2xl font-black mb-2">보행권 확보 운동</h3>
+            <p className="text-lg font-bold">사람이 중심이 되는 도시</p>
           </div>
 
           {/* 마을 만들기 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
+          <div className="text-foreground flex flex-col border-4 border-foreground p-6 text-center shadow-neobrutal hover:shadow-neobrutal-lg transition-shadow" style={{ backgroundColor: 'oklch(0.7 0.2 150)' }}>
             <div className="mb-4 flex justify-center">
-              <Home className="text-primary size-8" />
+              <Home className="text-foreground size-10" />
             </div>
-            <h3 className="text-2xl font-semibold">마을 만들기 운동</h3>
-            <p className="text-muted-foreground text-lg font-semibold">주민이 스스로 삶터 가꾸기</p>
+            <h3 className="text-2xl font-black mb-2">마을 만들기 운동</h3>
+            <p className="text-lg font-bold">주민이 스스로 삶터 가꾸기</p>
           </div>
 
           {/* 생활문화 운동 */}
-          <div className="bg-background/50 text-foreground flex flex-col rounded-none border p-6 text-center backdrop-blur-sm">
+          <div className="text-foreground flex flex-col border-4 border-foreground p-6 text-center shadow-neobrutal hover:shadow-neobrutal-lg transition-shadow" style={{ backgroundColor: 'oklch(0.75 0.25 340)' }}>
             <div className="mb-4 flex justify-center">
-              <Heart className="text-primary size-8" />
+              <Heart className="text-foreground size-10" />
             </div>
-            <h3 className="text-2xl font-semibold">생활문화 운동</h3>
-            <p className="text-muted-foreground text-lg font-semibold">사람의 삶의 흔적을 소중히</p>
+            <h3 className="text-2xl font-black mb-2">생활문화 운동</h3>
+            <p className="text-lg font-bold">사람의 삶의 흔적을 소중히</p>
           </div>
         </motion.div>
       </div>

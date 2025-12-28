@@ -33,11 +33,17 @@ export function StaffSection() {
 
   return (
     <section id="staff" className="scroll-mt-24 space-y-6 py-10">
-      <h2 className="text-2xl font-semibold tracking-tight">함께하는 사람들</h2>
+      <h2 className="text-4xl font-black tracking-tight border-4 border-foreground px-6 py-4 inline-block shadow-neobrutal" style={{ backgroundColor: 'oklch(0.75 0.2 200)' }}>
+        함께하는 사람들
+      </h2>
       {loading ? (
-        <p className="text-muted-foreground">불러오는 중...</p>
+        <p className="text-foreground font-bold border-4 border-foreground px-6 py-4 shadow-neobrutal-sm inline-block" style={{ backgroundColor: 'oklch(0.9 0.2 80)' }}>
+          불러오는 중...
+        </p>
       ) : error ? (
-        <p className="text-muted-foreground">{error}</p>
+        <p className="text-foreground font-bold border-4 border-foreground px-6 py-4 shadow-neobrutal-sm inline-block" style={{ backgroundColor: 'oklch(0.6 0.25 25)' }}>
+          {error}
+        </p>
       ) : (
         (() => {
           // group by group name (group is now required)
@@ -55,23 +61,26 @@ export function StaffSection() {
             <div className="space-y-8">
               {order.map((g) => (
                 <div key={g} className="space-y-4">
-                  <h3 className="text-xl font-semibold tracking-tight">{g}</h3>
+                  <h3 className="text-2xl font-black border-4 border-foreground px-4 py-2 inline-block shadow-neobrutal-sm" style={{ backgroundColor: 'oklch(0.85 0.2 120)' }}>
+                    {g}
+                  </h3>
                   <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                     {map.get(g)!.map((member) => (
                       <li
                         key={`${member.name}-${member.mail}`}
-                        className="border-muted bg-card text-card-foreground hover:border-foreground/20 group rounded-lg border p-4 shadow-sm transition-colors"
+                        className="border-4 border-foreground p-4 shadow-neobrutal hover:shadow-neobrutal-lg transition-shadow"
+                        style={{ backgroundColor: 'oklch(0.85 0.2 120)' }}
                       >
                         <div className="min-w-0 space-y-2">
                           {/* 이름 */}
-                          <p className="flex items-center gap-2 truncate text-base font-medium">
-                            <User2 className="text-muted-foreground size-4 shrink-0" />
+                          <p className="flex items-center gap-2 truncate text-base font-black">
+                            <User2 className="text-foreground size-5 shrink-0" />
                             <span className="truncate">{member.name}</span>
                           </p>
 
                           {/* 소속 */}
                           {member.affiliation ? (
-                            <p className="text-muted-foreground flex items-center gap-2 truncate text-sm">
+                            <p className="text-foreground flex items-center gap-2 truncate text-sm font-bold">
                               <Building2 className="size-4 shrink-0" />
                               <span className="truncate">{member.affiliation}</span>
                             </p>
@@ -81,9 +90,12 @@ export function StaffSection() {
                           {member.mail ? (
                             <a
                               href={`mailto:${member.mail}`}
-                              className="text-muted-foreground hover:text-foreground block items-center gap-2 truncate text-sm underline-offset-2 hover:underline"
+                              className="text-foreground block items-center gap-2 truncate text-sm font-bold border-2 border-foreground px-2 py-1 inline-block"
+                              style={{ backgroundColor: 'oklch(0.9 0.2 80)' }}
+                              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'oklch(0.75 0.2 50)'}
+                              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'oklch(0.9 0.2 80)'}
                             >
-                              <Mail className="size-4 shrink-0" />
+                              <Mail className="size-4 shrink-0 inline mr-2" />
                               <span className="truncate">{member.mail}</span>
                             </a>
                           ) : null}
