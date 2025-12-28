@@ -17,7 +17,7 @@ export function PostCard({ id, title, thumbnail, url, postDate }: PostCardProps)
 
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer" className="block h-full">
-      <Card className="hover:bg-muted/50 flex h-full flex-col overflow-hidden transition-colors">
+      <Card className="card-hover-lift flex h-full flex-col overflow-hidden cursor-pointer">
         <div className="relative aspect-[16/9] w-full">
           <Image src={thumbnail} alt="thumbnail" fill className="object-cover" />
         </div>

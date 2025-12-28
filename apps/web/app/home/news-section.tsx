@@ -78,7 +78,7 @@ export function NewsSection() {
               href={`/news/${item.id}`}
               className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
             >
-              <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group h-full flex flex-col">
+              <Card className="card-hover-lift overflow-hidden cursor-pointer group h-full flex flex-col">
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <Image
                     src={item.thumbnail}
@@ -95,7 +95,7 @@ export function NewsSection() {
                 </CardHeader>
                 <CardContent className="flex-1"></CardContent>
                 <CardFooter>
-                  <Button variant="secondary" className="ml-auto gap-1.5 font-semibold text-foreground/90 group-hover:text-foreground group-hover:shadow-lg group-hover:scale-[1.02] transition-all duration-300 pointer-events-none">
+                  <Button variant="secondary" className="ml-auto gap-1.5 font-semibold text-foreground/90 group-hover:text-foreground group-hover:shadow-[6px_6px_0px_0px_oklch(0.1_0_0)] transition-all duration-300 pointer-events-none">
                     자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>

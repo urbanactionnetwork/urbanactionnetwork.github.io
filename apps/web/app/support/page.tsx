@@ -10,10 +10,10 @@ export default function SupportPage() {
     <>
       <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         {/* Header & CTA Button */}
-        <div className="mb-12 flex flex-col gap-6 border-b pb-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3">
-            <HeartHandshakeIcon className="text-primary size-8" />
-            <h1 className="text-foreground text-3xl font-bold tracking-tight md:text-4xl">회원가입 및 후원</h1>
+        <div className="mb-12 flex flex-col gap-6 border-b-4 border-foreground pb-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3 border-4 border-foreground px-6 py-4 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.75 0.2 50)' }}>
+            <HeartHandshakeIcon className="text-foreground size-8" />
+            <h1 className="text-foreground text-3xl font-black tracking-tight md:text-4xl">회원가입 및 후원</h1>
           </div>
           <Button asChild size="lg" className="w-full md:w-auto">
             <Link
@@ -28,12 +28,12 @@ export default function SupportPage() {
           </Button>
         </div>
 
-        <div className="text-muted-foreground space-y-16 text-lg leading-relaxed">
+        <div className="text-foreground space-y-16 text-lg leading-relaxed font-bold">
           {/* Section 1: Introduction */}
-          <div className="space-y-6">
-            <h2 className="text-foreground text-2xl font-semibold">도시연대 회비와 후원금은…</h2>
+          <div className="space-y-6 border-4 border-foreground p-6 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.9 0.2 80)' }}>
+            <h2 className="text-foreground text-3xl font-black">도시연대 회비와 후원금은…</h2>
             <div className="space-y-4">
-              <p>
+              <p className="border-2 border-foreground px-4 py-2" style={{ backgroundColor: 'oklch(0.75 0.2 50)' }}>
                 <strong className="text-foreground">회비와 후원금은 도시연대 활동의 근간입니다.</strong>
               </p>
               <p>도시연대는 회비와 후원금을 단체 운영과 의제활동에 사용하고 있습니다.</p>
@@ -50,8 +50,8 @@ export default function SupportPage() {
           </div>
 
           {/* Section 2: Vision & Impact */}
-          <div className="space-y-6">
-            <h2 className="text-foreground text-2xl font-semibold">
+          <div className="space-y-6 border-4 border-foreground p-6 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.7 0.2 250)' }}>
+            <h2 className="text-foreground text-3xl font-black">
               도시연대는 회원과 함께 우리가 살아가는 도시의 변화를 추구합니다.
             </h2>
             <div className="space-y-4">
@@ -69,13 +69,13 @@ export default function SupportPage() {
           </div>
 
           {/* Section 3: Core Values */}
-          <div className="bg-muted/50 rounded-xl p-8 md:p-10">
-            <ul className="text-foreground mb-6 space-y-3 text-xl font-medium md:text-2xl">
-              <li>보행자를 존중하는 도시</li>
-              <li>안전하게 생활할 수 있는 도시</li>
-              <li>생활문화와 역사가 살아 숨쉬는 도시</li>
-              <li>사람과 자연이 공생하는 도시</li>
-              <li>다양한 계층이 소통하며 어울려 사는 도시</li>
+          <div className="border-4 border-foreground p-8 md:p-10 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.7 0.2 150)' }}>
+            <ul className="text-foreground mb-6 space-y-3 text-xl font-black md:text-2xl">
+              <li className="border-l-4 border-foreground pl-4">보행자를 존중하는 도시</li>
+              <li className="border-l-4 border-foreground pl-4">안전하게 생활할 수 있는 도시</li>
+              <li className="border-l-4 border-foreground pl-4">생활문화와 역사가 살아 숨쉬는 도시</li>
+              <li className="border-l-4 border-foreground pl-4">사람과 자연이 공생하는 도시</li>
+              <li className="border-l-4 border-foreground pl-4">다양한 계층이 소통하며 어울려 사는 도시</li>
             </ul>
             <p>
               도시연대가 추구하는 도시의 모습입니다. 누군가는 행동해야 우리 도시의 모습이 변할 수 있습니다. 도시연대
@@ -84,9 +84,9 @@ export default function SupportPage() {
           </div>
 
           {/* Section 4: Benefits */}
-          <div className="space-y-6">
-            <h2 className="text-foreground text-2xl font-semibold">회원이 되시면…</h2>
-            <ul className="marker:text-primary list-disc space-y-2 pl-6">
+          <div className="space-y-6 border-4 border-foreground p-6 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.75 0.25 340)' }}>
+            <h2 className="text-foreground text-3xl font-black">회원이 되시면…</h2>
+            <ul className="list-none space-y-3 pl-0">
               <li>회원회비 납부를 통해 걷고 싶고 살고 싶은 도시를 함께 만들어 갑니다.</li>
               <li>각종 소모임과 자원활동을 통해 자아실현과 사회변화에 기여할 수 있습니다.</li>
               <li>총회에 참가하여 의결권 및 투표권을 행사할 수 있습니다.</li>
@@ -95,16 +95,16 @@ export default function SupportPage() {
               <li>도시연대 발간자료를 받아보실 수 있습니다.</li>
               <li>도시연대의 모든 행사에 초청되고, 행사참가비가 있을 경우 할인혜택을 받으실 수 있습니다.</li>
             </ul>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm border-2 border-foreground px-4 py-2 inline-block" style={{ backgroundColor: 'oklch(0.9 0.2 80)' }}>
               * 상기내용은 사무처 및 운영위원회, 총회의 결정에 따라 달라질 수 있습니다.
             </p>
           </div>
 
           {/* Section 5: Membership Types */}
-          <div className="space-y-6">
-            <h2 className="text-foreground text-2xl font-semibold">회원종류</h2>
-            <div className="border-primary border-l-4 pl-6">
-              <h3 className="text-foreground mb-2 text-xl font-medium">월회원</h3>
+          <div className="space-y-6 border-4 border-foreground p-6 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.75 0.2 200)' }}>
+            <h2 className="text-foreground text-3xl font-black">회원종류</h2>
+            <div className="border-4 border-foreground p-6" style={{ backgroundColor: 'oklch(0.85 0.2 120)' }}>
+              <h3 className="text-foreground mb-2 text-2xl font-black">월회원</h3>
               <p className="mb-2">월회원은 회비를 매월 납부하는 회원입니다.</p>
               <p>회비는 1만원, 2만원, 3만원, 5만원, 10만원 중 선택하실 수 있습니다.</p>
             </div>
