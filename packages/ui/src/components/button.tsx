@@ -5,17 +5,17 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@workspace/ui/lib/utils'
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none text-sm font-bold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-4 focus-visible:border-foreground aria-invalid:border-destructive aria-invalid:border-4",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none text-sm font-bold transition-[transform,box-shadow] duration-200 ease-out disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-4 focus-visible:border-foreground aria-invalid:border-destructive aria-invalid:border-4",
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground border-4 border-foreground shadow-neobrutal hover:shadow-[8px_8px_0px_0px_oklch(0.1_0_0)] active:shadow-neobrutal-sm',
+        default: 'bg-primary text-primary-foreground border-4 border-foreground shadow-neobrutal hover:shadow-[8px_8px_0px_0px_oklch(0.1_0_0)] hover:-translate-y-1 hover:-translate-x-0.5 active:shadow-neobrutal-sm active:translate-y-0 active:translate-x-0',
         destructive:
-          'bg-destructive text-white border-4 border-foreground shadow-neobrutal hover:shadow-[8px_8px_0px_0px_oklch(0.1_0_0)] active:shadow-neobrutal-sm',
+          'bg-destructive text-white border-4 border-foreground shadow-neobrutal hover:shadow-[8px_8px_0px_0px_oklch(0.1_0_0)] hover:-translate-y-1 hover:-translate-x-0.5 active:shadow-neobrutal-sm active:translate-y-0 active:translate-x-0',
         outline:
-          'border-4 border-foreground bg-background shadow-neobrutal-sm hover:shadow-[6px_6px_0px_0px_oklch(0.1_0_0)] hover:bg-accent hover:text-accent-foreground',
-        secondary: 'bg-secondary text-secondary-foreground border-4 border-foreground shadow-neobrutal-sm hover:shadow-[6px_6px_0px_0px_oklch(0.1_0_0)] active:shadow-neobrutal-sm',
-        ghost: 'border-4 border-transparent hover:border-foreground hover:bg-accent hover:text-accent-foreground shadow-neobrutal-sm hover:shadow-[4px_4px_0px_0px_oklch(0.1_0_0)]',
+          'border-4 border-foreground bg-background shadow-neobrutal-sm hover:shadow-[6px_6px_0px_0px_oklch(0.1_0_0)] hover:-translate-y-1 hover:-translate-x-0.5 hover:bg-accent hover:text-accent-foreground',
+        secondary: 'bg-secondary text-secondary-foreground border-4 border-foreground shadow-neobrutal-sm hover:shadow-[6px_6px_0px_0px_oklch(0.1_0_0)] hover:-translate-y-1 hover:-translate-x-0.5 active:shadow-neobrutal-sm active:translate-y-0 active:translate-x-0',
+        ghost: 'border-4 border-transparent hover:border-foreground hover:bg-accent hover:text-accent-foreground shadow-neobrutal-sm hover:shadow-[4px_4px_0px_0px_oklch(0.1_0_0)] hover:-translate-y-1 hover:-translate-x-0.5',
         link: 'text-primary underline-offset-4 hover:underline border-4 border-transparent',
       },
       size: {

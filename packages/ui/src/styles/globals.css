@@ -185,29 +185,12 @@
     
     /* 카드 hover 효과 - 앞으로 이동하고 그림자 벌어짐 */
     .card-hover-lift {
-        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out !important;
     }
     
     .card-hover-lift:hover {
-        transform: translateY(-8px) translateX(-2px);
-        box-shadow: 12px 12px 0px 0px oklch(0.1 0 0);
-    }
-    
-    /* 버튼 hover 효과 - 앞으로 이동하고 그림자 벌어짐 */
-    [data-slot="button"]:not(:disabled):hover {
-        transform: translateY(-4px) translateX(-1px) !important;
-        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out !important;
-    }
-    
-    [data-slot="button"]:not(:disabled):active {
-        transform: translateY(-2px) translateX(0px) !important;
-        transition: transform 0.1s ease-out !important;
-    }
-    
-    /* 카드 내부 버튼도 hover 효과 적용 */
-    [data-slot="card"] [data-slot="button"]:not(:disabled):hover {
-        transform: translateY(-4px) translateX(-1px) !important;
-        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out !important;
+        transform: translateY(-8px) translateX(-2px) !important;
+        box-shadow: 12px 12px 0px 0px oklch(0.1 0 0) !important;
     }
     
     /* Neobrutalism 두꺼운 테두리 */
