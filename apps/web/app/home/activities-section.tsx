@@ -58,7 +58,7 @@ export function ActivitiesSection() {
     <section ref={sectionRef} className="relative flex w-full items-center justify-center py-12 text-center md:py-16">
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         {loading ? (
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {Array.from({ length: 3 }).map((_, idx) => (
               <div key={idx} className="flex h-full flex-col space-y-3">
                 <Skeleton className="h-48 w-full rounded-xl" />
@@ -72,7 +72,7 @@ export function ActivitiesSection() {
         ) : error ? (
           <div className="text-muted-foreground mt-10 text-sm">{error}</div>
         ) : (
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {items.map((item) => (
               <Link
                 key={item.id}
