@@ -146,7 +146,8 @@ export function InstagramSection() {
   return (
     <section ref={sectionRef} className="relative flex w-full items-center justify-center py-8 text-center md:py-12">
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
-        <div className="mb-4 flex items-center justify-end gap-2">
+        <div className="mb-4 flex items-center justify-between gap-2">
+          <h2 className="text-xl font-semibold md:text-2xl">새소식</h2>
           <Button
             asChild
             size="lg"
