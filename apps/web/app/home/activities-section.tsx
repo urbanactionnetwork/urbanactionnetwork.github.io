@@ -15,7 +15,7 @@ import {
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
 import { ArrowRightIcon, ChevronRightIcon, SparklesIcon } from 'lucide-react'
 import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI.ts'
-import { motion, useInView } from 'motion/react'
+import { useInView } from 'motion/react'
 
 export interface ActivitiesItem {
   id: number
@@ -37,7 +37,6 @@ export function ActivitiesSection() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   useEffect(() => {
     let mounted = true
@@ -110,9 +109,7 @@ export function ActivitiesSection() {
                         backgroundImage: `url(${patternBg})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
                         filter: 'blur(20px)',
-                        transform: 'rotate(180deg)',
                       }}
                     />
                     <div className="relative aspect-[16/9] w-full overflow-hidden">
@@ -124,13 +121,13 @@ export function ActivitiesSection() {
                       />
                     </div>
                     <CardHeader className="relative h-[4.5rem] overflow-hidden">
-                      <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl backdrop-saturate-150" />
+                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
                       <CardTitle className="group-hover:text-primary relative z-10 line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
                         {item.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="relative flex-1 overflow-hidden text-left text-sm text-slate-700">
-                      <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl backdrop-saturate-150" />
+                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
                       <div className="relative z-10 py-2">{item.description}</div>
                     </CardContent>
                     <CardFooter>
