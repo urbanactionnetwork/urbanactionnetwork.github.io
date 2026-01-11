@@ -111,7 +111,8 @@ export function ActivitiesSection() {
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        filter: 'blur(15px)',
+                        filter: 'blur(20px)',
+                        transform: 'rotate(180deg)',
                       }}
                     />
                     <div className="relative aspect-[16/9] w-full overflow-hidden">
