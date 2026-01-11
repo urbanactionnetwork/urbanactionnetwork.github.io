@@ -36,17 +36,13 @@ export default function NewsPage() {
   return (
     <>
       <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
-        <div className="mb-8 flex items-center gap-2">
-          <div className="border-4 border-foreground px-6 py-4 shadow-neobrutal" style={{ backgroundColor: 'oklch(0.75 0.25 340)' }}>
-            <NewspaperIcon className="size-6 inline mr-2" />
-            <h1 className="text-3xl md:text-4xl font-black inline">새소식</h1>
-          </div>
+        <div className="mb-6 flex items-center gap-2">
+          <NewspaperIcon className="size-5" />
+          <h1 className="text-xl font-semibold md:text-2xl">새소식</h1>
         </div>
 
         {error ? (
-          <div className="text-foreground py-10 text-center font-bold border-4 border-foreground px-6 py-4 inline-block shadow-neobrutal-sm" style={{ backgroundColor: 'oklch(0.6 0.25 25)' }}>
-            {error}
-          </div>
+          <div className="text-muted-foreground py-10 text-center">{error}</div>
         ) : (
           <PostCardList items={items} loading={loading} />
         )}
