@@ -13,9 +13,9 @@ import {
   CardTitle,
 } from '@workspace/ui/components/card.tsx'
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
-import { ArrowRightIcon, SparklesIcon } from 'lucide-react'
+import { ArrowRightIcon, ChevronRightIcon, SparklesIcon } from 'lucide-react'
 import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI.ts'
-import { motion, useInView } from 'motion/react'
+import { useInView } from 'motion/react'
 
 export interface ActivitiesItem {
   id: number
@@ -25,12 +25,18 @@ export interface ActivitiesItem {
   url: string
 }
 
+const PATTERN_BACKGROUNDS = [
+  '/patterns/card-bg-3.svg',
+  '/patterns/card-bg-2.svg',
+  '/patterns/card-bg-4.svg',
+  '/patterns/card-bg-1.svg',
+]
+
 export function ActivitiesSection() {
   const [items, setItems] = useState<ActivitiesItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   useEffect(() => {
     let mounted = true
@@ -42,7 +48,7 @@ export function ActivitiesSection() {
       } catch (e) {
         console.error(e)
         if (!mounted) return
-        setError('새소식 정보를 불러오는 중 문제가 발생했습니다.')
+        setError('공지사항 정보를 불러오는 중 문제가 발생했습니다.')
       } finally {
         if (mounted) {
           setLoading(false)
@@ -54,54 +60,23 @@ export function ActivitiesSection() {
     }
   }, [])
 
-  const text = 'Our Journey'
-  const letters = text.split('')
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-gradient-to-br from-lime-200 via-lime-100 to-lime-50 py-12 text-center md:py-16"
-    >
-      {/* 배경 장식 요소 - 원형 패턴 */}
-      <div className="absolute inset-0 -z-0 overflow-hidden">
-        {/* 큰 원형 장식 */}
-        <motion.div
-          className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-        <motion.div
-          className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-purple-200/30 blur-3xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-        />
-      </div>
-      {/* 왼쪽 상단 텍스트 - 섹션 왼쪽 상단 모서리에 정확히 배치 */}
-      <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-[calc(700px*0.25)] font-medium leading-none text-lime-600">
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: 'easeOut',
-              }}
-              style={{ display: 'inline-block' }}
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </motion.span>
-          ))}
-        </span>
-      </div>
-
+    <section ref={sectionRef} className="relative flex w-full items-center justify-center py-12 text-center md:py-16">
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
+        <div className="mb-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-bold text-slate-200 md:text-2xl">주요활동</h2>
+          </div>
+          <Link
+            href="/activities"
+            className="text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
+          >
+            <span className="text-lg font-medium text-slate-200">더보기</span>
+            <ChevronRightIcon className="size-6" />
+          </Link>
+        </div>
         {loading ? (
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {Array.from({ length: 3 }).map((_, idx) => (
               <div key={idx} className="flex h-full flex-col space-y-3">
                 <Skeleton className="h-48 w-full rounded-xl" />
@@ -113,43 +88,60 @@ export function ActivitiesSection() {
             ))}
           </div>
         ) : error ? (
-          <div className="text-muted-foreground mt-10 text-sm">{error}</div>
+          <div className="text-muted-foreground text-sm">{error}</div>
         ) : (
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {items.map((item) => (
-              <Link
-                key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-              >
-                <Card className="group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
-                  <div className="relative aspect-[16/9] w-full overflow-hidden">
-                    <Image
-                      src={item.thumbnail}
-                      alt="thumbnail"
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {items.map((item, index) => {
+              const patternBg = PATTERN_BACKGROUNDS[index % PATTERN_BACKGROUNDS.length]
+              return (
+                <Link
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                >
+                  <Card className="group relative flex h-full cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
+                    {/* 패턴 배경 이미지 */}
+                    <div
+                      className="pointer-events-none absolute inset-0 z-0"
+                      style={{
+                        backgroundImage: `url(${patternBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'blur(20px)',
+                      }}
                     />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="group-hover:text-primary line-clamp-2 text-left transition-colors duration-300">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="line-clamp-3 flex-1 text-left">{item.description}</CardContent>
-                  <CardFooter>
-                    <Button
-                      variant="secondary"
-                      className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
-                    >
-                      자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Link>
-            ))}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                      <Image
+                        src={item.thumbnail}
+                        alt="thumbnail"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <CardHeader className="relative h-[4.5rem] overflow-hidden">
+                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
+                      <CardTitle className="group-hover:text-primary relative z-10 line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="relative flex-1 overflow-hidden text-left text-sm text-slate-700">
+                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
+                      <div className="relative z-10 py-2">{item.description}</div>
+                    </CardContent>
+                    <CardFooter>
+                      <Button
+                        variant="secondary"
+                        className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+                      >
+                        자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>

@@ -1,4 +1,4 @@
-# 새소식 페이지
+# 공지사항 페이지
 
 - URL: /news
 - API: [newsAPI.ts](../apps/web/app/news/newsAPI.ts)
@@ -27,4 +27,4 @@
 
 - URL: /info
 - API: [activitiesAPI.ts](../apps/web/app/activities/activitiesAPI.ts)
-- 새소식 페이지를 참조
+- 공지사항 페이지를 참조

@@ -11,7 +11,7 @@ export interface News {
 }
 
 /**
- * 모든 새소식을 조회한다.
+ * 모든 공지사항을 조회한다.
  *
  * @returns News
  */
@@ -21,7 +21,7 @@ export const fetchNews = async () => {
 }
 
 /**
- * 최근 새소식 3건을 조회한다.
+ * 최근 공지사항 3건을 조회한다.
  *
  * @returns News (data 길이 최대 3)
  */

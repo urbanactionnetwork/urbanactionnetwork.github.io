@@ -21,7 +21,7 @@ export default function NewsPage() {
       } catch (e) {
         console.error(e)
         if (!mounted) return
-        setError('새소식 정보를 불러오는 중 문제가 발생했습니다.')
+        setError('공지사항 정보를 불러오는 중 문제가 발생했습니다.')
       } finally {
         if (mounted) {
           setLoading(false)
@@ -38,7 +38,7 @@ export default function NewsPage() {
       <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-6 flex items-center gap-2">
           <NewspaperIcon className="size-5" />
-          <h1 className="text-xl font-semibold md:text-2xl">새소식</h1>
+          <h1 className="text-xl font-semibold md:text-2xl">공지사항</h1>
         </div>
 
         {error ? (
