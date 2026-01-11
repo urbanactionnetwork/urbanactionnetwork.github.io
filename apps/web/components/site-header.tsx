@@ -6,7 +6,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from '@workspace/ui/components/navigation-menu'
 import Image from 'next/image'
 
@@ -22,22 +21,22 @@ export function SiteHeader() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} p-3`}>
+              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
                 <Link href="/info">소개</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} p-3`}>
+              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
                 <Link href="/activities">주요활동</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} p-3`}>
+              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
                 <Link href="/news">공지사항</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} p-3`}>
+              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
                 <Link href="/support">회원가입 및 후원</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
