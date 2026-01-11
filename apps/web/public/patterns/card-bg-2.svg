@@ -66,4 +66,27 @@
   <g transform="translate(120, 160) rotate(50)">
     <polygon points="0,0 0,20 15,10" fill="#ff6b6b" opacity="0.6" />
   </g>
+
+  <!-- 추가된 도형들 (밀도 향상) -->
+  <g transform="translate(20, 30) rotate(-15)">
+    <path d="M0,0 L15,0 L15,15" fill="none" stroke="#54a0ff" stroke-width="2.5" opacity="0.5" />
+  </g>
+
+  <g transform="translate(280, 50) rotate(10)">
+    <polygon points="0,0 15,0 20,10 5,10" fill="#1dd1a1" opacity="0.5" />
+  </g>
+
+  <g transform="translate(60, 80) rotate(45)">
+    <ellipse cx="0" cy="0" rx="12" ry="6" fill="#feca57" opacity="0.6" />
+  </g>
+
+  <path d="M100,20 Q110,10 120,20 T140,20" fill="none" stroke="#ff9ff3" stroke-width="2" opacity="0.4" />
+  
+  <circle cx="230" cy="140" r="2.5" fill="#ee5253" opacity="0.6" />
+  <circle cx="180" cy="180" r="4" fill="#5f27cd" opacity="0.5" />
+  <circle cx="40" cy="140" r="2" fill="#4ecdc4" opacity="0.6" />
+
+  <g transform="translate(200, 40)">
+    <rect x="0" y="0" width="3" height="3" fill="#ff6b6b" opacity="0.6" />
+  </g>
 </svg>

@@ -66,4 +66,29 @@
   <g transform="translate(120, 160) rotate(0)">
     <polygon points="0,0 0,20 15,10" fill="#ffa500" opacity="0.6" />
   </g>
+
+  <!-- 추가된 도형들 (밀도 향상) -->
+  <circle cx="280" cy="20" r="4" fill="#54a0ff" opacity="0.5" />
+  <circle cx="20" cy="180" r="3" fill="#5f27cd" opacity="0.4" />
+  <circle cx="150" cy="185" r="5" fill="#1dd1a1" opacity="0.5" />
+  
+  <g transform="translate(260, 160) rotate(45)">
+    <rect x="-8" y="-2" width="16" height="4" rx="2" fill="#ee5253" opacity="0.6" />
+    <rect x="-2" y="-8" width="4" height="16" rx="2" fill="#ee5253" opacity="0.6" />
+  </g>
+
+  <g transform="translate(100, 50) rotate(15)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#feca57" stroke-width="2" opacity="0.5" />
+  </g>
+
+  <g transform="translate(200, 100) rotate(-20)">
+    <path d="M0,0 L15,0 L7.5,13 Z" fill="none" stroke="#ff9ff3" stroke-width="1.5" opacity="0.6" />
+  </g>
+
+  <g transform="translate(80, 100)">
+    <circle cx="0" cy="0" r="2" fill="#4ecdc4" opacity="0.6" />
+  </g>
+  <g transform="translate(230, 20)">
+    <circle cx="0" cy="0" r="1.5" fill="#ff6b6b" opacity="0.6" />
+  </g>
 </svg>

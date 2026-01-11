@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import { ActivitiesSection } from '@/app/home/activities-section'
+import ActivitiesSection from '@/app/home/activities-section'
 import { InstagramSection } from '@/app/home/instagram-section'
 import { SiteFooter } from '@/components/site-footer'
 import { CtaSection } from '@/app/home/cta-section.tsx'
