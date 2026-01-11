@@ -10,51 +10,8 @@ export function SupportSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
-  const text = 'Join Our Journey'
-  const letters = text.split('')
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex w-full items-center justify-center bg-gradient-to-br from-cyan-200 via-cyan-100 to-cyan-50 py-16 text-center md:py-12"
-    >
-      {/* 배경 장식 요소 - 원형 패턴 */}
-      <div className="absolute inset-0 -z-0 overflow-hidden">
-        {/* 큰 원형 장식 */}
-        <motion.div
-          className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-cyan-200/30 blur-3xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-        <motion.div
-          className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-teal-200/30 blur-3xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-        />
-
-        {/* 그리드 패턴 */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d4_1px,transparent_1px),linear-gradient(to_bottom,#06b6d4_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]" />
-      </div>
-
-      {/* 왼쪽 상단 타이틀 */}
-      <div className="absolute left-0 top-0 z-0 m-0 ml-[-12] mt-[-36] flex items-center gap-2">
-        <span className="text-b-200 text-[calc(700px*0.20)] font-medium leading-none text-cyan-600">
-          {letters.map((letter, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.05, ease: 'easeOut' }}
-              style={{ display: 'inline-block' }}
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </motion.span>
-          ))}
-        </span>
-      </div>
-
+    <section ref={sectionRef} className="relative flex w-full items-center justify-center py-16 text-center md:py-12">
       <div className="container relative z-10 mx-auto mt-10 w-full max-w-3xl px-6">
         {/* 아이콘 장식 */}
         <motion.div
