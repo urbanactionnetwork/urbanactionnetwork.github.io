@@ -2,13 +2,28 @@
 
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
-import { HeartHandshakeIcon } from 'lucide-react'
+import { HeartHandshakeIcon, ArrowBigDownDash } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
+import { useRef } from 'react'
 
 export function CtaSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const scrollToNext = () => {
+    if (sectionRef.current) {
+      const nextSection = sectionRef.current.nextElementSibling
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
-    <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative isolate flex min-h-screen items-center justify-center overflow-hidden"
+    >
       <div className="container mx-auto w-full max-w-7xl px-4 pb-16 md:pb-20 lg:pb-24">
         <div className="mb-6 flex justify-center">
           <Image src="/logo.jpg" alt="logo" width={0} height={0} className="hidden h-24 w-auto md:block" priority />
@@ -67,6 +82,29 @@ export function CtaSection() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* 아래로 스크롤 유도 화살표 */}
+        <motion.div
+          className="bottom-18 absolute left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
+          onClick={scrollToNext}
+        >
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="flex flex-col items-center gap-2"
+          >
+            <ArrowBigDownDash className="size-32 text-slate-300 transition-colors hover:text-white md:size-32" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
