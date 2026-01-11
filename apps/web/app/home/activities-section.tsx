@@ -59,14 +59,14 @@ export function ActivitiesSection() {
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-semibold md:text-2xl">주요활동</h2>
+            <h2 className="text-xl font-bold text-slate-200 md:text-2xl">주요활동</h2>
           </div>
           <Link
             href="/activities"
             className="text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
           >
-            <span className="text-sm font-medium">더보기</span>
-            <ChevronRightIcon className="size-4" />
+            <span className="text-lg font-medium text-slate-200">더보기</span>
+            <ChevronRightIcon className="size-6" />
           </Link>
         </div>
         {loading ? (

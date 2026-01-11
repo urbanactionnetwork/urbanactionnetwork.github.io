@@ -21,14 +21,14 @@ export function SupportSection() {
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
         >
           <motion.div
-            className="rounded-full bg-white/60 p-3 shadow-md backdrop-blur-sm"
+            className="rounded-full bg-white/90 p-3 shadow-md backdrop-blur-sm"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <Users className="size-6 text-cyan-600" />
           </motion.div>
           <motion.div
-            className="rounded-full bg-white/60 p-3 shadow-md backdrop-blur-sm"
+            className="rounded-full bg-white/90 p-3 shadow-md backdrop-blur-sm"
             whileHover={{ scale: 1.1, rotate: -5 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -48,7 +48,7 @@ export function SupportSection() {
             animate={isInView ? { width: 100 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           />
-          <h2 className="text-lg font-semibold text-zinc-900 md:text-3xl">함께 하시겠어요?</h2>
+          <h2 className="text-lg font-semibold text-slate-200 md:text-3xl">함께 하시겠어요?</h2>
           <motion.div
             className="h-px w-[100px] bg-gradient-to-l from-transparent via-zinc-900 to-zinc-900"
             initial={{ width: 0 }}
@@ -58,7 +58,7 @@ export function SupportSection() {
         </motion.div>
 
         <motion.p
-          className="mt-4 text-2xl font-semibold leading-relaxed text-zinc-900 md:text-4xl"
+          className="mt-4 text-2xl font-semibold leading-relaxed text-slate-200 md:text-4xl"
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.35 }}

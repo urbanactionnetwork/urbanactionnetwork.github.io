@@ -10,7 +10,7 @@ export function CtaSection() {
   return (
     <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden">
       <div className="container mx-auto w-full max-w-7xl px-4 pb-16 md:pb-20 lg:pb-24">
-        <div className="flex justify-center">
+        <div className="mb-6 flex justify-center">
           <Image src="/logo.jpg" alt="logo" width={0} height={0} className="hidden h-24 w-auto md:block" priority />
         </div>
         {/* 메인 타이틀과 CTA 버튼을 같은 행에 배치 */}
@@ -24,6 +24,7 @@ export function CtaSection() {
             걷고 싶은 도시가
             <br />
             <motion.span
+              className="text-blue-400"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -33,7 +34,7 @@ export function CtaSection() {
           </motion.h1>
 
           <motion.p
-            className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed md:text-xl"
+            className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
