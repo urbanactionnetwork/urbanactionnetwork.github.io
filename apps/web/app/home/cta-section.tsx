@@ -50,15 +50,21 @@ export function CtaSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
           >
-            <Button
-              asChild
-              size="lg"
-              className="h-[60px] gap-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-lg text-white shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-teal-700 hover:shadow-xl"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
-              <Link href="/support">
-                <HeartHandshakeIcon className="size-7" /> 후원하기
-              </Link>
-            </Button>
+              <Button
+                asChild
+                size="lg"
+                className="h-[60px] gap-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-lg text-white shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-teal-700 hover:shadow-xl"
+              >
+                <Link href="/support">
+                  <HeartHandshakeIcon className="size-7" /> 후원하기
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </div>
