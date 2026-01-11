@@ -122,8 +122,8 @@ export function ActivitiesSection() {
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <CardHeader className="h-[3.5rem]">
-                      <CardTitle className="group-hover:text-primary line-clamp-2 text-left text-lg text-slate-900 transition-colors duration-300">
+                    <CardHeader className="h-[4.5rem] bg-white/40 backdrop-blur-2xl backdrop-saturate-150">
+                      <CardTitle className="group-hover:text-primary line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
                         {item.title}
                       </CardTitle>
                     </CardHeader>
