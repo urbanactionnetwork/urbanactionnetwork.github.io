@@ -134,6 +134,6 @@
     }
 
     [data-slot="card"] {
-        @apply from-primary/5 to-card bg-gradient-to-t shadow-xl;
+        @apply shadow-xl;
     }
 }
