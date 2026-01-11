@@ -128,7 +128,7 @@ export function SupportSection() {
               className="h-[60px] gap-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-lg text-white shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-teal-700 hover:shadow-xl"
             >
               <Link href="/support">
-                <HeartHandshakeIcon className="size-7" /> 정기후원하기
+                <HeartHandshakeIcon className="size-7" /> 후원하기
               </Link>
             </Button>
           </motion.div>

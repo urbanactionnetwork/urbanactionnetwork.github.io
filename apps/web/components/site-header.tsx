@@ -33,7 +33,7 @@ export function SiteHeader() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} p-3`}>
-                <Link href="/news">새소식</Link>
+                <Link href="/news">공지사항</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>

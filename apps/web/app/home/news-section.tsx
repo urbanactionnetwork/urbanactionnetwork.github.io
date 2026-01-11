@@ -38,7 +38,7 @@ export function NewsSection() {
       } catch (e) {
         console.error(e)
         if (!mounted) return
-        setError('새소식 정보를 불러오는 중 문제가 발생했습니다.')
+        setError('공지사항 정보를 불러오는 중 문제가 발생했습니다.')
       } finally {
         if (mounted) {
           setLoading(false)
@@ -54,7 +54,7 @@ export function NewsSection() {
     <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
       <div className="mb-6 flex items-center gap-2">
         <NewspaperIcon className="size-5" />
-        <h2 className="text-xl font-semibold md:text-2xl">새소식</h2>
+        <h2 className="text-xl font-semibold md:text-2xl">공지사항</h2>
       </div>
       {loading ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,7 +78,7 @@ export function NewsSection() {
               href={`/news/${item.id}`}
               className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
             >
-              <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group h-full flex flex-col">
+              <Card className="group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <Image
                     src={item.thumbnail}
@@ -88,14 +88,17 @@ export function NewsSection() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="group-hover:text-primary line-clamp-2 transition-colors duration-300">
                     {item.title}
                   </CardTitle>
                   <CardDescription className="line-clamp-3">{item.description ?? ''}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1"></CardContent>
                 <CardFooter>
-                  <Button variant="secondary" className="ml-auto gap-1.5 font-semibold text-foreground/90 group-hover:text-foreground group-hover:shadow-lg group-hover:scale-[1.02] transition-all duration-300 pointer-events-none">
+                  <Button
+                    variant="secondary"
+                    className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+                  >
                     자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
