@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-background mt-auto border-t">
       <div className="text-muted-foreground container mx-auto w-full max-w-6xl px-4 py-10 text-sm leading-6">
-        <div className="grid grid-cols-1 gap-2">
+        <div className="grid grid-cols-1 gap-2 text-slate-200">
           <p>
             <IdCard className="mr-2 inline h-4 w-4 align-[-2px]" aria-hidden />
             사업자등록번호 101-82-11766
