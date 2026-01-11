@@ -25,6 +25,13 @@ export interface ActivitiesItem {
   url: string
 }
 
+const PATTERN_BACKGROUNDS = [
+  '/patterns/card-bg-1.svg',
+  '/patterns/card-bg-2.svg',
+  '/patterns/card-bg-3.svg',
+  '/patterns/card-bg-4.svg',
+]
+
 export function ActivitiesSection() {
   const [items, setItems] = useState<ActivitiesItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -85,40 +92,54 @@ export function ActivitiesSection() {
           <div className="text-muted-foreground text-sm">{error}</div>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {items.map((item) => (
-              <Link
-                key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-              >
-                <Card className="group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:shadow-xl">
-                  <div className="relative aspect-[16/9] w-full overflow-hidden">
-                    <Image
-                      src={item.thumbnail}
-                      alt="thumbnail"
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+            {items.map((item, index) => {
+              const patternBg = PATTERN_BACKGROUNDS[index % PATTERN_BACKGROUNDS.length]
+              return (
+                <Link
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                >
+                  <Card className="group relative flex h-full cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
+                    {/* 패턴 배경 이미지 */}
+                    <div
+                      className="pointer-events-none absolute inset-0 z-0 opacity-90"
+                      style={{
+                        backgroundImage: `url(${patternBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        filter: 'blur(20px)',
+                      }}
                     />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="group-hover:text-primary line-clamp-2 text-left transition-colors duration-300">
-                      {item.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="line-clamp-3 flex-1 text-left">{item.description}</CardContent>
-                  <CardFooter>
-                    <Button
-                      variant="secondary"
-                      className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
-                    >
-                      자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Link>
-            ))}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                      <Image
+                        src={item.thumbnail}
+                        alt="thumbnail"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <CardHeader className="h-[3.5rem]">
+                      <CardTitle className="group-hover:text-primary line-clamp-2 text-left text-lg text-slate-900 transition-colors duration-300">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1 text-left text-sm text-slate-700">{item.description}</CardContent>
+                    <CardFooter>
+                      <Button
+                        variant="secondary"
+                        className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+                      >
+                        자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>
