@@ -7,7 +7,7 @@ import { SupportSection } from '@/app/home/support-section'
 
 export default function Page() {
   return (
-    <>
+    <div className="bg-background text-foreground min-h-full antialiased subpixel-antialiased">
       {/* Instagram embed 스크립트를 메인 페이지에서 로드 */}
       <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
 
@@ -24,6 +24,6 @@ export default function Page() {
       <SupportSection />
 
       <SiteFooter />
-    </>
+    </div>
   )
 }
