@@ -26,10 +26,10 @@ export interface ActivitiesItem {
 }
 
 const PATTERN_BACKGROUNDS = [
-  '/patterns/card-bg-1.svg',
-  '/patterns/card-bg-2.svg',
   '/patterns/card-bg-3.svg',
+  '/patterns/card-bg-2.svg',
   '/patterns/card-bg-4.svg',
+  '/patterns/card-bg-1.svg',
 ]
 
 export function ActivitiesSection() {
@@ -105,13 +105,13 @@ export function ActivitiesSection() {
                   <Card className="group relative flex h-full cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
                     {/* 패턴 배경 이미지 */}
                     <div
-                      className="pointer-events-none absolute inset-0 z-0 opacity-90"
+                      className="pointer-events-none absolute inset-0 z-0"
                       style={{
                         backgroundImage: `url(${patternBg})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        filter: 'blur(20px)',
+                        filter: 'blur(15px)',
                       }}
                     />
                     <div className="relative aspect-[16/9] w-full overflow-hidden">
@@ -122,12 +122,16 @@ export function ActivitiesSection() {
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <CardHeader className="h-[4.5rem] bg-white/40 backdrop-blur-2xl backdrop-saturate-150">
-                      <CardTitle className="group-hover:text-primary line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
+                    <CardHeader className="relative h-[4.5rem] overflow-hidden">
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl backdrop-saturate-150" />
+                      <CardTitle className="group-hover:text-primary relative z-10 line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
                         {item.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-1 text-left text-sm text-slate-700">{item.description}</CardContent>
+                    <CardContent className="relative flex-1 overflow-hidden text-left text-sm text-slate-700">
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl backdrop-saturate-150" />
+                      <div className="relative z-10 py-2">{item.description}</div>
+                    </CardContent>
                     <CardFooter>
                       <Button
                         variant="secondary"
