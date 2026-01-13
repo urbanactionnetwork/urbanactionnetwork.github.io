@@ -112,7 +112,7 @@ export function ActivitiesSection() {
                         filter: 'blur(20px)',
                       }}
                     />
-                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden shadow-md">
                       <Image
                         src={item.thumbnail}
                         alt="thumbnail"
@@ -120,15 +120,17 @@ export function ActivitiesSection() {
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <CardHeader className="relative h-[4.5rem] overflow-hidden">
-                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
-                      <CardTitle className="group-hover:text-primary relative z-10 line-clamp-2 py-2 text-left text-lg text-slate-900 transition-colors duration-300">
-                        {item.title}
+                    <CardHeader className="relative">
+                      <div className="absolute inset-0 shadow-sm backdrop-blur-md backdrop-saturate-150" />
+                      <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
+                        <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="relative flex-1 overflow-hidden text-left text-sm text-slate-700">
-                      <div className="absolute inset-0 backdrop-blur-2xl backdrop-saturate-150" />
-                      <div className="relative z-10 py-2">{item.description}</div>
+                    <CardContent className="relative flex-1">
+                      <div className="absolute inset-0 shadow-sm backdrop-blur-md backdrop-saturate-150" />
+                      <div className="relative z-10 py-4 text-left text-sm text-slate-700">
+                        <p className="line-clamp-4">{item.description}</p>
+                      </div>
                     </CardContent>
                     <CardFooter>
                       <Button

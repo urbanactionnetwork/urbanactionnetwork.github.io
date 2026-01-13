@@ -23,9 +23,6 @@ export function CtaSection() {
     <section ref={sectionRef} className="relative isolate flex min-h-screen flex-col overflow-hidden">
       <div className="container mx-auto flex w-full max-w-7xl flex-1 items-center justify-center px-4 py-16 md:py-20 lg:py-24">
         <div className="w-full">
-          <div className="mb-6 flex justify-center">
-            <Image src="/logo.jpg" alt="logo" width={0} height={0} className="hidden h-24 w-auto md:block" priority />
-          </div>
           {/* 메인 타이틀과 CTA 버튼을 같은 행에 배치 */}
           <div className="mx-auto max-w-4xl text-center">
             <motion.h1
@@ -47,14 +44,14 @@ export function CtaSection() {
             </motion.h1>
 
             <motion.p
-              className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl"
+              className="mx-auto mb-8 max-w-5xl text-lg leading-relaxed text-slate-200 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
             >
-              도시에 다양한 사람들이 함께 오래 살아갈 수 있는 인간환경을 회복함으로써
+              공간의 정의를 바로 세우고 장소의 가치를 되살려 다양한 사람들이 오래 함께 살아가는 도시.
               <br />
-              삶의 질을 개선하고 도시문화 역사를 보존, 창조해 나가는 시민운동입니다.
+              우리는 시민의 힘으로 도시의 문화와 역사를 보존하고 창조합니다.
             </motion.p>
 
             {/* 후원하기 버튼 */}
