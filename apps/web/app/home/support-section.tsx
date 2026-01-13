@@ -11,7 +11,11 @@ export function SupportSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   return (
-    <section ref={sectionRef} className="relative flex w-full items-center justify-center py-16 text-center md:py-12">
+    <section
+      ref={sectionRef}
+      className="relative flex w-full items-center justify-center py-16 text-center md:py-12"
+      style={{ backgroundColor: '#0F0F19' }}
+    >
       <div className="container relative z-10 mx-auto mt-10 w-full max-w-3xl px-6">
         {/* 아이콘 장식 */}
         <motion.div

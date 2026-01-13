@@ -2,7 +2,7 @@
 
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
-import { HeartHandshakeIcon, ArrowBigDownDash } from 'lucide-react'
+import { HeartHandshakeIcon, ChevronDown } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useRef } from 'react'
@@ -34,7 +34,7 @@ export function CtaSection() {
               걷고 싶은 도시가
               <br />
               <motion.span
-                className="text-blue-400"
+                className="text-violet-500"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -98,9 +98,10 @@ export function CtaSection() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-0"
         >
-          <ArrowBigDownDash className="size-32 text-slate-200 transition-colors hover:text-white md:size-32" />
+          <ChevronDown className="size-32 text-slate-200 transition-colors hover:text-white md:size-32" />
+          <ChevronDown className="-mt-22 size-32 text-slate-200 opacity-50 transition-colors hover:text-white md:size-32" />
         </motion.div>
       </motion.div>
     </section>
