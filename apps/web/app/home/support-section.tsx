@@ -13,10 +13,10 @@ export function SupportSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center py-16 text-center md:py-12"
+      className="relative flex w-full items-center justify-center border-t py-16 text-center md:py-12"
       style={{ backgroundColor: '#0F0F19' }}
     >
-      <div className="container relative z-10 mx-auto mt-10 w-full max-w-3xl px-6">
+      <div className="container relative z-10 mx-auto w-full max-w-3xl px-6">
         {/* 아이콘 장식 */}
         <motion.div
           className="mb-6 flex justify-center gap-6"

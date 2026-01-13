@@ -61,7 +61,10 @@ export function ActivitiesSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative flex w-full items-center justify-center py-12 text-center md:py-16">
+    <section
+      ref={sectionRef}
+      className="relative flex w-full items-center justify-center border-t py-12 text-center md:py-16"
+    >
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
