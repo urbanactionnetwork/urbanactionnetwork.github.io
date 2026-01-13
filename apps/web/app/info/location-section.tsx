@@ -15,7 +15,7 @@ export function LocationSection() {
           </span>
         </p>
         <img
-          src="/placeholder.svg"
+          src="/location.jpg"
           alt="도시연대 위치 안내 이미지"
           className="bg-muted/40 mx-auto block w-full rounded-md"
         />

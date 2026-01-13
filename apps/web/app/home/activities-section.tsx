@@ -124,13 +124,13 @@ export function ActivitiesSection() {
                       />
                     </div>
                     <CardHeader className="relative">
-                      <div className="absolute inset-0 shadow-sm backdrop-blur-md backdrop-saturate-150" />
+                      <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
                       <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
                         <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="relative flex-1">
-                      <div className="absolute inset-0 shadow-sm backdrop-blur-md backdrop-saturate-150" />
+                      <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
                       <div className="relative z-10 py-4 text-left text-sm text-slate-700">
                         <p className="line-clamp-4">{item.description}</p>
                       </div>
