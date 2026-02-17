@@ -1,6 +1,30 @@
 {
   "data": [
     {
+      "id": 7,
+      "title": "도시재생",
+      "description": "2011년, 도시연대는 \"고치며 살자\"라는 화두를 던졌다. 재개발이 투기판이 되어 원주민을 쫓아내는 현실 앞에서, 우리는 집을 고치고 골목을 다듬으며 '정주(定住)의 권리'를 지키는 길을 택했다. 그것은 도시를 상품이 아닌 '삶터'로 되돌리자는 조용한 선언이었다.",
+      "thumbnail": "https://www.notion.so/image/attachment%3A944fe5b2-567d-40b2-ae03-9324c8303cfb%3ASDC11588.jpg?table=block&id=304dafb0-c6a5-80ac-88ea-d7c0f4e04ef6&spaceId=5c55bc1a-b03a-4ac8-9085-ed03354a5157&width=2000&userId=0785cda8-3faf-4582-9a03-deb23b70f1c0&cache=v2",
+      "url": "https://urbanactionnetwork.notion.site/2e3dafb0c6a581b9a81ff5b8a2de8ce3?source=copy_link",
+      "postDate": "2026-02-12"
+    },
+    {
+      "id": 6,
+      "title": "도시기록",
+      "description": "도시는 사람들의 몸이 부딪치며 만들어내는 텍스트다. 우리는 재개발로 사라질 위기에 처한 골목의 담벼락, 오래된 노포 주인의 손때 묻은 도구, 그리고 그 공간을 점유했던 사람들의 구술 생애, 그리고 그들이 살아가는 생태계를 기록한다. 이는 물리적 공간을 넘어 장소성을 저장하는 일이다.",
+      "thumbnail": "https://www.notion.so/image/attachment%3Ae69ba36a-5479-492d-aa3d-d17781ecf002%3A2025-04-02_10_38_45.png?table=block&id=303dafb0-c6a5-8056-80bb-e48bf05d05ef&spaceId=5c55bc1a-b03a-4ac8-9085-ed03354a5157&width=2000&userId=0785cda8-3faf-4582-9a03-deb23b70f1c0&cache=v2",
+      "url": "https://urbanactionnetwork.notion.site/2e3dafb0c6a581448a2ff7cff963a313?source=copy_link",
+      "postDate": "2026-02-12"
+    },
+    {
+      "id": 5,
+      "title": "통합놀이터만들기",
+      "description": "놀이터의 턱을 없애는 것을 넘어, 아이들의 마음속에 있는 편견의 턱을 없애고자 합니다. 모든 아이의 '놀 권리'가 동등하게 보장되는 공간, 그것이 도시연대가 꿈꾸는 통합놀이터입니다.",
+      "thumbnail": "https://www.notion.so/image/attachment%3A67d0be0e-b446-45c9-a4fc-e6d2916ffb12%3Aimage.png?table=block&id=303dafb0-c6a5-80f4-bb6d-e6b86f269c71&spaceId=5c55bc1a-b03a-4ac8-9085-ed03354a5157&width=2000&userId=0785cda8-3faf-4582-9a03-deb23b70f1c0&cache=v2",
+      "url": "https://urbanactionnetwork.notion.site/2e3dafb0c6a581e0adb1e20a77f5e0cb?source=copy_link",
+      "postDate": "2026-02-12"
+    },
+    {
       "id": 4,
       "title": "서울광장만들기 운동과 보행조례 제정",
       "description": "1990년대 중반까지 서울은 '자동차의 도시'였습니다. 숭례문에서 경복궁까지 횡단보도가 하나도 없던 시절, 사람은 육교와 지하도로 밀려나고 도로는 오직 자동차만을 위한 성역이었습니다.",
