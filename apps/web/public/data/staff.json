@@ -32,7 +32,7 @@
       "name": "김은희",
       "mail": "",
       "imageUrl": "",
-      "affiliation": "도시연대 정책연구센터장",
+      "affiliation": "전 도시연대 정책연구센터장",
       "group": "이사"
     },
     {
@@ -134,53 +134,39 @@
       "group": "운영위원회"
     },
     {
-      "name": "안현찬",
-      "mail": "",
-      "imageUrl": "",
-      "affiliation": "걷고싶은도시 편집위원장",
-      "group": "편집위원"
-    },
-    {
       "name": "소준철",
       "mail": "",
       "imageUrl": "",
+      "affiliation": "걷고싶은도시 편집위원장",
+      "group": "편집위원회"
+    },
+    {
+      "name": "안현찬",
+      "mail": "",
+      "imageUrl": "",
       "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
+      "group": "편집위원회"
     },
     {
       "name": "이민재",
       "mail": "",
       "imageUrl": "",
       "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
+      "group": "편집위원회"
     },
     {
       "name": "이채원",
       "mail": "",
       "imageUrl": "",
       "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
-    },
-    {
-      "name": "조은혜",
-      "mail": "",
-      "imageUrl": "",
-      "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
-    },
-    {
-      "name": "최성용",
-      "mail": "",
-      "imageUrl": "",
-      "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
+      "group": "편집위원회"
     },
     {
       "name": "정선경",
       "mail": "",
       "imageUrl": "",
       "affiliation": "걷고싶은도시 편집위원",
-      "group": "편집위원"
+      "group": "편집위원회"
     },
     {
       "name": "맹기돈",
@@ -200,7 +186,7 @@
       "name": "김은희",
       "mail": "",
       "imageUrl": "",
-      "affiliation": "도시연대 정책연구센터장",
+      "affiliation": "전 도시연대 정책연구센터장",
       "group": "정책연구센터"
     },
     {
