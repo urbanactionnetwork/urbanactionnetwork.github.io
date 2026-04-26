@@ -93,7 +93,7 @@ export function ActivitiesSection() {
         ) : error ? (
           <div className="text-muted-foreground text-sm">{error}</div>
         ) : (
-          <div className="grid grid-cols-[repeat(auto-fit,284px)] justify-center gap-2.5">
+          <div className="grid grid-cols-[repeat(auto-fit,284px)] justify-center gap-5">
               {items.map((item, index) => {
                 const patternBg = PATTERN_BACKGROUNDS[index % PATTERN_BACKGROUNDS.length]
                 return (
@@ -129,20 +129,12 @@ export function ActivitiesSection() {
                           <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="relative flex-1">
+                      <CardContent className="relative h-[112px] flex-none">
                         <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                        <div className="relative z-10 py-4 text-left text-sm text-slate-700">
-                          <p className="line-clamp-4">{item.description}</p>
+                        <div className="relative z-10 h-full px-0 py-3 text-left text-sm text-slate-700">
+                          <p className="line-clamp-4 leading-5">{item.description}</p>
                         </div>
                       </CardContent>
-                      <CardFooter>
-                        <Button
-                          variant="secondary"
-                          className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
-                        >
-                          자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                        </Button>
-                      </CardFooter>
                     </Card>
                   </Link>
                 )
