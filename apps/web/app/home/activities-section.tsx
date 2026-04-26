@@ -126,7 +126,7 @@ export function ActivitiesSection() {
                       <CardHeader className="relative">
                         <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
                         <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
-                          <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
+                          <p className="line-clamp-2 h-14 text-left text-lg leading-7 text-slate-900">{item.title}</p>
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="relative h-[112px] flex-none">
