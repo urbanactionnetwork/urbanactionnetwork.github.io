@@ -65,7 +65,7 @@ export function ActivitiesSection() {
       ref={sectionRef}
       className="relative flex w-full items-center justify-center border-t py-12 text-center md:py-16"
     >
-      <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
+      <div className="container relative z-10 mx-auto w-full max-w-[1440px] px-4">
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-bold text-slate-200 md:text-2xl">주요활동</h2>
@@ -79,74 +79,74 @@ export function ActivitiesSection() {
           </Link>
         </div>
         {loading ? (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {Array.from({ length: 3 }).map((_, idx) => (
-              <div key={idx} className="flex h-full flex-col space-y-3">
-                <Skeleton className="h-48 w-full rounded-xl" />
-                <div className="space-y-2">
-                  <Skeleton className="h-8 w-full" />
-                  <Skeleton className="h-8 w-1/2" />
+          <div className="grid grid-cols-[repeat(auto-fit,284px)] justify-center gap-2.5">
+              {Array.from({ length: 3 }).map((_, idx) => (
+                <div key={idx} className="flex h-full flex-col space-y-3">
+                  <Skeleton className="h-48 w-full rounded-xl" />
+                  <div className="space-y-2">
+                    <Skeleton className="h-8 w-full" />
+                    <Skeleton className="h-8 w-1/2" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         ) : error ? (
           <div className="text-muted-foreground text-sm">{error}</div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {items.map((item, index) => {
-              const patternBg = PATTERN_BACKGROUNDS[index % PATTERN_BACKGROUNDS.length]
-              return (
-                <Link
-                  key={item.id}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-                >
-                  <Card className="group relative flex h-full cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
-                    {/* 패턴 배경 이미지 */}
-                    <div
-                      className="pointer-events-none absolute inset-0 z-0"
-                      style={{
-                        backgroundImage: `url(${patternBg})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        filter: 'blur(20px)',
-                      }}
-                    />
-                    <div className="relative aspect-[16/9] w-full overflow-hidden shadow-md">
-                      <Image
-                        src={item.thumbnail}
-                        alt="thumbnail"
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+          <div className="grid grid-cols-[repeat(auto-fit,284px)] justify-center gap-2.5">
+              {items.map((item, index) => {
+                const patternBg = PATTERN_BACKGROUNDS[index % PATTERN_BACKGROUNDS.length]
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full w-[284px] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                  >
+                    <Card className="group relative flex h-[427px] w-[284px] cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
+                      {/* 패턴 배경 이미지 */}
+                      <div
+                        className="pointer-events-none absolute inset-0 z-0"
+                        style={{
+                          backgroundImage: `url(${patternBg})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          filter: 'blur(20px)',
+                        }}
                       />
-                    </div>
-                    <CardHeader className="relative">
-                      <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                      <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
-                        <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="relative flex-1">
-                      <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                      <div className="relative z-10 py-4 text-left text-sm text-slate-700">
-                        <p className="line-clamp-4">{item.description}</p>
+                      <div className="relative aspect-[16/9] w-full overflow-hidden shadow-md">
+                        <Image
+                          src={item.thumbnail}
+                          alt="thumbnail"
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
                       </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button
-                        variant="secondary"
-                        className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
-                      >
-                        자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </Link>
-              )
-            })}
+                      <CardHeader className="relative">
+                        <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
+                        <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
+                          <p className="line-clamp-2 min-h-[3rem] text-left text-lg text-slate-900">{item.title}</p>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="relative flex-1">
+                        <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
+                        <div className="relative z-10 py-4 text-left text-sm text-slate-700">
+                          <p className="line-clamp-4">{item.description}</p>
+                        </div>
+                      </CardContent>
+                      <CardFooter>
+                        <Button
+                          variant="secondary"
+                          className="text-foreground/90 group-hover:text-foreground pointer-events-none ml-auto gap-1.5 font-semibold transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg"
+                        >
+                          자세히 보기 <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  </Link>
+                )
+              })}
           </div>
         )}
       </div>
