@@ -1,8 +1,9 @@
 import { IdCard, User, MapPin, Phone, Mail, Banknote, Copyright as CopyrightIcon } from 'lucide-react'
+import { cn } from '@workspace/ui/lib/utils'
 
-export function SiteFooter() {
+export function SiteFooter({ className }: { className?: string }) {
   return (
-    <footer className="bg-background mt-auto border-t">
+    <footer className={cn('bg-background mt-auto border-t', className)}>
       <div className="text-muted-foreground container mx-auto w-full max-w-6xl px-4 py-10 text-sm leading-6">
         <div className="grid grid-cols-1 gap-2 text-slate-200">
           <p>

@@ -60,18 +60,21 @@ export function StaffSection() {
                     {map.get(g)!.map((member) => (
                       <li
                         key={`${member.name}-${member.mail}`}
-                        className="border-muted bg-card text-card-foreground hover:border-foreground/20 group rounded-lg border p-4 shadow-sm transition-colors"
+                        className="text-card-foreground hover:border-foreground/20 group rounded-lg border border-muted p-4 shadow-sm transition-colors"
+                        style={{
+                          background: 'radial-gradient(circle, rgb(246, 251, 255) 0%, rgb(206, 233, 255) 100%)',
+                        }}
                       >
-                        <div className="min-w-0 space-y-2">
-                          {/* 이름 */}
-                          <p className="flex items-center gap-2 truncate text-base font-medium">
-                            <User2 className="text-muted-foreground size-4 shrink-0" />
+                        <div className="min-w-0 space-y-2 text-sm">
+                          {/* 이름: 소속(기준 1em)보다 1.5배 */}
+                          <p className="text-sky-600 flex items-center gap-2 truncate text-[1.5em] font-bold">
+                            <User2 className="size-6 shrink-0" />
                             <span className="truncate">{member.name}</span>
                           </p>
 
                           {/* 소속 */}
                           {member.affiliation ? (
-                            <p className="text-muted-foreground flex items-center gap-2 truncate text-sm">
+                            <p className="text-sky-500 flex items-center gap-2 truncate font-medium">
                               <Building2 className="size-4 shrink-0" />
                               <span className="truncate">{member.affiliation}</span>
                             </p>
@@ -81,7 +84,7 @@ export function StaffSection() {
                           {member.mail ? (
                             <a
                               href={`mailto:${member.mail}`}
-                              className="text-muted-foreground hover:text-foreground block items-center gap-2 truncate text-sm underline-offset-2 hover:underline"
+                              className="text-muted-foreground hover:text-foreground block items-center gap-2 truncate underline-offset-2 hover:underline"
                             >
                               <Mail className="size-4 shrink-0" />
                               <span className="truncate">{member.mail}</span>

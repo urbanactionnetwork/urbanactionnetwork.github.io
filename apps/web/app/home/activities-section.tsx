@@ -3,19 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { Button } from '@workspace/ui/components/button.tsx'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@workspace/ui/components/card.tsx'
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card.tsx'
 import { Skeleton } from '@workspace/ui/components/skeleton.tsx'
-import { ArrowRightIcon, ChevronRightIcon, SparklesIcon } from 'lucide-react'
+import { ChevronRightIcon } from 'lucide-react'
 import { fetchTopActivities, type Activities } from '@/app/activities/activitiesAPI.ts'
-import { useInView } from 'motion/react'
 
 export interface ActivitiesItem {
   id: number
@@ -25,12 +16,7 @@ export interface ActivitiesItem {
   url: string
 }
 
-const PATTERN_BACKGROUNDS = [
-  '/patterns/card-bg-3.svg',
-  '/patterns/card-bg-2.svg',
-  '/patterns/card-bg-4.svg',
-  '/patterns/card-bg-1.svg',
-]
+const PATTERN_BACKGROUNDS = ['/patterns/card-bg-1.svg', '/patterns/card-bg-2.svg', '/patterns/card-bg-3.svg']
 
 export function ActivitiesSection() {
   const [items, setItems] = useState<ActivitiesItem[]>([])
@@ -63,7 +49,7 @@ export function ActivitiesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center border-t py-12 text-center md:py-16"
+      className="relative flex w-full items-center justify-center bg-[#0F0F19] py-12 text-center md:py-16"
     >
       <div className="container relative z-10 mx-auto w-full max-w-[1440px] px-4">
         <div className="mb-6 flex items-center justify-between">
@@ -104,7 +90,7 @@ export function ActivitiesSection() {
                     rel="noopener noreferrer"
                     className="block h-full w-[284px] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
-                    <Card className="group relative flex h-[427px] w-[284px] cursor-pointer flex-col overflow-hidden !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
+                    <Card className="group relative flex w-[284px] cursor-pointer flex-col gap-0 overflow-hidden rounded-xl !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl" style={{ paddingBottom: 0 }}>
                       {/* 패턴 배경 이미지 */}
                       <div
                         className="pointer-events-none absolute inset-0 z-0"
@@ -115,7 +101,7 @@ export function ActivitiesSection() {
                           filter: 'blur(20px)',
                         }}
                       />
-                      <div className="relative aspect-[16/9] w-full overflow-hidden shadow-md">
+                      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden shadow-md">
                         <Image
                           src={item.thumbnail}
                           alt="thumbnail"
@@ -123,16 +109,11 @@ export function ActivitiesSection() {
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
-                      <CardHeader className="relative">
+                      <CardContent className="relative min-h-[100px] flex-none p-0">
                         <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                        <CardTitle className="group-hover:text-primary relative z-10 py-4 transition-colors duration-300">
-                          <p className="line-clamp-2 h-14 text-left text-lg leading-7 text-slate-900">{item.title}</p>
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="relative h-[112px] flex-none">
-                        <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                        <div className="relative z-10 h-full px-0 py-3 text-left text-sm text-slate-700">
-                          <p className="line-clamp-4 leading-5">{item.description}</p>
+                        <div className="relative z-10 h-full p-4 text-left text-sm text-slate-700">
+                          <p className="line-clamp-1 text-left text-lg leading-7 text-slate-900">{item.title}</p>
+                          <p className="line-clamp-4 leading-5 mt-2 h-20">{item.description}</p>
                         </div>
                       </CardContent>
                     </Card>

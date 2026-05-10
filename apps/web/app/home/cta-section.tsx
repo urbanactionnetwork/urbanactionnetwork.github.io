@@ -4,7 +4,6 @@ import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
 import { HeartHandshakeIcon, ChevronDown } from 'lucide-react'
 import { motion } from 'motion/react'
-import Image from 'next/image'
 import { useRef } from 'react'
 
 export function CtaSection() {
@@ -20,7 +19,10 @@ export function CtaSection() {
   }
 
   return (
-    <section ref={sectionRef} className="relative isolate flex min-h-screen flex-col overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-[#0F0F19]"
+    >
       <div className="container mx-auto flex w-full max-w-7xl flex-1 items-center justify-center px-4 py-16 md:py-20 lg:py-24">
         <div className="w-full">
           {/* 메인 타이틀과 CTA 버튼을 같은 행에 배치 */}
@@ -53,15 +55,27 @@ export function CtaSection() {
               <br />
               우리는 시민의 힘으로 도시의 문화와 역사를 보존하고 창조합니다.
             </motion.p>
+          </div>
 
-            {/* 후원하기 버튼 */}
+          {/* 후원하기 버튼 (가로 최대 700px) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+            className="mx-auto flex w-full max-w-[700px] justify-center px-4 pb-20 md:pb-24 lg:pb-32"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-              className="pb-20 md:pb-24 lg:pb-32"
+              animate={{ x: [0, -6, 6, -6, 6, 0] }}
+              transition={{
+                duration: 0.45,
+                repeat: Infinity,
+                repeatDelay: 2.55,
+                ease: 'easeInOut',
+              }}
+              className="block w-full"
             >
               <motion.div
+                className="w-full"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -69,15 +83,15 @@ export function CtaSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="h-[60px] gap-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-lg text-white shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-teal-700 hover:shadow-xl"
+                  className="h-[60px] w-full max-w-none gap-4 rounded-xl border-0 bg-[#68cf00] px-8 text-lg font-semibold text-gray-900 shadow-lg transition-colors hover:bg-[#5dcc00]"
                 >
-                  <Link href="/support">
-                    <HeartHandshakeIcon className="size-7" /> 후원하기
+                  <Link href="/support" className="w-full">
+                    <HeartHandshakeIcon className="size-7 shrink-0" /> 후원하기
                   </Link>
                 </Button>
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
