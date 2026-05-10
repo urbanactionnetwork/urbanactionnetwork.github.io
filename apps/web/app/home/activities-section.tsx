@@ -49,7 +49,7 @@ export function ActivitiesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center border-t border-white/10 bg-[#0F0F19] py-12 text-center md:py-16"
+      className="relative flex w-full items-center justify-center bg-[#0F0F19] py-12 text-center md:py-16"
     >
       <div className="container relative z-10 mx-auto w-full max-w-[1440px] px-4">
         <div className="mb-6 flex items-center justify-between">
@@ -90,7 +90,7 @@ export function ActivitiesSection() {
                     rel="noopener noreferrer"
                     className="block h-full w-[284px] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                   >
-                    <Card className="group relative flex w-[284px] cursor-pointer flex-col gap-0 overflow-hidden rounded-xl !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl">
+                    <Card className="group relative flex w-[284px] cursor-pointer flex-col gap-0 overflow-hidden rounded-xl !bg-white !text-gray-900 transition-all duration-300 hover:shadow-xl" style={{ paddingBottom: 0 }}>
                       {/* 패턴 배경 이미지 */}
                       <div
                         className="pointer-events-none absolute inset-0 z-0"
@@ -109,16 +109,11 @@ export function ActivitiesSection() {
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
-                      <CardHeader className="relative shrink-0 space-y-0 p-0">
-                        <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                        <CardTitle className="group-hover:text-primary relative z-10 p-0 transition-colors duration-300">
-                          <p className="line-clamp-1 text-left text-lg leading-7 text-slate-900">{item.title}</p>
-                        </CardTitle>
-                      </CardHeader>
                       <CardContent className="relative min-h-[100px] flex-none p-0">
                         <div className="absolute inset-0 shadow-sm saturate-150 backdrop-blur-xl backdrop-saturate-150" />
-                        <div className="relative z-10 h-full p-0 text-left text-sm text-slate-700">
-                          <p className="line-clamp-4 leading-5">{item.description}</p>
+                        <div className="relative z-10 h-full p-4 text-left text-sm text-slate-700">
+                          <p className="line-clamp-1 text-left text-lg leading-7 text-slate-900">{item.title}</p>
+                          <p className="line-clamp-4 leading-5 mt-2 h-20">{item.description}</p>
                         </div>
                       </CardContent>
                     </Card>

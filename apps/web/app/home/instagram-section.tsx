@@ -146,7 +146,7 @@ export function InstagramSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center border-t border-white/10 bg-[#0F0F19] py-8 text-center md:py-12"
+      className="relative flex w-full items-center justify-center bg-[#0F0F19] py-8 text-center md:py-12"
     >
       <div className="container relative z-10 mx-auto w-full max-w-6xl px-4">
         <div className="mb-4 flex items-center justify-between gap-2">
