@@ -60,18 +60,21 @@ export function StaffSection() {
                     {map.get(g)!.map((member) => (
                       <li
                         key={`${member.name}-${member.mail}`}
-                        className="border-muted bg-card text-card-foreground hover:border-foreground/20 group rounded-lg border p-4 shadow-sm transition-colors"
+                        className="text-card-foreground hover:border-foreground/20 group rounded-lg border border-muted p-4 shadow-sm transition-colors"
+                        style={{
+                          background: 'radial-gradient(circle, rgb(255, 251, 255) 0%, rgb(250, 227, 245) 100%)',
+                        }}
                       >
                         <div className="min-w-0 space-y-2">
                           {/* 이름 */}
-                          <p className="flex items-center gap-2 truncate text-base font-medium">
+                          <p className="flex items-center gap-2 truncate text-base font-bold">
                             <User2 className="text-muted-foreground size-4 shrink-0" />
                             <span className="truncate">{member.name}</span>
                           </p>
 
                           {/* 소속 */}
                           {member.affiliation ? (
-                            <p className="text-muted-foreground flex items-center gap-2 truncate text-sm">
+                            <p className="text-muted-foreground flex items-center gap-2 truncate text-sm font-medium">
                               <Building2 className="size-4 shrink-0" />
                               <span className="truncate">{member.affiliation}</span>
                             </p>

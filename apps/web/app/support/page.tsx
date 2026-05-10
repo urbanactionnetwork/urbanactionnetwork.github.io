@@ -1,6 +1,7 @@
 'use client'
 
-import { HeartHandshakeIcon, ExternalLink } from 'lucide-react'
+import { HeartHandshakeIcon } from 'lucide-react'
+import { motion } from 'motion/react'
 import { SiteFooter } from '@/components/site-footer'
 import { Button } from '@workspace/ui/components/button.tsx'
 import Link from 'next/link'
@@ -10,22 +11,52 @@ export default function SupportPage() {
     <>
       <section className="container mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
         {/* Header & CTA Button */}
-        <div className="mb-12 flex flex-col gap-6 border-b pb-8 md:flex-row md:items-center md:justify-between">
+        <div className="mb-12 flex flex-col gap-8 border-b pb-8">
           <div className="flex items-center gap-3">
             <HeartHandshakeIcon className="text-primary size-8" />
             <h1 className="text-foreground text-3xl font-bold tracking-tight md:text-4xl">회원가입 및 후원</h1>
           </div>
-          <Button asChild size="lg" className="w-full md:w-auto">
-            <Link
-              href="https://mrmweb.hsit.co.kr/v2/default.aspx?Server=/ugLwAfaWqhb/koN36wxzw==&action=join"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gap-2"
+
+          {/* CTA와 동일한 후원하기 버튼 (가로 최대 700px) */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+            className="mx-auto flex w-full max-w-[700px] justify-center px-4"
+          >
+            <motion.div
+              animate={{ x: [0, -6, 6, -6, 6, 0] }}
+              transition={{
+                duration: 0.45,
+                repeat: Infinity,
+                repeatDelay: 2.55,
+                ease: 'easeInOut',
+              }}
+              className="block w-full"
             >
-              후원하기
-              <ExternalLink className="size-4" />
-            </Link>
-          </Button>
+              <motion.div
+                className="w-full"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-[60px] w-full max-w-none gap-4 rounded-xl border-0 bg-[#68cf00] px-8 text-lg font-semibold text-gray-900 shadow-lg transition-colors hover:bg-[#5dcc00]"
+                >
+                  <Link
+                    href="https://mrmweb.hsit.co.kr/v2/default.aspx?Server=/ugLwAfaWqhb/koN36wxzw==&action=join"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <HeartHandshakeIcon className="size-7 shrink-0" /> 후원하기
+                  </Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
         <div className="text-muted-foreground space-y-16 text-lg leading-relaxed">

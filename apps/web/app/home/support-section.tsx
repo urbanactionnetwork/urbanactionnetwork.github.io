@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Button } from '@workspace/ui/components/button.tsx'
-import { HeartHandshakeIcon, Sparkles, Users, HandHeart } from 'lucide-react'
+import { HeartHandshakeIcon, Users, HandHeart } from 'lucide-react'
 
 export function SupportSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -13,11 +13,11 @@ export function SupportSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex w-full items-center justify-center border-t py-16 text-center md:py-12"
-      style={{ backgroundColor: '#0F0F19' }}
+      className="relative flex w-full items-center justify-center border-t border-white/10 bg-[#0F0F19] py-16 text-center md:py-12"
     >
-      <div className="container relative z-10 mx-auto w-full max-w-3xl px-6">
-        {/* 아이콘 장식 */}
+      <div className="container relative z-10 mx-auto w-full px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* 아이콘 장식 */}
         <motion.div
           className="mb-6 flex justify-center gap-6"
           initial={{ opacity: 0, y: 20 }}
@@ -71,27 +71,40 @@ export function SupportSection() {
           <br />
           지지와 동참을 부탁드립니다.
         </motion.p>
+        </div>
 
         <motion.div
-          className="mt-8 flex justify-center"
+          className="mx-auto mt-8 flex w-full max-w-[700px] justify-center px-4"
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
         >
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            animate={{ x: [0, -6, 6, -6, 6, 0] }}
+            transition={{
+              duration: 0.45,
+              repeat: Infinity,
+              repeatDelay: 2.55,
+              ease: 'easeInOut',
+            }}
+            className="block w-full"
           >
-            <Button
-              asChild
-              size="lg"
-              className="h-[60px] gap-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-lg text-white shadow-lg transition-all duration-300 hover:from-cyan-700 hover:to-teal-700 hover:shadow-xl"
+            <motion.div
+              className="w-full"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
-              <Link href="/support">
-                <HeartHandshakeIcon className="size-7" /> 후원하기
-              </Link>
-            </Button>
+              <Button
+                asChild
+                size="lg"
+                className="h-[60px] w-full max-w-none gap-4 rounded-xl border-0 bg-[#68cf00] px-8 text-lg font-semibold text-gray-900 shadow-lg transition-colors hover:bg-[#5dcc00]"
+              >
+                <Link href="/support" className="w-full">
+                  <HeartHandshakeIcon className="size-7 shrink-0" /> 후원하기
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
