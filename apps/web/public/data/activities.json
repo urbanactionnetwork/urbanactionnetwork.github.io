@@ -1,10 +1,11 @@
+``` json
 {
   "data": [
     {
       "id": 8,
       "title": "공공공간 공개공지",
       "description": "공개공지는 제도와 정책을 통해 개인의 이익과 사회의 공공성을 균형있게 묶어내는 사례로, 그 운영방식과 설계, 시민의 활용 방식 등을 탐구하는 일은 도시 속에서 ‘누가, 어떻게, 무엇을 위해 공간을 만들고 사용하는가’라는 근본적 질문과 연결됩니다.",
-      "thumbnail": "https://img.notionusercontent.com/s3/prod-files-secure%2F5c55bc1a-b03a-4ac8-9085-ed03354a5157%2F67d0be0e-b446-45c9-a4fc-e6d2916ffb12%2Fimage.png/size/w=1410?exp=1778825599&sig=iAyhw7GAvS8H4fzd_zzRhSaD97yrvw5Bk-WnKD5wPFU&id=303dafb0-c6a5-80f4-bb6d-e6b86f269c71&table=block&mtd=so",
+      "thumbnail": "https://img.notionusercontent.com/s3/prod-files-secure/5c55bc1a-b03a-4ac8-9085-ed03354a5157/d30735f0-3c4c-4cad-8f99-e894f2675e28/KakaoTalk_20250927_143633161_07.jpg/size/w=2000?exp=1778824375&sig=rZCigeSPEv9nwsruO3KW59yKJuz_ASGENy6TbYM7qN8&id=33ddafb0-c6a5-8081-b995-c3254bdefd5d&table=block&userId=0785cda8-3faf-4582-9a03-deb23b70f1c0&mtd=so",
       "url": "https://urbanactionnetwork.notion.site/2e3dafb0c6a581d28893d4c7c4caedeb?source=copy_link",
       "postDate": "2026-04-09"
     },
@@ -66,3 +67,5 @@
     }
   ]
 }
+
+```
