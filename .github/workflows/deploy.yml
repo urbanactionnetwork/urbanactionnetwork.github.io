@@ -71,6 +71,9 @@ jobs:
       
     - name: Build
       run: pnpm build
+
+    - name: Create CNAME for custom domain
+      run: echo "www.dosi.or.kr" > apps/web/out/CNAME
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
