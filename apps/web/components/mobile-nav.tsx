@@ -75,7 +75,7 @@ function MobileNavOverlay() {
 
         <div className="border-border flex h-16 shrink-0 items-center justify-between border-b px-4">
           <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-            <Image src="/logo.png" alt="logo" width={0} height={0} className="h-8 w-8" priority />
+            <Image src="/logo.png" alt="logo" width={0} height={0} className="h-8 w-8 invert" priority />
             <span className="sr-only">홈으로</span>
           </Link>
           <Button
