@@ -16,8 +16,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white/90">
       <div className="container relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4">
         <Link href="/" className="absolute left-4 flex items-center gap-2">
-          <Image src="/logo.png" alt="logo" width={0} height={0} className="h-8 w-8 lg:hidden" priority />
-          <Image src="/logo-text.png" alt="logo" width={0} height={0} className="hidden h-8 w-auto lg:block" priority />
+          <Image src="/logo.png" alt="logo" width={0} height={0} className="h-8 w-8 hidden md:block lg:hidden" priority />
+          <Image src="/logo-text.png" alt="logo" width={0} height={0} className="h-8 w-auto block md:hidden lg:block" priority />
           <span className="sr-only">홈으로</span>
         </Link>
         <NavigationMenu className="hidden md:flex">
