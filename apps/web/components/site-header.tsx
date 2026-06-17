@@ -17,7 +17,7 @@ export function SiteHeader() {
       <div className="container relative mx-auto flex h-16 max-w-6xl items-center justify-center px-4">
         <Link href="/" className="absolute left-4 flex items-center gap-2">
           <Image src="/logo.png" alt="logo" width={0} height={0} className="h-8 w-8 hidden md:block lg:hidden" priority />
-          <Image src="/logo-text.png" alt="logo" width={0} height={0} className="h-8 w-auto block md:hidden lg:block" priority />
+          <Image src="/logo-text.png" alt="logo" width={0} height={0} className="h-auto w-72 block md:hidden lg:block" priority />
           <span className="sr-only">홈으로</span>
         </Link>
         <NavigationMenu className="hidden md:flex">
