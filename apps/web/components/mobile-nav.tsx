@@ -83,7 +83,7 @@ function MobileNavOverlay() {
             aria-label="메뉴 닫기"
             className="text-foreground hover:bg-accent/50 hover:text-foreground"
           >
-            <X />
+            <X style={{ width: '24px', height: '24px' }} />
           </Button>
         </div>
 
@@ -176,7 +176,7 @@ export function MobileNavTrigger({ className }: { className?: string }) {
       onClick={() => setOpen(true)}
       aria-label="메뉴 열기"
     >
-      <Menu />
+      <Menu style={{ width: '24px', height: '24px' }} />
     </Button>
   )
 }
