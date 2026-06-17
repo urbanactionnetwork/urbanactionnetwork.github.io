@@ -14,8 +14,6 @@ import { MAIN_NAV_ITEMS, type NavItem } from '@/lib/site-nav'
 type MobileNavContextValue = {
   open: boolean
   setOpen: (open: boolean) => void
-  subNavItems: NavItem[]
-  setSubNavItems: (items: NavItem[]) => void
 }
 
 const MobileNavContext = React.createContext<MobileNavContextValue | null>(null)
@@ -58,7 +56,7 @@ function NavLink({
 }
 
 function MobileNavOverlay() {
-  const { open, setOpen, subNavItems } = useMobileNavContext()
+  const { open, setOpen } = useMobileNavContext()
   const pathname = usePathname()
 
   const closeMenu = React.useCallback(() => {
@@ -92,8 +90,7 @@ function MobileNavOverlay() {
         <nav className="flex-1 overflow-y-auto px-2 py-4">
           <ul className="space-y-1">
             {MAIN_NAV_ITEMS.map((item) => {
-              const isInfoSection = item.href === '/info'
-              const showSubNav = isInfoSection && subNavItems.length > 0
+              const showSubNav = item.subNavItems && item.subNavItems.length > 0
               const isMainActive = isActivePath(pathname, item.href)
 
               return (
@@ -101,12 +98,12 @@ function MobileNavOverlay() {
                   <NavLink
                     href={item.href}
                     label={item.label}
-                    active={isMainActive && !showSubNav}
+                    active={isMainActive}
                     onNavigate={closeMenu}
                   />
                   {showSubNav ? (
                     <ul className="mt-1 space-y-1">
-                      {subNavItems.map((subItem) => (
+                      {item.subNavItems?.map((subItem) => (
                         <li key={subItem.href}>
                           <NavLink
                             href={subItem.href}
@@ -141,7 +138,6 @@ function useMobileNavContext() {
 export function MobileNavProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [open, setOpen] = React.useState(false)
-  const [subNavItems, setSubNavItems] = React.useState<NavItem[]>([])
 
   React.useEffect(() => {
     setOpen(false)
@@ -150,11 +146,11 @@ export function MobileNavProvider({ children }: { children: React.ReactNode }) {
   const value = React.useMemo(
     () => ({
       open,
-      setOpen,
-      subNavItems,
-      setSubNavItems,
+      setOpen
+
+
     }),
-    [open, subNavItems]
+    [open]
   )
 
   return (

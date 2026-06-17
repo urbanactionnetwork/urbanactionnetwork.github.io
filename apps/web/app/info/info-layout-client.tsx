@@ -53,16 +53,10 @@ function InfoSidebar() {
 export function InfoLayoutClient({ children }: { children: React.ReactNode }) {
   const isMobile = useIsMobile()
   const [mounted, setMounted] = React.useState(false)
-  const { setSubNavItems } = useMobileNav()
 
   React.useEffect(() => {
     setMounted(true)
   }, [])
-
-  React.useEffect(() => {
-    setSubNavItems(INFO_SUB_NAV_ITEMS)
-    return () => setSubNavItems([])
-  }, [setSubNavItems])
 
   const showSidebar = mounted && !isMobile
 
