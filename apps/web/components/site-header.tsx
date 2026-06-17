@@ -8,6 +8,8 @@ import {
   NavigationMenuList,
 } from '@workspace/ui/components/navigation-menu'
 import Image from 'next/image'
+import { MobileNavTrigger } from '@/components/mobile-nav'
+import { MAIN_NAV_ITEMS } from '@/lib/site-nav'
 
 export function SiteHeader() {
   return (
@@ -18,30 +20,18 @@ export function SiteHeader() {
           <Image src="/logo-text.png" alt="logo" width={0} height={0} className="hidden h-8 w-auto lg:block" priority />
           <span className="sr-only">홈으로</span>
         </Link>
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
-                <Link href="/info">소개</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
-                <Link href="/activities">주요활동</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
-                <Link href="/news">공지사항</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
-                <Link href="/support">회원가입 및 후원</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+            {MAIN_NAV_ITEMS.map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <NavigationMenuLink asChild className="p-3 font-bold text-slate-900">
+                  <Link href={item.href}>{item.label}</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <MobileNavTrigger className="absolute right-4 md:hidden" />
       </div>
     </header>
   )
