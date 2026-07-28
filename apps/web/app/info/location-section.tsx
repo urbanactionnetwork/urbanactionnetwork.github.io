@@ -52,7 +52,7 @@ const ONLINE_LINK_GROUPS: OnlineLinkItem[][] = [
   ],
   [
     {
-      label: '임정동 함께 기억하기',
+      label: '입정동 함께 기억하기',
       links: [{ href: 'http://1py-cheongyecheon.com' }],
     },
   ],
