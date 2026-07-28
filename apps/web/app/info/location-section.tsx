@@ -110,7 +110,7 @@ export function LocationSection() {
         />
       </div>
 
-      <div className="space-y-8 pt-4">
+      <div className="space-y-4 pt-4">
         <h3 className="text-amber-400 text-lg font-medium">온라인</h3>
         {ONLINE_LINK_GROUPS.map((items, index) => (
           <div key={`group-${index}`}>
