@@ -53,7 +53,7 @@ const ONLINE_LINK_GROUPS: OnlineLinkItem[][] = [
   [
     {
       label: '임정동 함께 기억하기',
-      links: [{ href: 'http://im-cheongyecheon.com' }],
+      links: [{ href: 'http://1py-cheongyecheon.com' }],
     },
   ],
   [
@@ -66,7 +66,7 @@ const ONLINE_LINK_GROUPS: OnlineLinkItem[][] = [
 
 function OnlineLinkList({ items }: { items: OnlineLinkItem[] }) {
   return (
-    <ul className="text-muted-foreground space-y-3 leading-7">
+    <ul className="text-muted-foreground">
       {items.map((item) => (
         <li key={item.label} className="flex items-start gap-3">
           <span className="shrink-0">{item.label}:</span>
@@ -110,7 +110,7 @@ export function LocationSection() {
         />
       </div>
 
-      <div className="space-y-6 pt-4">
+      <div className="space-y-8 pt-4">
         <h3 className="text-amber-400 text-lg font-medium">온라인</h3>
         {ONLINE_LINK_GROUPS.map((items, index) => (
           <div key={`group-${index}`}>
