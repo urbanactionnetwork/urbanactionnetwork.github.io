@@ -20,7 +20,7 @@ const ONLINE_LINK_GROUPS: OnlineLinkItem[][] = [
     },
     {
       label: '인스타그램',
-      links: [{ href: 'https://www.instagram.com/urbanactionnetwork' }],
+      links: [{ href: 'https://www.instagram.com/urbanaction_1994' }],
     },
   ],
   [
@@ -37,13 +37,13 @@ const ONLINE_LINK_GROUPS: OnlineLinkItem[][] = [
     },
     {
       label: '기관지 [걷고싶은도시] PDF 통권 보기',
-      links: [{ href: 'https://han.gl/iQJyng' }],
+      links: [{ href: 'https://bit.ly/4pKCPtZ' }],
     },
   ],
   [
     {
       label: '한평공원 지도보기',
-      links: [{ href: 'https://url.kr/1h3c54' }],
+      links: [{ href: 'https://bit.ly/4vRPblq' }],
     },
     {
       label: '한평공원 카페',
