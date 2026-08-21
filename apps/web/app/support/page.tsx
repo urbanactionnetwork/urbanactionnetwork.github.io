@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { ArrowUpRight, Check, ChevronDown, MapPin, Pause, Users } from 'lucide-react'
@@ -86,15 +85,7 @@ export default function SupportPage() {
           <div className="pointer-events-none absolute right-[-17rem] top-36 -z-10 size-[48rem] rounded-[48%] border border-[#175c3a]/15 md:right-[-2rem]" />
           <div className="pointer-events-none absolute right-[10%] top-[30%] -z-10 size-4 rounded-full bg-[#175c3a] shadow-[0_0_0_9px_#dff56b]" />
           <div className="mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-7xl flex-col justify-between px-5 py-10 sm:px-8 md:py-16 lg:px-12">
-            <div className="flex items-start justify-between gap-6">
-              <Image
-                src="/logo-support.png"
-                alt="도시연대"
-                width={248}
-                height={248}
-                priority
-                className="h-auto w-24 sm:w-32"
-              />
+            <div className="flex justify-end">
               <span className="mt-2 text-right text-[11px] font-bold uppercase tracking-[0.18em] text-[#175c3a]">
                 Member campaign
               </span>
@@ -102,9 +93,9 @@ export default function SupportPage() {
             <div className="max-w-5xl py-16 md:py-24">
               <p className="mb-6 text-sm font-bold tracking-[0.14em] text-[#175c3a]">도시연대 회원 캠페인</p>
               <h1 className="text-[clamp(3rem,8vw,7.5rem)] font-black leading-[1.03] tracking-[-0.065em]">
-                도시를 바꾸는
-                <br />
-                <span className="text-[#175c3a]">시민의 힘</span>을 이어주세요
+                <span className="block">도시를 바꾸는</span>
+                <span className="block text-[#175c3a]">시민의 힘을</span>
+                <span className="block">이어주세요</span>
               </h1>
               <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#36463c] md:text-xl">
                 누구나 자기 속도로 걷고, 멈추고, 머물 수 있는 도시. 도시에서 가장 큰 제약을 받는 사람의 경험에서 변화는
