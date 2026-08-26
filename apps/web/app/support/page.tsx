@@ -9,44 +9,63 @@ const JOIN_URL = 'https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=joi
 const work = [
   [
     '01',
-    '보이지 않던 불평등을 발견합니다',
-    '공공데이터와 지도를 분석하고 직접 거리를 걷습니다. 경사와 단차, 보행 동선과 그늘, 차량 통행과 휴게시설을 조사합니다.',
+    '자신의 도시 경험에서 질문을 시작합니다',
+    '불편과 배제의 경험을 개인적인 문제로 남겨두지 않습니다. 회원과 시민이 직접 거리를 걷고 관찰하고 기록하며, 누가 이 공간을 이용하고 누가 배제되는지 질문합니다.',
     MapPin,
   ],
   [
     '02',
-    '공간을 살아가는 사람들의 이야기를 듣습니다',
-    '현장에서 쉽게 만나는 사람뿐 아니라 이동이 어려워 거리에서 보이지 않는 사람의 경험까지 찾습니다.',
+    '서로 다른 경험과 이해관계를 만납니다',
+    '같은 장소도 사람마다 다르게 경험합니다. 자신의 요구만 주장하는 데서 멈추지 않고, 다른 몸과 삶의 조건에서 도시가 어떻게 보이는지 함께 살핍니다.',
     Users,
   ],
   [
     '03',
-    '시민과 함께 대안을 만듭니다',
-    '전문가가 답을 정하는 대신 주민과 함께 걷고 이야기하며 설계합니다. 필요하다면 아무것도 만들지 않는 선택도 합니다.',
+    '함께 조사하고 판단합니다',
+    '전문가의 설명이나 다수의 선호를 그대로 답으로 삼지 않습니다. 경험과 데이터, 제도와 이해관계를 함께 검토하며 무엇이 공적인 문제인지 판단합니다.',
     Pause,
   ],
   [
     '04',
-    '공간의 변화를 제도와 권리로 연결합니다',
-    '현장에서 찾은 문제를 기록하고 설계 기준과 운영 방식, 조례와 정책의 변화로 연결합니다.',
+    '결과를 확인하고 다시 묻습니다',
+    '제안으로 끝내지 않습니다. 무엇이 바뀌고 바뀌지 않았는지 기록하며, 실패와 한계도 공유하고 다음 행동을 함께 논의합니다.',
     ArrowUpRight,
   ],
 ] as const
 
 const benefits = [
-  '총회에 참여해 도시연대의 주요 방향을 결정하고 의결권을 행사합니다.',
-  '교육·답사·토론과 공동 활동에 참여합니다.',
-  '회원 모임에서 다양한 사람과 도시 문제를 함께 공부합니다.',
-  '잡지 『걷고싶은도시』와 도시연대 발간자료를 받아봅니다.',
-  '교육과 행사에 할인된 비용으로 참여합니다.',
-  '도시연대 공간을 정해진 절차에 따라 무료로 이용합니다.',
-  '활동 소식과 참여 기회를 정기적으로 안내받습니다.',
+  '도시연대의 활동과 자료를 읽고 회비로 시민 활동의 기반을 만듭니다.',
+  '자신이 도시에서 겪은 경험과 발견한 문제를 제안합니다.',
+  '답사와 교육에서 다른 사람의 도시 경험을 만납니다.',
+  '관심 있는 의제를 함께 조사하고 토론합니다.',
+  '회원모임과 총회에서 도시연대의 방향을 함께 결정합니다.',
+  '자신의 지식과 기술, 관계를 필요한 활동에 보탭니다.',
+  '활동의 결과와 재정, 결정 과정을 확인하고 의견을 냅니다.',
+]
+
+const commitments = [
+  [
+    '제안할 수 있는 통로',
+    '회원의 도시 경험과 문제 제안이 일회성 의견으로 사라지지 않도록 기록하고 검토하는 통로를 만들어가겠습니다.',
+  ],
+  [
+    '결정 범위의 공개',
+    '회원이 함께 결정할 수 있는 일과 활동가·운영기구가 책임져야 하는 일을 가능한 한 분명하게 알리겠습니다.',
+  ],
+  [
+    '반영 여부의 설명',
+    '모든 의견을 받아들일 수는 없지만, 중요한 제안이 어떻게 검토되었고 왜 반영되거나 반영되지 않았는지 설명하겠습니다.',
+  ],
+  [
+    '결과의 공유와 재논의',
+    '활동의 성과만이 아니라 실패와 한계도 공유하고, 결과를 바탕으로 다음 질문과 행동을 다시 논의하겠습니다.',
+  ],
 ]
 
 const faqs = [
   [
     '회원이 되면 반드시 활동에 참여해야 하나요?',
-    '아닙니다. 회비로 활동을 지지하는 것도 중요한 참여입니다. 각자의 관심과 형편에 따라 참여할 수 있습니다.',
+    '아닙니다. 회비로 시민 활동의 기반을 만들고 소식과 자료를 읽는 것도 중요한 참여입니다. 경험 제안, 답사, 조사, 토론, 총회 등에는 각자의 관심과 형편에 따라 참여할 수 있습니다.',
   ],
   [
     '전문지식이 없어도 회원이 될 수 있나요?',
@@ -59,6 +78,10 @@ const faqs = [
   [
     '기부금영수증을 받을 수 있나요?',
     '네. 도시연대는 공익법인으로 지정되어 있어 납부한 회비와 후원금에 대해 기부금영수증을 발급합니다.',
+  ],
+  [
+    '회원의 의견은 어떻게 반영되나요?',
+    '회원은 총회에서 도시연대의 주요 방향을 결정하고 의결권을 행사할 수 있습니다. 도시연대는 일상적인 문제 제안과 활동 논의도 실제 결정으로 이어질 수 있도록 제안·검토·설명·결과 공유의 구조를 회원과 함께 만들어가고 있습니다.',
   ],
 ]
 
@@ -98,8 +121,8 @@ export default function SupportPage() {
                 <span className="block">이어주세요</span>
               </h1>
               <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#36463c] md:text-xl">
-                누구나 자기 속도로 걷고, 멈추고, 머물 수 있는 도시. 도시에서 가장 큰 제약을 받는 사람의 경험에서 변화는
-                시작됩니다.
+                도시를 바꾸는 힘은 특별한 전문가나 뛰어난 지도자에게만 있지 않습니다. 자신의 경험을 말하고, 다른 사람의
+                삶을 이해하며, 공동의 문제를 함께 판단하는 시민에게 있습니다.
               </p>
               <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                 <JoinButton />
@@ -164,11 +187,35 @@ export default function SupportPage() {
           </div>
         </section>
 
+        <section className="bg-[#175c3a] text-white">
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:py-36 lg:gap-24 lg:px-12">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#dff56b]">Not on your behalf</p>
+            <div>
+              <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+                도시연대는 시민을 대신해
+                <br />
+                도시를 바꾸는 조직이 아닙니다
+              </h2>
+              <div className="mt-10 max-w-3xl space-y-6 text-lg leading-8 text-white/80">
+                <p>
+                  시민의 의견을 대신 전달하거나 전문가가 정한 답을 설명하는 것만으로는 도시의 민주주의가 만들어지지
+                  않습니다.
+                </p>
+                <p>
+                  도시연대는 각자의 도시 경험을 공적인 문제로 말하고, 서로 다른 의견과 이해관계를 검토하며, 공동의
+                  판단을 만들어가는 장소가 되고자 합니다. 회원이 된다는 것은 이 조직을 후원하는 동시에 그런 시민의
+                  가능성을 함께 만드는 일입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-[#e5ebe2]">
           <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 md:py-36 lg:px-12">
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">How we work</p>
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">How we become citizens</p>
             <h2 className="text-4xl font-black tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-              도시연대는 이렇게 일합니다
+              우리는 이렇게 시민이 되어갑니다
             </h2>
             <div className="mt-14 grid border-l border-t border-[#162019]/20 md:grid-cols-2">
               {work.map(([number, title, text, Icon]) => (
@@ -221,26 +268,31 @@ export default function SupportPage() {
             <div>
               <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#dff56b]">Why members matter</p>
               <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-                사업비가 정한 문제만
+                시민의 질문을
                 <br />
-                다루지 않기 위해
+                오래 이어가기 위해
                 <br />
                 <span className="text-[#dff56b]">회원이 필요합니다</span>
               </h2>
             </div>
             <div className="space-y-6 text-base leading-8 text-[#d5ddd7] md:pt-12 md:text-lg">
               <p>
-                도시의 문제는 지원사업이 시작될 때 생기고 사업이 끝날 때 사라지지 않습니다. 경험을 조사하고 관계를
-                만들며, 작은 변화를 정책으로 이어가려면 긴 시간이 필요합니다.
+                시민의 의견은 저절로 공동의 결정이 되지 않습니다. 경험을 기록하고, 서로 다른 이해관계를 만나게 하고,
+                필요한 정보를 함께 검토하며, 결정의 결과를 오래 추적하는 조직이 필요합니다.
               </p>
               <p>
-                현재 도시연대에는 <strong className="text-[#dff56b]">300명 안팎의 회원</strong>이 함께하지만, 이
-                회비만으로 사무공간을 유지하고 활동가에게 안정적인 임금을 지급하며 독립적인 활동을 이어가기는
-                어렵습니다.
+                사업비는 정해진 의제와 기간 안에서 움직입니다. 하지만 시민이 배우고 관계를 만들며 공동의 판단을 형성하는
+                데에는 사업기간보다 긴 시간이 필요합니다. 회비는 도시연대가 지원기관의 일정이 아니라 시민의 질문을 따라
+                움직이게 합니다.
+              </p>
+              <p>
+                현재 도시연대에는 <strong className="text-[#dff56b]">300명 안팎의 회원</strong>이 함께합니다. 더
+                안정적인 회원 기반은 사무공간과 활동가의 임금만이 아니라, 시민의 경험을 서둘러 결론내리지 않고 오래 듣고
+                조사하고 토론할 시간을 만듭니다.
               </p>
               <blockquote className="mt-10 border-t-4 border-[#dff56b] pt-6 text-xl font-bold leading-9 text-white md:text-2xl">
-                회원의 회비는 관리비가 아닙니다. 활동가가 현장을 걷고 사람을 만날 시간, 시민이 공부하고 토론할 공간,
-                사업의 경계를 넘어 독립적으로 행동할 힘을 만듭니다.
+                회원은 도시연대의 활동을 소비하는 사람이 아닙니다. 도시의 결정권이 행정·시장·전문가에게만 독점되지
+                않도록 시민의 조직과 시간을 함께 유지하는 사람입니다.
               </blockquote>
             </div>
           </div>
@@ -252,14 +304,14 @@ export default function SupportPage() {
               <div>
                 <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">Membership</p>
                 <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-                  후원자이자 도시를 함께
+                  각자의 방식으로
                   <br />
-                  바꾸는 동료가 됩니다
+                  참여할 수 있습니다
                 </h2>
               </div>
               <p className="max-w-xl text-lg leading-8 text-[#526158]">
-                모든 활동에 적극적으로 참여해야 하는 것은 아닙니다. 회비로 기반을 만들거나 교육과 답사에 참여하고,
-                자신의 경험과 전문성을 보탤 수 있습니다.
+                민주적 시민이 된다는 것은 모든 회의에 참석하거나 많은 시간을 내야 한다는 뜻이 아닙니다. 회비로 기반을
+                만들고 소식을 읽는 일부터 의제를 제안하고 결정에 참여하는 일까지, 각자의 형편에 맞는 경로가 있습니다.
               </p>
             </div>
             <ul className="mt-14 grid border-l border-t border-[#162019]/20 md:grid-cols-2">
@@ -273,13 +325,43 @@ export default function SupportPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 md:py-36 lg:px-12">
+          <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-end">
+            <div>
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">
+                Our democratic promise
+              </p>
+              <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+                회원의 목소리가
+                <br />
+                결정으로 이어지는 구조를
+                <br />
+                <span className="text-[#175c3a]">함께 만들겠습니다</span>
+              </h2>
+            </div>
+            <p className="max-w-xl text-lg leading-8 text-[#526158]">
+              도시연대도 아직 완성된 민주적 조직은 아닙니다. 외부에 시민참여를 요구하는 만큼, 내부에서도 회원의 경험과
+              판단이 실제 운영과 활동에 영향을 미칠 수 있는 조건을 꾸준히 만들겠습니다.
+            </p>
+          </div>
+          <div className="mt-14 grid border-l border-t border-[#162019]/20 md:grid-cols-2">
+            {commitments.map(([title, text], index) => (
+              <article key={title} className="border-b border-r border-[#162019]/20 p-7 md:p-10">
+                <span className="font-mono text-sm font-bold text-[#175c3a]">0{index + 1}</span>
+                <h3 className="mt-8 text-2xl font-bold tracking-[-0.025em]">{title}</h3>
+                <p className="mt-4 leading-7 text-[#526158]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="bg-[#175c3a] px-5 py-16 sm:px-8 md:py-24 lg:px-12">
           <div className="mx-auto max-w-5xl bg-[#162019] p-7 text-white sm:p-10 md:p-16">
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#dff56b]">Join us</p>
             <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
               월 1만 원부터
               <br />
-              함께할 수 있습니다
+              시민의 조직을 함께 만듭니다
             </h2>
             <div className="mt-10 flex flex-wrap gap-2">
               {['1만 원', '2만 원', '3만 원', '5만 원', '10만 원'].map((amount) => (
@@ -291,7 +373,8 @@ export default function SupportPage() {
             <p className="mt-8 max-w-3xl leading-8 text-[#d5ddd7]">
               회비와 후원금은 사무공간 운영, 활동가 임금, 조사와 연구, 시민 프로그램, 계간지 제작과 온라인 공간 운영에
               사용됩니다. 내역을 정기적으로 보고하고, 매년 기부금 모금액과 활용실적을 홈페이지와 국세청을 통해
-              공개합니다.
+              공개합니다. 회비는 시민의 경험을 듣고 조사하며, 서로 다른 판단이 만날 수 있는 독립적인 시간과 공간을
+              만듭니다.
             </p>
             <div className="mt-9">
               <JoinButton light label="월 1만 원부터 회원 되기" />
@@ -324,7 +407,8 @@ export default function SupportPage() {
               <span className="text-[#dff56b]">공통의 힘</span>이 필요합니다
             </h2>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#d5ddd7]">
-              도시연대가 이 일을 오래, 독립적으로, 더 많은 시민과 함께할 수 있도록 회원으로 힘을 보태주세요.
+              도시를 누군가에게 맡겨두지 않고, 자신의 경험을 말하고 다른 사람과 함께 판단하는 시민의 조직을 함께
+              만들어주세요.
             </p>
             <div className="mt-10">
               <JoinButton light />
