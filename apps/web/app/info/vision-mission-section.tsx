@@ -1,203 +1,216 @@
-import Link from 'next/link'
-import { ArrowUpRight, BookOpenText, Map, Microscope, Shapes } from 'lucide-react'
-
-const urbanLens = [
-  {
-    title: '이동과 머묾',
-    text: '누가 자유롭게 이동하고 머물 수 있는지, 속도와 접근성의 기준이 어떤 몸과 생활을 중심으로 만들어졌는지 봅니다.',
-  },
-  {
-    title: '소유와 이용',
-    text: '공간의 소유권만이 아니라 실제 이용과 관리, 접근을 둘러싼 권한이 누구에게 어떻게 배분되어 있는지 봅니다.',
-  },
-  {
-    title: '생산과 돌봄',
-    text: '도시를 유지하는 노동과 돌봄이 어디에서 이루어지고, 누가 그 비용과 위험을 감당하는지 봅니다.',
-  },
-  {
-    title: '기억과 변화',
-    text: '개발이 무엇을 새로 만드는지만이 아니라 어떤 장소의 관계와 기억을 지우고 무엇을 남기는지 봅니다.',
-  },
-]
-
-const method = [
-  {
-    number: '01',
-    title: '현장에서 징후를 찾습니다',
-    text: '지도와 통계만으로는 드러나지 않는 도시의 작동 방식을 거리와 일터, 골목과 광장에서 관찰합니다. 임시 의자, 우회하는 동선, 비어 있는 공간도 중요한 자료가 됩니다.',
-    icon: Microscope,
-  },
-  {
-    number: '02',
-    title: '문제를 다시 정의합니다',
-    text: '개인의 불편으로 보이는 일을 공간의 배치, 제도의 기준, 자원과 권한의 분배 문제로 바꾸어 읽습니다. 익숙한 해결책보다 먼저 정확한 질문을 찾습니다.',
-    icon: Map,
-  },
-  {
-    number: '03',
-    title: '작은 변화를 시험합니다',
-    text: '완성된 계획을 일방적으로 적용하기보다 현장에서 가능한 대안을 작게 시도합니다. 이용 과정에서 드러난 예상 밖의 효과와 충돌을 다음 설계에 반영합니다.',
-    icon: Shapes,
-  },
-  {
-    number: '04',
-    title: '경험을 사회적 자산으로 남깁니다',
-    text: '한 장소의 변화가 일회성 사업으로 끝나지 않도록 조사와 실패, 협의와 실행의 과정을 기록합니다. 이를 설계 기준과 운영 방식, 정책과 제도의 변화로 연결합니다.',
-    icon: BookOpenText,
-  },
-]
-
-const principles = [
-  ['공공성', '소유 주체나 법적 명칭이 아니라 실제로 누가 접근하고 이용하며 머물 수 있는지를 기준으로 판단합니다.'],
-  [
-    '도시적 권리',
-    '시설을 제공받는 권리를 넘어 도시의 공간과 자원이 어떻게 만들어지고 배분될지 결정하는 권리를 중요하게 봅니다.',
-  ],
-  [
-    '구체적인 차이',
-    '추상적인 평균보다 서로 다른 몸과 연령, 노동과 돌봄, 소득과 거주 조건이 만드는 차이에서 출발합니다.',
-  ],
-  [
-    '축적되는 변화',
-    '눈에 보이는 결과만이 아니라 과정에서 생긴 지식과 관계, 기준과 제도가 다음 변화를 가능하게 해야 한다고 봅니다.',
-  ],
-]
-
 export function VisionMissionSection() {
   return (
-    <article id="vision-mission" className="scroll-mt-24 overflow-hidden bg-[#f3f0e7] text-[#162019]">
-      <section className="relative isolate border-b border-[#162019]/15">
-        <div className="pointer-events-none absolute -right-52 top-12 -z-10 size-[42rem] rounded-[48%] border border-[#175c3a]/15 md:right-[-6rem] md:size-[56rem] md:rotate-12" />
-        <div className="pointer-events-none absolute right-[-15rem] top-48 -z-10 size-[46rem] rounded-[46%] border border-[#175c3a]/15 md:right-8" />
-        <div className="pointer-events-none absolute right-[13%] top-[42%] -z-10 size-3 rounded-full bg-[#175c3a] shadow-[0_0_0_8px_#dff56b]" />
-        <div className="mx-auto flex min-h-[72svh] w-full max-w-7xl flex-col justify-center px-5 py-24 sm:px-8 md:py-36 lg:px-12">
-          <p className="mb-6 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">Urbanaction Network</p>
-          <h1 className="max-w-5xl text-[clamp(3.2rem,8vw,7.8rem)] font-black leading-[1.02] tracking-[-0.065em]">
-            <span className="block">도시는 삶을</span>
-            <span className="block text-[#175c3a]">조직하는 방식입니다</span>
+    <article id="vision-mission" className="scroll-mt-24 bg-white text-zinc-900">
+      <header className="border-b border-zinc-200 bg-[#f5f2e9]">
+        <div className="mx-auto max-w-4xl px-5 py-20 sm:px-8 md:py-28">
+          <p className="mb-5 text-sm font-semibold tracking-[0.16em] text-emerald-800">도시연대 비전과 미션</p>
+          <h1 className="text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl md:text-6xl">
+            누가 도시를 만드는가
           </h1>
-          <p className="mt-9 max-w-3xl text-lg font-medium leading-8 text-[#36463c] md:text-xl">
-            어디에 집과 일터가 놓이고, 누가 빠르게 이동하며, 어디에서 쉬고 만날 수 있는가. 도시의 공간적 배치는 사람들의
-            기회와 부담, 관계와 일상의 가능성을 다르게 만듭니다.
+          <p className="mt-8 max-w-3xl text-xl font-semibold leading-9 text-zinc-700">
+            도시는 그곳에 발 딛고 살아가는 사람들의 일상으로 만들어진다.
           </p>
         </div>
-      </section>
+      </header>
 
-      <section className="bg-[#162019] text-[#f3f0e7]">
-        <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-24 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:py-36 lg:gap-24 lg:px-12">
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#dff56b]">An urban perspective</p>
-            <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-              도시의 문제를
-              <br />
-              공간과 관계의 구조에서 봅니다
-            </h2>
-          </div>
-          <div className="space-y-6 text-base leading-8 text-[#d5ddd7] md:pt-10 md:text-lg">
-            <p>
-              도시의 문제는 경제성이나 환경성 어느 하나만으로 설명되지 않습니다. 주거와 노동, 이동과 돌봄, 소유와 이용,
-              개발과 기억이 한 장소에서 서로 얽혀 작동합니다.
-            </p>
-            <p>
-              도시연대가 말하는 도시적 관점은 이 관계들이 공간 안에서 어떻게 배치되고 충돌하는지 살피는 방식입니다.
-              개인의 선택이나 불편으로 보이는 현상 뒤에서 제도와 시장, 기술과 문화가 어떤 생활을 가능하게 하고 어떤 삶을
-              밀어내는지 묻습니다.
-            </p>
-            <p className="border-l-4 border-[#dff56b] pl-5 text-xl font-bold leading-9 text-white md:text-2xl">
-              도시를 바꾼다는 것은 시설을 하나 더 놓는 일만이 아니라, 삶의 조건과 결정 권한이 배치된 방식을 바꾸는
-              일입니다.
-            </p>
-          </div>
+      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 md:py-24">
+        <div className="space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+          <p>
+            우리는 흔히 도시를 건물과 도로, 개발계획과 행정의 결과물로 이해한다. 건설사가 건물을 짓고, 전문가가
+            공간을 구획하며, 행정이 도시의 방향을 결정한다고 생각한다. 그러나 그것만으로는 도시가 어떻게 만들어지고
+            작동하는지 충분히 설명할 수 없다.
+          </p>
+          <p>
+            매일 같은 길을 걷는 사람, 동네의 가게를 운영하는 사람, 아이와 노인을 돌보는 사람, 시장과 일터에서 노동하는
+            사람, 공원과 골목에서 이웃을 만나는 사람, 오래된 장소의 기억을 간직한 사람. 이들의 움직임과 관계, 노동과
+            돌봄이 쌓이면서 도시는 구체적인 삶의 공간이 된다.
+          </p>
+          <p>
+            하지만 모든 사람의 경험과 필요가 도시를 만드는 과정에 똑같이 반영되는 것은 아니다. 토지와 건물을 소유한
+            사람, 개발을 추진하는 기업, 제도와 예산을 운용하는 행정, 전문적인 언어와 정보를 가진 사람은 공간에 관한
+            결정에 더 큰 영향력을 행사한다. 반면 그 공간에서 살아가지만 결정 권한을 갖지 못한 주민, 세입자, 보행자,
+            어린이, 장애인, 고령자와 불안정한 노동자의 경험은 쉽게 뒤로 밀린다.
+          </p>
+          <p>
+            같은 도시를 살아도 누구는 빠르게 이동하고 편안하게 머물 수 있지만, 누구는 높은 턱과 가파른 경사, 비싼
+            비용과 보이지 않는 규칙 앞에서 멈춰야 한다. 도시의 공간적 배치는 단순히 건물과 시설을 배치하는 일이 아니다.
+            누구에게 어떤 기회가 열리고, 누가 더 많은 시간과 비용을 부담하며, 어떤 삶이 중심에 놓이고 어떤 삶이 주변으로
+            밀려날지를 정하는 과정이다.
+          </p>
+
+          <p className="border-l-4 border-emerald-700 py-1 pl-5 text-xl font-semibold leading-9 text-zinc-900">
+            걷고싶은도시만들기시민연대(약칭 도시연대)는 바로 이 지점에서 도시를 바라본다.
+          </p>
+
+          <p>
+            도시의 문제는 경제성이나 환경성 어느 하나만으로는 충분히 설명되지 않는다. 주거와 노동, 이동과 돌봄, 소유와
+            이용, 개발과 기억이 한 장소에서 얽히고 충돌한다. 도시를 이해하려면 각각의 문제를 분리해서 보는 데서 그치지
+            않고, 서로 다른 관계가 공간 안에서 어떻게 배치되고 있는지 살펴야 한다.
+          </p>
+          <p>
+            도시연대가 말하는 ‘도시적 관점’은 도시에서 일어나는 일을 공간과 관계의 구조 속에서 읽는 방식이다. 개인의
+            불편이나 선택으로 보이는 현상 뒤에 어떤 제도와 시장, 기술과 문화가 작동하는지 묻는다. 누가 공간을
+            소유하는지만이 아니라 누가 실제로 이용하고 관리하며 머물 수 있는지 살핀다. 무엇이 새로 만들어지는지만이
+            아니라 그 과정에서 어떤 생활과 관계, 노동과 기억이 사라지는지도 본다.
+          </p>
+          <p>
+            따라서 도시를 바꾼다는 것은 시설을 하나 더 설치하거나 낡은 공간을 새롭게 꾸미는 일에 그치지 않는다. 사람들이
+            도시를 이용하는 조건과 서로 관계 맺는 방식, 공간을 결정할 수 있는 권한이 어떻게 배분되어 있는지를 바꾸는
+            일이다.
+          </p>
+          <p>
+            도시연대는 이러한 관점으로 도시를 조사하고 질문하며 변화를 만들어가는 시민단체다. 우리는 시민을 대신해 도시의
+            정답을 제시하거나 완성된 계획을 일방적으로 적용하려 하지 않는다. 그 공간을 살아가는 사람들의 경험과 현장의
+            조건을 바탕으로 문제를 다시 정의하고, 서로 다른 이해관계 속에서 가능한 대안을 찾으며, 그 과정을 사회가 함께
+            사용할 수 있는 지식과 제도로 남기고자 한다.
+          </p>
+          <p>
+            이를 위해 도시연대는 탐색하고, 연결하고, 실험하며, 축적한다. 이 네 가지는 서로 분리된 사업 단계가 아니라
+            현장에서 시작한 질문을 사회적 변화로 이어가기 위한 하나의 과정이다.
+          </p>
         </div>
-      </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 md:py-36 lg:px-12">
-        <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">What we examine</p>
-        <h2 className="text-4xl font-black tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-          하나의 장소를 여러 관계로 읽습니다
-        </h2>
-        <div className="mt-14 grid border-l border-t border-[#162019]/20 md:grid-cols-2">
-          {urbanLens.map(({ title, text }, index) => (
-            <article key={title} className="min-h-64 border-b border-r border-[#162019]/20 p-7 md:p-10">
-              <span className="font-mono text-sm font-bold text-[#175c3a]">0{index + 1}</span>
-              <h3 className="mt-10 text-2xl font-bold tracking-[-0.025em]">{title}</h3>
-              <p className="mt-4 max-w-lg leading-7 text-[#526158]">{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-[#e5ebe2]">
-        <div className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 md:py-36 lg:px-12">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#175c3a]">Our method</p>
-          <h2 className="text-4xl font-black tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-            탐색하고, 재정의하고, 시험하고, 남깁니다
+        <section className="mt-20 border-t border-zinc-300 pt-12">
+          <p className="mb-3 text-sm font-semibold tracking-[0.12em] text-emerald-800">탐색</p>
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.025em] text-zinc-900">
+            우리의 시작은 현장을 탐색하는 일이다
           </h2>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#526158]">
-            도시연대의 활동은 정해진 해답을 적용하는 사업이 아니라 현장에서 문제를 새롭게 읽고, 가능한 변화를 시험하며,
-            그 경험을 다른 장소에서도 사용할 수 있는 지식과 제도로 만드는 과정입니다.
-          </p>
-          <div className="mt-14 grid border-l border-t border-[#162019]/20 md:grid-cols-2">
-            {method.map(({ number, title, text, icon: Icon }) => (
-              <article key={number} className="group min-h-80 border-b border-r border-[#162019]/20 p-7 md:p-10">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-sm font-bold text-[#175c3a]">{number}</span>
-                  <Icon className="size-5 text-[#175c3a] transition group-hover:scale-110" aria-hidden="true" />
-                </div>
-                <h3 className="mt-14 max-w-md text-2xl font-bold leading-snug tracking-[-0.025em]">{title}</h3>
-                <p className="mt-4 max-w-lg leading-7 text-[#526158]">{text}</p>
-              </article>
-            ))}
+          <div className="mt-8 space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+            <p>
+              거리를 걷고, 사람들이 움직이고 멈추는 모습을 살피며, 그곳에서 살아가고 일하는 사람들의 이야기를 듣는다.
+              지도와 통계, 제도와 계획을 검토하면서도 그것만으로는 드러나지 않는 도시의 작동 방식을 현장에서 확인한다.
+            </p>
+            <p>
+              길가에 놓인 낡은 의자, 사람들이 반복해서 우회하는 동선, 사용되지 않는 광장, 계단 위의 종이상자도 중요한
+              자료가 된다. 그것은 사람들이 주어진 공간을 실제로 어떻게 이용하고 있는지, 공식적인 계획이 채우지 못한
+              필요가 무엇인지 보여주는 흔적이기 때문이다.
+            </p>
+            <p>
+              현장을 탐색하는 목적은 이미 정해놓은 문제를 확인하는 데 있지 않다. 겉으로는 개인의 불편처럼 보이는 일이
+              공간의 배치와 제도의 기준, 자원과 권한의 분배에서 비롯된 것은 아닌지 다시 묻기 위해서다.
+            </p>
+            <p>
+              예를 들어 어떤 고령자가 집 밖으로 자주 나오지 못하는 상황은 개인의 건강이나 의지 문제로 설명될 수 있다.
+              그러나 집과 시장 사이의 가파른 경사, 앉아서 쉴 곳이 없는 거리, 자동차 중심의 보행환경과 폭염이 함께 놓여
+              있다면 문제의 성격은 달라진다. 개인의 어려움으로 보였던 경험은 누가 도시를 지속적으로 이용할 수 있는가라는
+              공적인 질문이 된다.
+            </p>
+            <p className="font-semibold text-zinc-900">
+              그래서 도시연대의 탐색은 성급하게 해결책을 내놓기보다 문제를 정확하게 다시 정의하는 과정이다. 익숙한 답을
+              반복하기 전에 지금까지 무엇이 보이지 않았고, 누구의 경험이 빠져 있었는지를 확인하는 일이 변화의 출발점이라고
+              생각한다.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-[#175c3a] text-white">
-        <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-24 sm:px-8 md:grid-cols-[0.75fr_1.25fr] md:py-36 lg:gap-24 lg:px-12">
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#dff56b]">Our principles</p>
-            <h2 className="text-4xl font-black leading-tight tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-              우리가 변화를 판단하는 기준
-            </h2>
-          </div>
-          <div className="divide-y divide-white/20 border-y border-white/20">
-            {principles.map(([title, text]) => (
-              <article key={title} className="grid gap-3 py-6 md:grid-cols-[8rem_1fr] md:gap-7">
-                <h3 className="font-bold text-[#dff56b]">{title}</h3>
-                <p className="leading-7 text-white/80">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#162019] px-5 py-28 text-center text-white sm:px-8 md:py-44">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-lg font-semibold text-[#d5ddd7]">도시를 바꾸기 전에</p>
-          <h2 className="mt-4 text-[clamp(3rem,7vw,6.5rem)] font-black leading-[1.08] tracking-[-0.06em]">
-            도시를 보는 방식을
-            <br />
-            <span className="text-[#dff56b]">먼저 바꿉니다</span>
+        <section className="mt-20 border-t border-zinc-300 pt-12">
+          <p className="mb-3 text-sm font-semibold tracking-[0.12em] text-emerald-800">연결</p>
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.025em] text-zinc-900">
+            탐색은 서로 다른 경험과 이해관계를 연결하는 일로 이어진다
           </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#d5ddd7]">
-            도시연대는 현장의 작은 징후에서 도시의 구조를 읽고, 구체적인 실험을 공공의 지식과 제도로 이어갑니다.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/activities"
-              className="inline-flex min-h-14 items-center justify-between gap-8 rounded-sm bg-[#dff56b] px-6 py-3 font-bold text-[#162019] transition hover:-translate-y-0.5 hover:bg-[#eaff7d]"
-            >
-              주요 활동 보기 <ArrowUpRight className="size-5" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/info/history"
-              className="inline-flex min-h-14 items-center justify-between gap-8 rounded-sm border border-white/30 px-6 py-3 font-bold transition hover:border-white hover:bg-white/10"
-            >
-              걸어온 길 보기 <ArrowUpRight className="size-5" aria-hidden="true" />
-            </Link>
+          <div className="mt-8 space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+            <p>
+              도시의 한 장소에는 여러 삶과 이해관계가 함께 존재한다. 주민과 상인, 토지 소유자와 세입자, 보행자와 운전자,
+              어린이와 보호자, 행정과 전문가가 같은 공간을 서로 다르게 경험한다.
+            </p>
+            <p>
+              이 차이는 대화만으로 쉽게 해소되지 않는다. 사람마다 가진 자원과 정보, 결정에 미칠 수 있는 영향력이 다르다.
+              누군가에게는 단순한 편의의 문제인 일이 다른 누군가에게는 이동과 생계, 안전과 존엄에 관한 문제일 수 있다.
+              모든 의견을 동등한 선호로 나열하면 이러한 차이는 오히려 가려질 수 있다.
+            </p>
+            <p>
+              사람과 경험을 연결한다는 것은 서로 다른 의견을 모아 적당한 중간값을 찾는다는 뜻이 아니다. 누가 무엇을
+              요구하고 있는지, 누가 결정 권한을 가지고 있는지, 변화의 이익과 비용을 누가 부담하는지, 어떤 경험이 그동안
+              구조적으로 덜 반영되어 왔는지를 함께 살피는 일이다.
+            </p>
+            <p>
+              이를 위해 시민의 경험과 전문적인 지식, 현장의 관찰과 공공데이터, 주민의 필요와 행정의 조건을 하나의 논의
+              안에 놓는다. 전문성은 시민의 판단을 대신하는 권위가 아니라, 현장의 문제를 더 정확히 이해하고 가능한 대안을
+              검토하기 위해 함께 사용하는 자원이어야 한다.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="mt-20 border-t border-zinc-300 pt-12">
+          <p className="mb-3 text-sm font-semibold tracking-[0.12em] text-emerald-800">실험</p>
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.025em] text-zinc-900">
+            연결은 현장에서 가능한 변화를 실험하는 일로 나아간다
+          </h2>
+          <div className="mt-8 space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+            <p>
+              좋은 도시는 완성된 도면을 현실에 적용하는 것만으로 만들어지지 않는다. 계획이 실제 생활과 만나는 순간에는
+              예상하지 못한 이용 방식과 갈등, 새로운 필요가 생긴다.
+            </p>
+            <p>
+              그래서 처음부터 완성된 답을 제시하기보다 현장에서 가능한 변화를 작게 시도하고 그 결과를 살핀다. 주민과 함께
+              걷고, 공간을 관찰하고, 필요한 경우 직접 사용해보면서 위치와 형태, 운영 방식을 조정한다. 계획했던 시설이
+              기존의 생활과 관계를 침해한다면 위치와 설계를 바꾸거나 아무것도 만들지 않는 선택도 검토한다.
+            </p>
+            <p>
+              실험은 새로운 시설을 설치하는 데 그치지 않는다. 이미 주민들이 만들어온 쉼의 장소와 돌봄의 관계를 발견하고
+              이를 더 안전하게 이어주는 일, 사용되지 않던 공간의 운영 방식을 바꾸는 일, 행정과 시민이 협의하는 절차를
+              새롭게 만드는 일도 도시의 실험이 될 수 있다.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-20 border-t border-zinc-300 pt-12">
+          <p className="mb-3 text-sm font-semibold tracking-[0.12em] text-emerald-800">축적</p>
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.025em] text-zinc-900">
+            현장의 실험은 사회가 함께 사용할 수 있는 자산으로 축적되어야 한다
+          </h2>
+          <div className="mt-8 space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+            <p>
+              현장에서 얻은 경험은 한 번의 사업과 함께 사라져서는 안 된다. 어떤 문제를 발견했고, 누구와 어떤 갈등을
+              겪었으며, 무엇을 바꾸었고 무엇을 바꾸지 못했는지 기록해야 한다.
+            </p>
+            <p>
+              도시연대는 현장의 관찰과 시민의 경험, 협의와 실행의 과정을 조사와 기록으로 남긴다. 한 장소에서 얻은 배움이
+              다른 지역에서도 활용될 수 있도록 설계 기준과 운영 방식, 안내서와 연구자료로 정리한다. 필요한 경우 조례와
+              정책, 행정의 기준을 바꾸는 근거로 연결한다.
+            </p>
+            <p>
+              이때 축적해야 할 것은 성공 사례만이 아니다. 처음의 판단이 왜 틀렸는지, 어떤 이해관계를 충분히 살피지
+              못했는지, 제도와 예산의 한계 때문에 무엇을 실행하지 못했는지도 함께 남겨야 한다. 실패와 수정의 과정까지
+              기록될 때 현장의 경험은 다음 실천을 가능하게 하는 공공의 지식이 된다.
+            </p>
+            <p>
+              한 사람의 경험이 모든 사람을 대표할 수는 없다. 그러나 기록되지 않은 경험은 공적인 판단의 근거가 되기
+              어렵다. 개인의 경험을 그대로 일반화하지 않으면서도, 그것이 사적인 불편으로 사라지지 않도록 조사하고 비교하며
+              사회적 질문으로 바꾸고자 한다.
+            </p>
+            <p className="font-semibold text-zinc-900">
+              골목과 거리에서 시작한 작은 질문이 설계의 기준을 바꾸고, 한 장소의 실험이 다른 지역의 정책으로 이어질 수
+              있어야 한다. 도시의 변화는 눈앞의 결과뿐 아니라 그 과정에서 생긴 지식과 관계, 새로운 기준과 제도가 다음
+              변화를 가능하게 할 때 비로소 축적된다.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-20 border-t border-zinc-300 pt-12">
+          <div className="space-y-7 text-[1.05rem] leading-8 text-zinc-700 md:text-lg md:leading-9">
+            <p>
+              도시연대는 빠른 이동과 개발의 속도만으로 도시의 발전을 판단하지 않는다. 사람들이 자기 속도로 걷고 머물 수
+              있는지, 서로 다른 삶이 한 공간에서 관계를 맺을 수 있는지, 도시를 유지하는 노동과 돌봄이 존중받는지, 변화의
+              과정에서 기존의 생활과 기억이 함부로 지워지지 않는지를 함께 묻는다.
+            </p>
+            <p>
+              도시에 대한 권리 역시 이미 만들어진 시설을 이용할 권리에 머물지 않는다. 도시의 공간과 자원이 누구를 위해
+              만들어지고, 어떤 방식으로 이용되고 관리될지를 결정하는 과정에 참여할 권리까지 포함한다. 도시는 하나의
+              완성된 결과물이 아니다. 서로 다른 사람들이 공간을 사용하고 관계를 맺으며, 충돌하는 이해를 조정하고, 기존의
+              기준을 다시 질문하는 과정 속에서 계속 만들어진다.
+            </p>
+            <p>
+              도시연대가 만들고자 하는 것은 특정한 형태의 도시나 하나의 정답이 아니다. 지금까지 보이지 않았던 삶의 조건을
+              발견하고, 개인의 경험을 공적인 질문으로 바꾸며, 서로 다른 사람들이 도시의 변화를 함께 판단할 수 있는
+              조건이다.
+            </p>
+          </div>
+          <p className="mt-12 border-y border-emerald-800/30 py-10 text-2xl font-bold leading-10 tracking-[-0.02em] text-emerald-900 md:text-3xl md:leading-[1.5]">
+            도시는 완성된 공간이 아니라 끊임없이 만들어지는 민주주의다.
+          </p>
+        </section>
+      </div>
     </article>
   )
 }
